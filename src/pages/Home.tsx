@@ -1,11 +1,12 @@
-import { Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import React from 'react';
+import MainSvg from '../assets/main.svg';
 
 export function Home(): JSX.Element {
   return (
     <View className="container h-full">
       <View className="flex-1 justify-center items-center">
-        <Image source={require('../assets/logo.png')} />
+        <MainSvg height={45} width={45} />
         <Text>Open up App.npm jff start working on your app!</Text>
       </View>
       <View className="h-20 justify-center items-center">

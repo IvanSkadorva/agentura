@@ -10,7 +10,7 @@ export function Home(): JSX.Element {
     <View className="container h-full">
       <View className="flex-1 justify-center items-center">
         <MainSvg height={450} width={450} />
-        <Text>{t('gameTitle')}</Text>
+        <Text className="font-kino">{t('gameTitle')}</Text>
         <Button
           title={t('buttons.play')}
           onPress={() => {

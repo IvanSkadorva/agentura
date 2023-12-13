@@ -1,0 +1,81 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Cygre-Black.ttf",
+      "sha1": "5e378a67e4d912745561ada045ec0b4b37422a90"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-BlackIt.ttf",
+      "sha1": "57dc19309b5432c19a91052c12e0d39b8659814b"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-Bold.ttf",
+      "sha1": "3bc30e32afb289aa93eaaf8f4ce9d96f2992b2f6"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-BoldIt.ttf",
+      "sha1": "97b6a53253d010dc24b24c70077484071cc8b1ff"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-Book.ttf",
+      "sha1": "e434967bc12ac0756c6f28a8e670baca0be86ea2"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-BookIt.ttf",
+      "sha1": "195497d680f16ec69e57352e358c4f2754eae55d"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-ExtraBold.ttf",
+      "sha1": "fe4a3a7c2c7d1ad4b8b437a715cc83386afbba12"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-ExtraBoldIt.ttf",
+      "sha1": "5fe27c5ebb7b4caed19842a71d5f5de890de1491"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-Light.ttf",
+      "sha1": "d18eb2657c83a175509cfb67ddc0424fcff07b3e"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-LightIt.ttf",
+      "sha1": "45ecc6efd01ec73bcce9abfe81b19fa8f1c29698"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-Medium.ttf",
+      "sha1": "a9bce4cc4bd9e2065dce0e112f4484599d33c7de"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-MediumIt.ttf",
+      "sha1": "17eb411501c727814ef8b15cea94be3ad5fb96c3"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-Regular.ttf",
+      "sha1": "6d2b1ea0cc1ed1c8bb621e64abf1090726d1b798"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-RegularIt.ttf",
+      "sha1": "9e7bdb2f829b5ef0a2a0a38baaf20533c7711c99"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-SemiBold.ttf",
+      "sha1": "6d44771da2aa586d9086b69a92073b71a52f4ece"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-SemiBoldIt.ttf",
+      "sha1": "13063d51e0c0779fdb2667d5e205c2db0b2fb9c1"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-Thin.ttf",
+      "sha1": "d8898a901c7a181f1765d18aec1d3d761c657ee1"
+    },
+    {
+      "path": "src/assets/fonts/Cygre-ThinIt.ttf",
+      "sha1": "6a8c54cb4c2046adb39d891a5d59282b17053c1c"
+    },
+    {
+      "path": "src/assets/fonts/Kino-Regular.ttf",
+      "sha1": "ff87dbb76d4568547053e9911e8f267ed9dd5d5d"
+    }
+  ]
+}

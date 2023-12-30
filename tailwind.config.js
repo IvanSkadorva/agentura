@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     colors: {
       'coral-red': 'rgb(253, 58, 58)',
-      'base-white': 'rgb(255, 255, 255)',
+      white: 'rgb(255, 255, 255)',
+      black: 'rgb(0, 0, 0)',
     },
     extend: {
       fontFamily: {

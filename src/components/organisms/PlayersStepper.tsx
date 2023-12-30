@@ -1,10 +1,11 @@
 import { View } from 'react-native';
-import CivilSvg from '../assets/icons/civil.svg';
-import SpySvg from '../assets/icons/spy.svg';
-import { BaseText } from './BaseText.tsx';
-import { PlusMinusButton } from './PlusMinusButton.tsx';
+import CivilSvg from '../../assets/images/civil.svg';
+import SpySvg from '../../assets/images/spy.svg';
+import { BaseText } from '../atoms/BaseText.tsx';
+import { PlusMinusButton } from '../atoms/PlusMinusButton.tsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { ScaledSheet } from 'react-native-size-matters';
 const MAX_PLAYERS = 10;
 
 interface PlayersStepperProps {
@@ -28,13 +29,13 @@ export const PlayersStepper = ({
     );
   };
   return (
-    <View className="flex flex-col">
-      <View className="fle flex-row gap-2">
+    <View style={styles.container}>
+      <View style={styles.stepper}>
         {[...Array(playersAmount)].map((_, i) =>
           isCivil ? <CivilSvg key={'civil-' + i} /> : <SpySvg key={'spy-' + i} />
         )}
       </View>
-      <View className="fle flex-row justify-between pt-6">
+      <View style={styles.buttons}>
         <BaseText>{isCivil ? t('configuration.civil') : t('configuration.spy')}</BaseText>
         <View>
           <PlusMinusButton onPress={handleAmountChange} />
@@ -43,3 +44,21 @@ export const PlayersStepper = ({
     </View>
   );
 };
+
+const styles = ScaledSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  stepper: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '8@msr',
+  },
+  buttons: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingTop: '24@msr',
+  },
+});

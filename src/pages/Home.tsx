@@ -1,15 +1,16 @@
 import { Text, View } from 'react-native';
 import React from 'react';
-import MainSvg from '../assets/icons/main.svg';
-
+import MainSvg from '../assets/images/main.svg';
+import { ScaledSheet, s, vs } from 'react-native-size-matters';
 import { useTranslation } from 'react-i18next';
-import { ActionButton, ButtonType } from '../components/ActionButton.tsx';
-import { Container } from '../components/Container.tsx';
-import { MusicButton } from '../components/MusicButton.tsx';
-import { InfoButton } from '../components/InfoButton.tsx';
+import { ActionButton, ButtonType } from '../components/molecules/ActionButton.tsx';
+import { Container } from '../components/atoms/Container.tsx';
+import { MusicButton } from '../components/atoms/MusicButton.tsx';
+import { InfoButton } from '../components/atoms/InfoButton.tsx';
 import { useNavigation } from '@react-navigation/native';
 import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 import { type RootStackParamList } from '../App.tsx';
+import { FONT_FAMILY_KINO } from '../styles/typography.ts';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
@@ -19,15 +20,15 @@ export function Home(): JSX.Element {
 
   return (
     <Container>
-      <View className="flex-1 justify-center items-center">
-        <MainSvg height="400" width="400" />
-        <Text className="font-kino text-6xl -mt-12 ">{t('gameTitle')}</Text>
+      <View style={styles.wrapper}>
+        <MainSvg width={s(300)} height={vs(254)} />
+        <Text style={styles.title}>{t('gameTitle')}</Text>
         <ActionButton
           title={t('buttons.play')}
           onPress={() => {
             navigation.navigate('Configuration');
           }}
-          classes="mb-5"
+          style={styles.playButton}
         />
         <ActionButton
           title={t('buttons.howToPlay')}
@@ -37,10 +38,34 @@ export function Home(): JSX.Element {
           type={ButtonType.Secondary}
         />
       </View>
-      <View className="h-20 flex flex-row justify-between">
+      <View style={styles.buttonsContainer}>
         <MusicButton />
         <InfoButton />
       </View>
     </Container>
   );
 }
+
+const styles = ScaledSheet.create({
+  wrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  title: {
+    fontFamily: FONT_FAMILY_KINO,
+    fontWeight: 'normal',
+    color: 'black',
+    fontSize: '60@msr',
+    marginTop: '-30@msr',
+  },
+  playButton: {
+    marginBottom: '20@msr',
+  },
+  buttonsContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+});

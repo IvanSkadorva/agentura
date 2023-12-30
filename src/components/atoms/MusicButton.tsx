@@ -1,7 +1,7 @@
 import { TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
-import MusicButtonSvg from '../assets/icons/music-button.svg';
-import MusicButtonMutedSvg from '../assets/icons/music-button-muted.svg';
+import MusicButtonSvg from '../../assets/images/music-button.svg';
+import MusicButtonMutedSvg from '../../assets/images/music-button-muted.svg';
 export const MusicButton = (): JSX.Element => {
   const [muted, setMuted] = useState(false);
 
@@ -10,7 +10,7 @@ export const MusicButton = (): JSX.Element => {
   };
 
   return (
-    <TouchableOpacity className="" onPress={handlePress}>
+    <TouchableOpacity onPress={handlePress}>
       {muted ? <MusicButtonMutedSvg /> : <MusicButtonSvg />}
     </TouchableOpacity>
   );

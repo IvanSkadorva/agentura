@@ -6,27 +6,31 @@ import { PlusMinusButton } from '../atoms/PlusMinusButton.tsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScaledSheet } from 'react-native-size-matters';
+import { useAppStore } from '../../store/app-store.ts';
 const MAX_PLAYERS = 10;
 
 interface PlayersStepperProps {
-  defaultPlayersAmount: number;
   isCivil?: boolean;
 }
-export const PlayersStepper = ({
-  defaultPlayersAmount,
-  isCivil = false,
-}: PlayersStepperProps): JSX.Element => {
+export const PlayersStepper = ({ isCivil = false }: PlayersStepperProps): JSX.Element => {
   const { t } = useTranslation();
-  const [playersAmount, setPlayersAmount] = React.useState(defaultPlayersAmount);
+  const civilsAmount = useAppStore.use.civils();
+  const spiesAmount = useAppStore.use.spies();
+
+  const [playersAmount, setPlayersAmount] = React.useState(isCivil ? civilsAmount : spiesAmount);
   const minPlayersAmount = isCivil ? 2 : 1;
 
+  const setCivils = useAppStore.use.setCivilsAmount();
+  const setSpies = useAppStore.use.setSpiesAmount();
+
   const handleAmountChange = (amount: number): void => {
-    setPlayersAmount(
+    const players =
       (amount > 0 && MAX_PLAYERS > playersAmount) ||
-        (amount < 0 && playersAmount > minPlayersAmount)
+      (amount < 0 && playersAmount > minPlayersAmount)
         ? playersAmount + amount
-        : playersAmount
-    );
+        : playersAmount;
+    setPlayersAmount(players);
+    isCivil ? setCivils(players) : setSpies(players);
   };
   return (
     <View style={styles.container}>

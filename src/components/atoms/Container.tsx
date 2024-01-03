@@ -1,12 +1,13 @@
 import React, { type ReactNode } from 'react';
-import { View } from 'react-native';
+import { type RegisteredStyle, View, type ViewStyle } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 interface ContainerProps {
   children: ReactNode;
+  style?: RegisteredStyle<ViewStyle>;
 }
-export const Container = ({ children }: ContainerProps): JSX.Element => (
-  <View style={styles.container}>{children}</View>
+export const Container = ({ children, style }: ContainerProps): JSX.Element => (
+  <View style={[styles.container, style]}>{children}</View>
 );
 
 const styles = ScaledSheet.create({

@@ -8,6 +8,10 @@
      "civil": "Players",
      "spy": "Spies",
      "time": "Time",
-     "minutes": "minutes"
+     "minutes": "minutes",
+     "enableRoles": "Enable roles",
+     "hintsForSpy": "Hints for spies",
+     "localizationsChosen": "Places chosen"
+
    }
  }

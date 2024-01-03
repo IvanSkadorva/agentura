@@ -39,6 +39,10 @@ export const ActionButton = ({
 
 const styles = ScaledSheet.create({
   button: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    maxWidth: '300@msr',
     borderRadius: '24@msr',
   },
   primary: {

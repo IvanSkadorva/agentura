@@ -8,6 +8,9 @@
     "civil": "Hulcy",
     "spy": "Špijony",
     "time": "Čas",
-    "minutes": "(2-4)[сhvilin];(5-inf)[сhvilin];"
+    "minutes": "(2-4)[сhvilin];(5-inf)[сhvilin];",
+    "enableRoles": "Hulnia pa roliach",
+    "hintsForSpy": "Padkazki dlia špijona",
+    "localizationsChosen": "Miescaŭ abrana"
   }
 }

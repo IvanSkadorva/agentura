@@ -1,5 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import intervalPlural from 'i18next-intervalplural-postprocessor';
+
 import en from './en.json';
 import be_la from './be_la.json';
 import be_cy from './be_cy.json';
@@ -14,7 +16,8 @@ const resources = {
 };
 
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(initReactI18next)
+  .use(intervalPlural) // passes i18n down to react-i18next
   .init({
     resources,
     lng: 'be_cy', // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources

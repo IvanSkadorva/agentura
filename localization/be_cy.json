@@ -3,5 +3,11 @@
     "play": "Гуляць",
     "howToPlay": "Як гуляць?"
   },
-  "gameTitle": "Агентура"
+  "gameTitle": "Агентура",
+  "configuration": {
+    "civil": "Гульцы",
+    "spy": "Шпіёны",
+    "time": "Час",
+    "minutes":"(1-4)[хвіліны];(5-inf)[хвілін];"
+  }
 }

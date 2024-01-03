@@ -3,5 +3,11 @@
      "play": "Play",
      "howToPlay": "How to play?"
    },
-   "gameTitle": "Spy"
+   "gameTitle": "Spy",
+   "configuration": {
+     "civil": "Players",
+     "spy": "Spies",
+     "time": "Time",
+     "minutes": "minutes"
+   }
  }

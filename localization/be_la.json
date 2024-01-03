@@ -3,5 +3,11 @@
     "play": "Hrać",
     "howToPlay": "Jak huliać?"
   },
-  "gameTitle": "Agentura"
+  "gameTitle": "Agentura",
+  "configuration": {
+    "civil": "Hulcy",
+    "spy": "Špijony",
+    "time": "Čas",
+    "minutes": "(2-4)[сhvilin];(5-inf)[сhvilin];"
+  }
 }

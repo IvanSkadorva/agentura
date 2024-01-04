@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '../components/atoms/Container.tsx';
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { PlayersStepper } from '../components/organisms/PlayersStepper.tsx';
 import { ScaledSheet } from 'react-native-size-matters';
 import { TimeStepper } from '../components/organisms/TimeStepper.tsx';
@@ -19,7 +19,9 @@ type ConfigurationProps = NativeStackScreenProps<RootStackParamList, 'Configurat
 export const Configuration = (): JSX.Element => {
   const { t } = useTranslation();
   const navigation = useNavigation<ConfigurationProps['navigation']>();
-  const civilsAmount = useAppStore.use.civils();
+  const places = useAppStore.use.localizations();
+  const setIsRoleGame = useAppStore.use.setIsRoleGame();
+  const setEnableHintsForSpies = useAppStore.use.setEnableHintsForSpies();
 
   return (
     <Container style={styles.container}>
@@ -27,13 +29,21 @@ export const Configuration = (): JSX.Element => {
         <PlayersStepper isCivil />
         <PlayersStepper />
         <TimeStepper />
-        <CheckboxWithLabel label={t('configuration.enableRoles')} />
-        <CheckboxWithLabel label={t('configuration.hintsForSpy')} />
+        <CheckboxWithLabel label={t('configuration.enableRoles')} onPress={setIsRoleGame} />
+        <CheckboxWithLabel
+          label={t('configuration.hintsForSpy')}
+          onPress={setEnableHintsForSpies}
+        />
         <View style={styles.localizationsContainer}>
           <BaseText>{t('configuration.localizationsChosen')}</BaseText>
-          <BaseText>10</BaseText>
-          <Localization />
-          <BaseText>{civilsAmount}</BaseText>
+          <BaseText>{places.length}</BaseText>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Localizations');
+            }}
+          >
+            <Localization />
+          </TouchableOpacity>
         </View>
       </View>
       <ActionButton

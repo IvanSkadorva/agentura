@@ -14,14 +14,15 @@ interface PlayersStepperProps {
 }
 export const PlayersStepper = ({ isCivil = false }: PlayersStepperProps): JSX.Element => {
   const { t } = useTranslation();
+
   const civilsAmount = useAppStore.use.civils();
   const spiesAmount = useAppStore.use.spies();
+  const playersAmount = isCivil ? civilsAmount : spiesAmount;
 
-  const [playersAmount, setPlayersAmount] = React.useState(isCivil ? civilsAmount : spiesAmount);
   const minPlayersAmount = isCivil ? 2 : 1;
-
   const setCivils = useAppStore.use.setCivilsAmount();
   const setSpies = useAppStore.use.setSpiesAmount();
+  const setPlayersAmount = isCivil ? setCivils : setSpies;
 
   const handleAmountChange = (amount: number): void => {
     const players =

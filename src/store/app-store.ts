@@ -22,13 +22,13 @@ interface AppState {
   gameTimeInMinutes: number;
   isRoleGame: boolean;
   enableHintsForSpies: boolean;
-  selectedPlaces: string[];
+  localizations: Array<{ key: string; enabled: boolean }>;
   setCivilsAmount: (players: number) => void;
   setSpiesAmount: (spies: number) => void;
   setGameTimeInMinutes: (time: number) => void;
   setIsRoleGame: (isRoleGame: boolean) => void;
   setEnableHintsForSpies: (enableHintsForSpies: boolean) => void;
-  setSelectedPlaces: (places: string[]) => void;
+  toggleLocalization: (localization: { key: string; enabled: boolean }) => void;
 }
 
 const useAppStoreBase = create<AppState>()((set) => ({
@@ -37,7 +37,7 @@ const useAppStoreBase = create<AppState>()((set) => ({
   gameTimeInMinutes: 5,
   isRoleGame: false,
   enableHintsForSpies: false,
-  selectedPlaces: [],
+  localizations: [{ key: 'Valozhyn', enabled: true }],
   setCivilsAmount: (civils) => {
     set((state) => ({ ...state, civils }));
   },
@@ -53,8 +53,8 @@ const useAppStoreBase = create<AppState>()((set) => ({
   setEnableHintsForSpies: (enableHintsForSpies) => {
     set((state) => ({ ...state, enableHintsForSpies }));
   },
-  setSelectedPlaces: (selectedPlaces) => {
-    set((state) => ({ ...state, selectedPlaces }));
+  toggleLocalization: (localization) => {
+    set((state) => ({ ...state, localizations: [...state.localizations, localization] }));
   },
 }));
 

@@ -6,19 +6,20 @@ import { ScaledSheet } from 'react-native-size-matters';
 
 interface CheckboxWithLabelProps {
   label: string;
+  onPress: (newValue: boolean) => void;
 }
 
-export function CheckboxWithLabel({ label }: CheckboxWithLabelProps): JSX.Element {
+export function CheckboxWithLabel({ label, onPress }: CheckboxWithLabelProps): JSX.Element {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const handlePress = (newValue: boolean): void => {
+    setToggleCheckBox(newValue);
+    onPress(newValue);
+  };
+
   return (
     <View style={styles.container}>
       <BaseText>{label}</BaseText>
-      <CheckBox
-        value={toggleCheckBox}
-        onValueChange={(newValue) => {
-          setToggleCheckBox(newValue);
-        }}
-      />
+      <CheckBox value={toggleCheckBox} onValueChange={handlePress} />
     </View>
   );
 }

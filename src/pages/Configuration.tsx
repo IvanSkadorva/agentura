@@ -19,7 +19,7 @@ type ConfigurationProps = NativeStackScreenProps<RootStackParamList, 'Configurat
 export const Configuration = (): JSX.Element => {
   const { t } = useTranslation();
   const navigation = useNavigation<ConfigurationProps['navigation']>();
-  const places = useAppStore.use.localizations();
+  const localizations = useAppStore.use.localizations();
   const setIsRoleGame = useAppStore.use.setIsRoleGame();
   const setEnableHintsForSpies = useAppStore.use.setEnableHintsForSpies();
 
@@ -36,7 +36,7 @@ export const Configuration = (): JSX.Element => {
         />
         <View style={styles.localizationsContainer}>
           <BaseText>{t('configuration.localizationsChosen')}</BaseText>
-          <BaseText>{places.length}</BaseText>
+          <BaseText>{localizations.filter((value) => value.enabled).length}</BaseText>
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('Localizations');

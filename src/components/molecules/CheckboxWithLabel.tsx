@@ -7,10 +7,15 @@ import { ScaledSheet } from 'react-native-size-matters';
 interface CheckboxWithLabelProps {
   label: string;
   onPress: (newValue: boolean) => void;
+  defaultValue?: boolean;
 }
 
-export function CheckboxWithLabel({ label, onPress }: CheckboxWithLabelProps): JSX.Element {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+export function CheckboxWithLabel({
+  label,
+  onPress,
+  defaultValue = false,
+}: CheckboxWithLabelProps): JSX.Element {
+  const [toggleCheckBox, setToggleCheckBox] = useState(defaultValue);
   const handlePress = (newValue: boolean): void => {
     setToggleCheckBox(newValue);
     onPress(newValue);

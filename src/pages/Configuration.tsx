@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '../components/atoms/Container.tsx';
-import { TouchableOpacity, View } from 'react-native';
+import { ScrollView, TouchableOpacity, View } from 'react-native';
 import { PlayersStepper } from '../components/organisms/PlayersStepper.tsx';
 import { ScaledSheet } from 'react-native-size-matters';
 import { TimeStepper } from '../components/organisms/TimeStepper.tsx';
@@ -25,31 +25,33 @@ export const Configuration = (): JSX.Element => {
 
   return (
     <Container style={styles.container}>
-      <View style={styles.wrapper}>
-        <PlayersStepper isCivil />
-        <PlayersStepper />
-        <TimeStepper />
-        <CheckboxWithLabel label={t('configuration.enableRoles')} onPress={setIsRoleGame} />
-        <CheckboxWithLabel
-          label={t('configuration.hintsForSpy')}
-          onPress={setEnableHintsForSpies}
-        />
-        <View style={styles.localizationsContainer}>
-          <BaseText>{t('configuration.localizationsChosen')}</BaseText>
-          <BaseText>{localizations.filter((value) => value.enabled).length}</BaseText>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Localizations');
-            }}
-          >
-            <Localization />
-          </TouchableOpacity>
+      <ScrollView>
+        <View style={styles.wrapper}>
+          <PlayersStepper isCivil />
+          <PlayersStepper />
+          <TimeStepper />
+          <CheckboxWithLabel label={t('configuration.enableRoles')} onPress={setIsRoleGame} />
+          <CheckboxWithLabel
+            label={t('configuration.hintsForSpy')}
+            onPress={setEnableHintsForSpies}
+          />
+          <View style={styles.localizationsContainer}>
+            <BaseText>{t('configuration.localizationsChosen')}</BaseText>
+            <BaseText>{localizations.filter((value) => value.enabled).length}</BaseText>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Localizations');
+              }}
+            >
+              <Localization />
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </ScrollView>
       <ActionButton
         title={t('buttons.play')}
         onPress={() => {
-          navigation.navigate('Configuration');
+          navigation.navigate('PlayerDistribution');
         }}
         style={styles.playButton}
       />

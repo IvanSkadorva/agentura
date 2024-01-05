@@ -1,6 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
-import { BaseText } from '../components/atoms/BaseText.tsx';
+import { ScrollView, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
 import { useAppStore } from '../store/app-store.ts';
 import { useTranslation } from 'react-i18next';
@@ -17,24 +16,25 @@ export function Localizations(): JSX.Element {
   const localizations = useAppStore.use.localizations();
   const toggleLocalization = useAppStore.use.toggleLocalization();
   const navigation = useNavigation<LocalizationsProps['navigation']>();
-
   const { t } = useTranslation();
+
   return (
     <Container>
       <View style={styles.wrapper}>
-        <View style={styles.localizationsContainer}>
-          {localizations.map(({ key, enabled, roles }) => (
-            <CheckboxWithLabel
-              key={key}
-              defaultValue={enabled}
-              label={t(key)}
-              onPress={(enabled: boolean) => {
-                toggleLocalization({ key, enabled, roles });
-              }}
-            />
-          ))}
-        </View>
-
+        <ScrollView>
+          <View style={styles.localizationsContainer}>
+            {localizations.map(({ key, enabled, roles }) => (
+              <CheckboxWithLabel
+                key={key}
+                defaultValue={enabled}
+                label={t(key)}
+                onPress={(enabled: boolean) => {
+                  toggleLocalization({ key, enabled, roles });
+                }}
+              />
+            ))}
+          </View>
+        </ScrollView>
         <ActionButton
           title={t('buttons.forward')}
           onPress={() => {
@@ -57,7 +57,9 @@ const styles = ScaledSheet.create({
   localizationsContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '16@msr',
+    rowGap: '10@vs',
+    marginRight: '1@msr',
+    marginTop: '1@msr',
   },
   playButton: {
     alignSelf: 'center',

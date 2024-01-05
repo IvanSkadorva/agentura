@@ -1,5 +1,4 @@
 import { create, type StoreApi, type UseBoundStore } from 'zustand';
-import { produce } from 'immer';
 import { immer } from 'zustand/middleware/immer';
 
 type WithSelectors<S> = S extends { getState: () => infer T }

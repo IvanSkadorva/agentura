@@ -1,5 +1,5 @@
 import React, { type ReactNode } from 'react';
-import { type RegisteredStyle, View, type ViewStyle } from 'react-native';
+import { type RegisteredStyle, SafeAreaView, View, type ViewStyle } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 interface ContainerProps {
@@ -7,7 +7,9 @@ interface ContainerProps {
   style?: RegisteredStyle<ViewStyle>;
 }
 export const Container = ({ children, style }: ContainerProps): JSX.Element => (
-  <View style={[styles.container, style]}>{children}</View>
+  <SafeAreaView>
+    <View style={[styles.container, style]}>{children}</View>
+  </SafeAreaView>
 );
 
 const styles = ScaledSheet.create({

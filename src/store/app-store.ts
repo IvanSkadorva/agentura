@@ -1,5 +1,6 @@
 import { create, type StoreApi, type UseBoundStore } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
+import sampleSize from 'lodash.samplesize';
 
 type WithSelectors<S> = S extends { getState: () => infer T }
   ? S & { use: { [K in keyof T]: () => T[K] } }
@@ -22,19 +23,26 @@ interface Localization {
   roles: string[];
 }
 
+interface CurrentGame {
+  players: Array<{ id: number; role: string }>;
+  location: Localization;
+}
+
 interface AppState {
   civils: number;
   spies: number;
   gameTimeInMinutes: number;
+  currentGame: CurrentGame;
   isRoleGame: boolean;
   enableHintsForSpies: boolean;
   localizations: Localization[];
   setCivilsAmount: (players: number) => void;
   setSpiesAmount: (spies: number) => void;
   setGameTimeInMinutes: (time: number) => void;
-  setIsRoleGame: (isRoleGame: boolean) => void;
+  toggleIsRoleGame: () => void;
   setEnableHintsForSpies: (enableHintsForSpies: boolean) => void;
   toggleLocalization: (localization: Localization) => void;
+  startGame: () => void;
 }
 
 const useAppStoreBase = create<AppState>()(
@@ -43,10 +51,11 @@ const useAppStoreBase = create<AppState>()(
     spies: 1,
     gameTimeInMinutes: 5,
     isRoleGame: false,
+    currentGame: { players: [], location: { key: '', enabled: false, roles: [] } },
     enableHintsForSpies: false,
     localizations: [
-      { key: 'Valozhyn', enabled: true, roles: [] },
-      { key: 'Minsktrans', enabled: true, roles: [] },
+      { key: 'Valozhyn', enabled: true, roles: ['Vania', 'Jahor', 'Maks'] },
+      { key: 'Minsktrans', enabled: true, roles: ['Kirouca', 'Chotsci', 'Pasazyr'] },
       { key: 'Rhaczou', enabled: true, roles: [] },
     ],
     setCivilsAmount: (civils) => {
@@ -58,8 +67,8 @@ const useAppStoreBase = create<AppState>()(
     setGameTimeInMinutes: (gameTimeInMinutes) => {
       set((state) => ({ ...state, gameTimeInMinutes }));
     },
-    setIsRoleGame: (isRoleGame) => {
-      set((state) => ({ ...state, isRoleGame }));
+    toggleIsRoleGame: () => {
+      set((state) => ({ ...state, isRoleGame: !state.isRoleGame }));
     },
     setEnableHintsForSpies: (enableHintsForSpies) => {
       set((state) => ({ ...state, enableHintsForSpies }));
@@ -70,6 +79,37 @@ const useAppStoreBase = create<AppState>()(
           (l: Localization) => l.key === affectedLocalization.key
         );
         state.localizations[selectedIndex].enabled = affectedLocalization.enabled;
+      });
+    },
+    startGame: () => {
+      set((state) => {
+        const enabledLocalizations = state.localizations.filter((l: Localization) => l.enabled);
+        const selectedLocation =
+          enabledLocalizations[Math.floor(Math.random() * enabledLocalizations.length)];
+        const shuffledRoles = selectedLocation.roles.sort(() => Math.random() - 0.5);
+        state.currentGame.location = selectedLocation;
+
+        const playersIndexes = Array.from(Array(state.civils + state.spies).keys());
+        const spiesIndexes = sampleSize(playersIndexes, state.spies);
+
+        playersIndexes.forEach((index) => {
+          if (spiesIndexes.includes(index)) {
+            state.currentGame.players.push({ id: index + 1, role: 'role.spy' });
+          } else {
+            state.currentGame.players.push({
+              id: index + 1,
+              role: state.isRoleGame ? shuffledRoles[index] : 'role.civil',
+            });
+          }
+        });
+        console.log(
+          state.isRoleGame,
+          state.currentGame,
+          enabledLocalizations,
+          shuffledRoles,
+          playersIndexes,
+          spiesIndexes
+        );
       });
     },
   }))

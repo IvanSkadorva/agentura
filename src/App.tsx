@@ -5,6 +5,7 @@ import { Home } from './pages/Home.tsx';
 import { Configuration } from './pages/Configuration.tsx';
 import { Localizations } from './pages/Localizations.tsx';
 import { PlayerDistribution } from './pages/PlayerDistribution.tsx';
+import { Role } from './pages/Role.tsx';
 
 // eslint-disable-next-line
 export type RootStackParamList = {
@@ -12,6 +13,7 @@ export type RootStackParamList = {
   Configuration: undefined;
   Localizations: undefined;
   PlayerDistribution: undefined;
+  Role: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -28,6 +30,7 @@ function App(): React.JSX.Element {
           component={PlayerDistribution}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="Role" component={Role} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -20,8 +20,14 @@ export const Configuration = (): JSX.Element => {
   const { t } = useTranslation();
   const navigation = useNavigation<ConfigurationProps['navigation']>();
   const localizations = useAppStore.use.localizations();
-  const setIsRoleGame = useAppStore.use.setIsRoleGame();
+  const toggleIsRoleGame = useAppStore.use.toggleIsRoleGame();
   const setEnableHintsForSpies = useAppStore.use.setEnableHintsForSpies();
+  const startGame = useAppStore.use.startGame();
+
+  const handlePlayButtonPress = (): void => {
+    navigation.navigate('PlayerDistribution');
+    startGame();
+  };
 
   return (
     <Container style={styles.container}>
@@ -30,7 +36,7 @@ export const Configuration = (): JSX.Element => {
           <PlayersStepper isCivil />
           <PlayersStepper />
           <TimeStepper />
-          <CheckboxWithLabel label={t('configuration.enableRoles')} onPress={setIsRoleGame} />
+          <CheckboxWithLabel label={t('configuration.enableRoles')} onPress={toggleIsRoleGame} />
           <CheckboxWithLabel
             label={t('configuration.hintsForSpy')}
             onPress={setEnableHintsForSpies}
@@ -50,9 +56,7 @@ export const Configuration = (): JSX.Element => {
       </ScrollView>
       <ActionButton
         title={t('buttons.play')}
-        onPress={() => {
-          navigation.navigate('PlayerDistribution');
-        }}
+        onPress={handlePlayButtonPress}
         style={styles.playButton}
       />
     </Container>
@@ -63,7 +67,6 @@ const styles = ScaledSheet.create({
   container: {
     display: 'flex',
     justifyContent: 'space-between',
-    marginBottom: '24@vs',
   },
   wrapper: {
     display: 'flex',

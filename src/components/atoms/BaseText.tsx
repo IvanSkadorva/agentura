@@ -18,6 +18,7 @@ const styles = ScaledSheet.create({
     fontSize: '24@msr',
     lineHeight: '24@msr',
     color: 'black',
+    textAlign: 'center',
   },
   whiteText: {
     color: 'white',

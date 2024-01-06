@@ -1,7 +1,9 @@
 {
   "buttons": {
     "play": "Гуляць",
-    "howToPlay": "Як гуляць?"
+    "howToPlay": "Як гуляць?",
+    "forward": "Далей",
+    "showRole": "Даведацца"
   },
   "gameTitle": "Агентура",
   "configuration": {
@@ -12,5 +14,9 @@
     "enableRoles": "Гульня па ролях",
     "hintsForSpy": "Падказкі для шпіёна",
     "localizationsChosen": "Месцаў абрана"
+  },
+  "playerDistribution": {
+    "player": "Гулец",
+    "showRoleExplanation": "Націсніце, каб паказаць ролю"
   }
 }

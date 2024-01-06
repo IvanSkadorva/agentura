@@ -19,13 +19,15 @@ type ConfigurationProps = NativeStackScreenProps<RootStackParamList, 'Configurat
 export const Configuration = (): JSX.Element => {
   const { t } = useTranslation();
   const navigation = useNavigation<ConfigurationProps['navigation']>();
-  const localizations = useAppStore.use.localizations();
-  const toggleIsRoleGame = useAppStore.use.toggleIsRoleGame();
+  const locations = useAppStore.use.locations();
+  const isRoleGame = useAppStore.use.isRoleGame();
+  const setIsRoleGame = useAppStore.use.setIsRoleGame();
+  const enableHintsForSpies = useAppStore.use.enableHintsForSpies();
   const setEnableHintsForSpies = useAppStore.use.setEnableHintsForSpies();
   const startGame = useAppStore.use.startGame();
 
   const handlePlayButtonPress = (): void => {
-    navigation.navigate('PlayerDistribution');
+    navigation.navigate('PlayerDistribution', { id: 1 });
     startGame();
   };
 
@@ -36,17 +38,22 @@ export const Configuration = (): JSX.Element => {
           <PlayersStepper isCivil />
           <PlayersStepper />
           <TimeStepper />
-          <CheckboxWithLabel label={t('configuration.enableRoles')} onPress={toggleIsRoleGame} />
+          <CheckboxWithLabel
+            label={t('configuration.enableRoles')}
+            onPress={setIsRoleGame}
+            defaultValue={isRoleGame}
+          />
           <CheckboxWithLabel
             label={t('configuration.hintsForSpy')}
             onPress={setEnableHintsForSpies}
+            defaultValue={enableHintsForSpies}
           />
           <View style={styles.localizationsContainer}>
             <BaseText>{t('configuration.localizationsChosen')}</BaseText>
-            <BaseText>{localizations.filter((value) => value.enabled).length}</BaseText>
+            <BaseText>{locations.filter((value) => value.enabled).length}</BaseText>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Localizations');
+                navigation.navigate('Locations');
               }}
             >
               <Localization />

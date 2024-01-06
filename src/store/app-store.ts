@@ -17,7 +17,7 @@ const createSelectors = <S extends UseBoundStore<StoreApi<object>>>(
 
   return store;
 };
-interface Localization {
+interface Location {
   key: string;
   enabled: boolean;
   roles: string[];
@@ -25,7 +25,7 @@ interface Localization {
 
 interface CurrentGame {
   players: Array<{ id: number; role: string }>;
-  location: Localization;
+  location: Location;
 }
 
 interface AppState {
@@ -35,13 +35,13 @@ interface AppState {
   currentGame: CurrentGame;
   isRoleGame: boolean;
   enableHintsForSpies: boolean;
-  localizations: Localization[];
+  locations: Location[];
   setCivilsAmount: (players: number) => void;
   setSpiesAmount: (spies: number) => void;
   setGameTimeInMinutes: (time: number) => void;
-  toggleIsRoleGame: () => void;
+  setIsRoleGame: (isRoleGame: boolean) => void;
   setEnableHintsForSpies: (enableHintsForSpies: boolean) => void;
-  toggleLocalization: (localization: Localization) => void;
+  toggleLocalization: (localization: Location) => void;
   startGame: () => void;
 }
 
@@ -53,10 +53,22 @@ const useAppStoreBase = create<AppState>()(
     isRoleGame: false,
     currentGame: { players: [], location: { key: '', enabled: false, roles: [] } },
     enableHintsForSpies: false,
-    localizations: [
-      { key: 'Valozhyn', enabled: true, roles: ['Vania', 'Jahor', 'Maks'] },
-      { key: 'Minsktrans', enabled: true, roles: ['Kirouca', 'Chotsci', 'Pasazyr'] },
-      { key: 'Rhaczou', enabled: true, roles: [] },
+    locations: [
+      {
+        key: 'Valozhyn',
+        enabled: true,
+        roles: ['Vania', 'Jahor', 'Maks', 'Koscik', 'Maks Minski'],
+      },
+      {
+        key: 'Minsktrans',
+        enabled: true,
+        roles: ['Kirouca', 'Chotsci', 'Pasazyr', 'Kantralior', 'Vania'],
+      },
+      {
+        key: 'Rahaczou',
+        enabled: true,
+        roles: ['Degustatar', 'Pracounik', 'Naczalnik', 'Razumnik', 'Praunik'],
+      },
     ],
     setCivilsAmount: (civils) => {
       set((state) => ({ ...state, civils }));
@@ -67,31 +79,34 @@ const useAppStoreBase = create<AppState>()(
     setGameTimeInMinutes: (gameTimeInMinutes) => {
       set((state) => ({ ...state, gameTimeInMinutes }));
     },
-    toggleIsRoleGame: () => {
-      set((state) => ({ ...state, isRoleGame: !state.isRoleGame }));
+    setIsRoleGame: (isRoleGame: boolean) => {
+      set((state) => ({ ...state, isRoleGame }));
     },
     setEnableHintsForSpies: (enableHintsForSpies) => {
       set((state) => ({ ...state, enableHintsForSpies }));
     },
     toggleLocalization: (affectedLocalization) => {
       set((state) => {
-        const selectedIndex = state.localizations.findIndex(
-          (l: Localization) => l.key === affectedLocalization.key
+        const selectedIndex = state.locations.findIndex(
+          (l: Location) => l.key === affectedLocalization.key
         );
-        state.localizations[selectedIndex].enabled = affectedLocalization.enabled;
+        state.locations[selectedIndex].enabled = affectedLocalization.enabled;
       });
     },
     startGame: () => {
       set((state) => {
-        const enabledLocalizations = state.localizations.filter((l: Localization) => l.enabled);
+        const enabledLocations = state.locations.filter((l: Location) => l.enabled);
         const selectedLocation =
-          enabledLocalizations[Math.floor(Math.random() * enabledLocalizations.length)];
+          enabledLocations[Math.floor(Math.random() * enabledLocations.length)];
+
         const shuffledRoles = selectedLocation.roles.sort(() => Math.random() - 0.5);
+
         state.currentGame.location = selectedLocation;
 
         const playersIndexes = Array.from(Array(state.civils + state.spies).keys());
         const spiesIndexes = sampleSize(playersIndexes, state.spies);
 
+        state.currentGame.players = [];
         playersIndexes.forEach((index) => {
           if (spiesIndexes.includes(index)) {
             state.currentGame.players.push({ id: index + 1, role: 'role.spy' });
@@ -105,7 +120,7 @@ const useAppStoreBase = create<AppState>()(
         console.log(
           state.isRoleGame,
           state.currentGame,
-          enabledLocalizations,
+          enabledLocations,
           shuffledRoles,
           playersIndexes,
           spiesIndexes

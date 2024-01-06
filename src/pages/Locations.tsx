@@ -10,10 +10,10 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App.tsx';
 import { ScaledSheet } from 'react-native-size-matters';
 
-type LocalizationsProps = NativeStackScreenProps<RootStackParamList, 'Localizations'>;
+type LocalizationsProps = NativeStackScreenProps<RootStackParamList, 'Locations'>;
 
-export function Localizations(): JSX.Element {
-  const localizations = useAppStore.use.localizations();
+export function Locations(): JSX.Element {
+  const localizations = useAppStore.use.locations();
   const toggleLocalization = useAppStore.use.toggleLocalization();
   const navigation = useNavigation<LocalizationsProps['navigation']>();
   const { t } = useTranslation();

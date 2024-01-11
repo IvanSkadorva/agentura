@@ -18,5 +18,11 @@
   "playerDistribution": {
     "player": "Гулец",
     "showRoleExplanation": "Націсніце, каб паказаць ролю"
+  },
+  "role": {
+    "you": "Ты",
+    "civil": "Гулец",
+    "spy": "Шпіён",
+    "location": "Лакацыя:"
   }
 }

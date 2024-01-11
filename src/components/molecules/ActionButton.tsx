@@ -49,6 +49,9 @@ const styles = ScaledSheet.create({
     backgroundColor: CORAL_RED,
     paddingVertical: '16@msr',
     paddingHorizontal: '56@msr',
+    borderWidth: '1@msr',
+    borderStyle: 'solid',
+    borderColor: 'white',
   },
   secondary: {
     borderWidth: '2@msr',

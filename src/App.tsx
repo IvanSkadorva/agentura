@@ -26,7 +26,7 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Configuration" component={Configuration} />
         <Stack.Screen name="Locations" component={Locations} />
         <Stack.Screen name="PlayerDistribution" component={PlayerDistribution} />
-        <Stack.Screen name="Role" component={Role} />
+        <Stack.Screen name="Role" component={Role} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

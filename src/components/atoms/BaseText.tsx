@@ -5,11 +5,20 @@ import { FONT_FAMILY_CYGRE } from '../../styles/typography.ts';
 
 interface BaseTextProps {
   whiteText?: boolean;
+  bigText?: boolean;
   children: ReactNode;
 }
 
-export const BaseText = ({ whiteText = false, children }: BaseTextProps): JSX.Element => {
-  return <Text style={[styles.text, whiteText && styles.whiteText]}>{children}</Text>;
+export const BaseText = ({
+  whiteText = false,
+  bigText = false,
+  children,
+}: BaseTextProps): JSX.Element => {
+  return (
+    <Text style={[styles.text, whiteText && styles.whiteText, bigText && styles.bigText]}>
+      {children}
+    </Text>
+  );
 };
 const styles = ScaledSheet.create({
   text: {
@@ -22,5 +31,10 @@ const styles = ScaledSheet.create({
   },
   whiteText: {
     color: 'white',
+  },
+  bigText: {
+    fontSize: '36@msr',
+    lineHeight: '36@msr',
+    uppercase: true,
   },
 });

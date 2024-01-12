@@ -2,11 +2,11 @@ import React from 'react';
 import { Container } from '../components/atoms/Container.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import { useTranslation } from 'react-i18next';
-import { ActionButton, ButtonType } from '../components/molecules/ActionButton.tsx';
+import { ActionButton } from '../components/molecules/ActionButton.tsx';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App.tsx';
-import { ms, mvs, s, ScaledSheet, vs } from 'react-native-size-matters';
+import { ScaledSheet } from 'react-native-size-matters';
 import CivilBoy from '../assets/images/civil-boy.svg';
 import SpyBoy from '../assets/images/spy-boy.svg';
 import CivilWomanAndCat from '../assets/images/civil-woman-and-cat.svg';
@@ -14,9 +14,8 @@ import SpyWomanAndCat from '../assets/images/spy-woman-and-cat.svg';
 import CivilMan from '../assets/images/civil-man.svg';
 import SpyMan from '../assets/images/spy-man.svg';
 import { useAppStore } from '../store/app-store.ts';
-import { View, Dimensions, Platform } from 'react-native';
+import { View, Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
-console.log(width, height);
 
 type RoleProps = NativeStackScreenProps<RootStackParamList, 'Role'>;
 
@@ -37,7 +36,7 @@ export function Role(): JSX.Element {
 
   const handleButtonPress = (): void => {
     if (players.length === id) {
-      navigate('Home');
+      navigate('Hint');
     } else {
       navigate('PlayerDistribution', { id: id + 1 });
     }

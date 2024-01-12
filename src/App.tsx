@@ -6,6 +6,8 @@ import { Configuration } from './pages/Configuration.tsx';
 import { Locations } from './pages/Locations.tsx';
 import { PlayerDistribution } from './pages/PlayerDistribution.tsx';
 import { Role } from './pages/Role.tsx';
+import { Hint } from './pages/Hint.tsx';
+import { Timer } from './pages/Timer.tsx';
 
 // eslint-disable-next-line
 export type RootStackParamList = {
@@ -14,6 +16,8 @@ export type RootStackParamList = {
   Locations: undefined;
   PlayerDistribution: { id: number };
   Role: { id: number };
+  Hint: undefined;
+  Timer: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -27,6 +31,8 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Locations" component={Locations} />
         <Stack.Screen name="PlayerDistribution" component={PlayerDistribution} />
         <Stack.Screen name="Role" component={Role} options={{ headerShown: false }} />
+        <Stack.Screen name="Hint" component={Hint} options={{ headerShown: false }} />
+        <Stack.Screen name="Timer" component={Timer} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

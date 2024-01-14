@@ -14,7 +14,7 @@ export const Container = ({ children, style }: ContainerProps): JSX.Element => (
 
 const styles = ScaledSheet.create({
   safeArea: {
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
   },
   container: {
     width: '100%',

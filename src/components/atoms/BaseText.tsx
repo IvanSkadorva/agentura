@@ -1,21 +1,23 @@
 import React, { type ReactNode } from 'react';
-import { Text } from 'react-native';
+import { type RegisteredStyle, Text, type ViewStyle } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import { FONT_FAMILY_CYGRE } from '../../styles/typography.ts';
 
 interface BaseTextProps {
   whiteText?: boolean;
   bigText?: boolean;
+  style?: RegisteredStyle<ViewStyle>;
   children: ReactNode;
 }
 
 export const BaseText = ({
   whiteText = false,
   bigText = false,
+  style,
   children,
 }: BaseTextProps): JSX.Element => {
   return (
-    <Text style={[styles.text, whiteText && styles.whiteText, bigText && styles.bigText]}>
+    <Text style={[styles.text, whiteText && styles.whiteText, bigText && styles.bigText, style]}>
       {children}
     </Text>
   );

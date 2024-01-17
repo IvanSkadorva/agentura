@@ -1,18 +1,17 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../App.tsx';
+import { PlayerRole, type RootStackParamList } from '../App.tsx';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import Clock from '../assets/images/clock.svg';
-import CivilSide from '../assets/images/civil-side.svg';
-import SpySide from '../assets/images/spy-side.svg';
 
 import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
 import React, { useEffect, useRef, useState } from 'react';
 import { useAppStore } from '../store/app-store.ts';
 import { CORAL_RED } from '../styles/colors.ts';
+import { ActionButton } from '../components/molecules/ActionButton.tsx';
 
 type TimerProps = NativeStackScreenProps<RootStackParamList, 'Timer'>;
 
@@ -36,6 +35,10 @@ export function Timer(): JSX.Element {
     }
   };
 
+  const handleButtonPress = (winner: PlayerRole): void => {
+    navigate('Winner', { winner });
+  };
+
   useEffect(() => {
     return () => {
       clearInterval(intervalRef.current);
@@ -56,21 +59,36 @@ export function Timer(): JSX.Element {
       <View style={styles.textContainer}>
         <BaseText>{t('timer.chooseThePerson')}</BaseText>
       </View>
-      <View style={styles.overlayContainer}>
-        <View style={styles.overlaySide}>
-          <CivilSide width={ms(300)} height={mvs(290)} />
-          <BaseText whiteText style={styles.overlayText}>
-            {t('timer.spies')}
-          </BaseText>
-        </View>
-        <BaseText>{t('timer.whoWon')}</BaseText>
-        <View style={styles.overlaySide}>
-          <SpySide width={ms(300)} height={mvs(300)} />
-          <BaseText whiteText style={styles.overlayText}>
-            {t('timer.civils')}
-          </BaseText>
-        </View>
+      <View style={styles.buttons}>
+        <ActionButton
+          title={t('timer.spies')}
+          onPress={() => {
+            handleButtonPress(PlayerRole.SPY);
+          }}
+        />
+        <ActionButton
+          title={t('timer.civils')}
+          onPress={() => {
+            handleButtonPress(PlayerRole.CIVIL);
+          }}
+        />
       </View>
+
+      {/* <View style={styles.overlayContainer}> */}
+      {/*  <View style={styles.overlaySide}> */}
+      {/*    <SpySide width={ms(300)} height={mvs(290)} /> */}
+      {/*    <BaseText whiteText style={styles.overlayText}> */}
+      {/*      {t('timer.spies')} */}
+      {/*    </BaseText> */}
+      {/*  </View> */}
+      {/*  <BaseText>{t('timer.whoWon')}</BaseText> */}
+      {/*  <View style={styles.overlaySide}> */}
+      {/*    <CivilSide width={ms(300)} height={mvs(300)} /> */}
+      {/*    <BaseText whiteText style={styles.overlayText}> */}
+      {/*      {t('timer.civils')} */}
+      {/*    </BaseText> */}
+      {/*  </View> */}
+      {/* </View> */}
     </Container>
   );
 }
@@ -123,4 +141,5 @@ const styles = ScaledSheet.create({
     position: 'absolute',
     paddingTop: '80@mvs',
   },
+  buttons: { display: 'flex', flexDirection: 'row' },
 });

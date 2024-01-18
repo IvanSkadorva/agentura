@@ -7,14 +7,15 @@ interface ContainerProps {
   style?: RegisteredStyle<ViewStyle>;
 }
 export const Container = ({ children, style }: ContainerProps): JSX.Element => (
-  <SafeAreaView style={styles.safeArea}>
-    <View style={[styles.container, style]}>{children}</View>
-  </SafeAreaView>
+  <View style={[styles.container]}>
+    <SafeAreaView style={[styles.safeArea, style]}>{children}</SafeAreaView>
+  </View>
 );
 
 const styles = ScaledSheet.create({
   safeArea: {
-    // backgroundColor: 'white',
+    width: '100%',
+    height: '100%',
   },
   container: {
     width: '100%',

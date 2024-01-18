@@ -19,7 +19,7 @@ export function Winner(): JSX.Element {
   const { winner } = useRoute<WinnerProps['route']>().params;
   const { t } = useTranslation();
   const currentGame = useAppStore.use.currentGame();
-  const spiesIndexes = currentGame.players.filter((player) => player.role === 'role.spy');
+  const spies = currentGame.players.filter((player) => player.role === 'role.spy');
 
   return (
     <Container style={styles.wrapper}>
@@ -36,9 +36,14 @@ export function Winner(): JSX.Element {
       </View>
       <View>
         <BaseText>{t('winner.spiesWere')}</BaseText>
-        <View>
-          {spiesIndexes.map((spy) => (
-            <BaseText key={spy.id}>{t('playerDistribution.player') + ' ' + (spy.id + 1)}</BaseText>
+        <View style={styles.spiesList}>
+          {spies.map((spy, index) => (
+            <BaseText key={spy.id}>
+              {t('playerDistribution.player') +
+                ' ' +
+                spy.id +
+                (index !== spies.length - 1 ? ', ' : '')}
+            </BaseText>
           ))}
         </View>
       </View>
@@ -70,5 +75,11 @@ const styles = ScaledSheet.create({
   },
   textContainer: {
     gap: '10@mvs',
+  },
+  spiesList: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: '8@msr',
   },
 });

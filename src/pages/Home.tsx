@@ -16,7 +16,7 @@ type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export function Home(): JSX.Element {
   const { t } = useTranslation();
-  const navigation = useNavigation<HomeProps['navigation']>();
+  const { navigate } = useNavigation<HomeProps['navigation']>();
 
   return (
     <Container>
@@ -26,21 +26,25 @@ export function Home(): JSX.Element {
         <ActionButton
           title={t('buttons.play')}
           onPress={() => {
-            navigation.navigate('Configuration');
+            navigate('Configuration');
           }}
           style={styles.playButton}
         />
         <ActionButton
           title={t('buttons.howToPlay')}
           onPress={() => {
-            console.log('Hello');
+            navigate('Instructions');
           }}
           type={ButtonType.Secondary}
         />
       </View>
       <View style={styles.buttonsContainer}>
         <MusicButton />
-        <InfoButton />
+        <InfoButton
+          onPress={() => {
+            navigate('Info');
+          }}
+        />
       </View>
     </Container>
   );

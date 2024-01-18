@@ -1,12 +1,12 @@
 import React, { type ReactNode } from 'react';
-import { type RegisteredStyle, Text, type ViewStyle } from 'react-native';
+import { type RegisteredStyle, Text, type TextStyle } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import { FONT_FAMILY_CYGRE } from '../../styles/typography.ts';
 
 interface BaseTextProps {
   whiteText?: boolean;
   bigText?: boolean;
-  style?: RegisteredStyle<ViewStyle>;
+  style?: RegisteredStyle<TextStyle>;
   children: ReactNode;
 }
 

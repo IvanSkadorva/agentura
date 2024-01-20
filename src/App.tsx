@@ -10,7 +10,7 @@ import { Hint } from './pages/Hint.tsx';
 import { Timer } from './pages/Timer.tsx';
 import { Winner } from './pages/Winner.tsx';
 import { Info } from './pages/Info.tsx';
-import { Instructions } from './pages/Instructions.tsx';
+import { Onboarding } from './pages/Onboarding.tsx';
 
 export enum PlayerRole {
   CIVIL,
@@ -28,7 +28,7 @@ export type RootStackParamList = {
   Timer: undefined;
   Winner: { winner: PlayerRole };
   Info: undefined;
-  Instructions: undefined;
+  Onboarding: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -46,7 +46,7 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Timer" component={Timer} options={{ headerShown: false }} />
         <Stack.Screen name="Winner" component={Winner} options={{ headerShown: false }} />
         <Stack.Screen name="Info" component={Info} />
-        <Stack.Screen name="Instructions" component={Instructions} />
+        <Stack.Screen name="Onboarding" component={Onboarding} />
       </Stack.Navigator>
     </NavigationContainer>
   );

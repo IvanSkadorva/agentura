@@ -11,6 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 import { type RootStackParamList } from '../App.tsx';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';
+import { Onboarding } from './Onboarding.tsx';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
@@ -33,7 +34,7 @@ export function Home(): JSX.Element {
         <ActionButton
           title={t('buttons.howToPlay')}
           onPress={() => {
-            navigate('Instructions');
+            navigate('Onboarding');
           }}
           type={ButtonType.Secondary}
         />

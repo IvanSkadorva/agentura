@@ -12,6 +12,7 @@ export function Onboarding(): JSX.Element {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
+  const slides = getOnboardingItems();
 
   const viewableItemsChanged = useRef(
     ({ viewableItems }: { viewableItems: ViewToken[]; changed: ViewToken[] }) => {
@@ -21,10 +22,16 @@ export function Onboarding(): JSX.Element {
 
   const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
 
+  const scrollTo = (): void => {
+    if (currentIndex < slides.length - 1) {
+      slidesRef?.current?.scrollToIndex({ index: currentIndex + 1 });
+    }
+  };
+
   return (
     <View style={styles.wrapper}>
       <FlatList
-        data={getOnboardingItems()}
+        data={slides}
         renderItem={({ item }) => <OnboardingSlide item={item}></OnboardingSlide>}
         horizontal
         bounces={false}
@@ -39,8 +46,8 @@ export function Onboarding(): JSX.Element {
         scrollEventThrottle={32}
         ref={slidesRef}
       />
-      <Paginator data={getOnboardingItems()} scrollX={scrollX} />
-      <NextButton onPress={() => {}} />
+      <Paginator data={slides} scrollX={scrollX} />
+      <NextButton onPress={scrollTo} percentage={(currentIndex + 1) * (100 / slides.length)} />
     </View>
   );
 }

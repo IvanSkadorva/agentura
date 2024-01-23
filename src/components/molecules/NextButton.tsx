@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, TouchableOpacity, View } from 'react-native';
 import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
-import { CORAL_RED } from '../../styles/colors.ts';
+import { CORAL_RED, MAIN_WHITE } from '../../styles/colors.ts';
 import Svg, { Circle, G } from 'react-native-svg';
-import ArrowRight from '../../assets/images/arrow-right.svg';
+import ArrowRightLong from '../../assets/images/arrow-right-long.svg';
 
 interface NextButtonProps {
   onPress: () => void;
@@ -17,7 +17,7 @@ export function NextButton({ onPress, percentage }: NextButtonProps): JSX.Elemen
   const circumference = radius * 2 * Math.PI;
 
   const progressAnimation = useRef(new Animated.Value(0)).current;
-  const progressRef = useRef(null);
+  const progressRef = useRef<Circle>(null);
 
   const animation = (toValue: number): void => {
     Animated.timing(progressAnimation, {
@@ -34,7 +34,7 @@ export function NextButton({ onPress, percentage }: NextButtonProps): JSX.Elemen
   useEffect(() => {
     progressAnimation.addListener((listener) => {
       const strokeDashoffset = circumference - (circumference * listener.value) / 100;
-      if (progressRef?.current) {
+      if (progressRef?.current !== null) {
         progressRef.current.setNativeProps({
           strokeDashoffset,
         });
@@ -58,12 +58,12 @@ export function NextButton({ onPress, percentage }: NextButtonProps): JSX.Elemen
             r={radius}
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
-            fill="#ffffff"
+            fill={MAIN_WHITE}
           />
         </G>
       </Svg>
       <TouchableOpacity style={styles.button} activeOpacity={0.6} onPress={onPress}>
-        <ArrowRight width={ms(32)} height={mvs(32)} />
+        <ArrowRightLong width={ms(32)} height={mvs(32)} fill={MAIN_WHITE} />
       </TouchableOpacity>
     </View>
   );

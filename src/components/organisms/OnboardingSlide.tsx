@@ -1,5 +1,5 @@
 import { Image, useWindowDimensions, View } from 'react-native';
-import React, { type ReactNode } from 'react';
+import React from 'react';
 import { ScaledSheet } from 'react-native-size-matters';
 import { type OnboardingItem } from '../../utils/onboarding-slides.ts';
 import { BaseText } from '../atoms/BaseText.tsx';

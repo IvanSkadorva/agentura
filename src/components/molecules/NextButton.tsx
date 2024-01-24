@@ -71,7 +71,6 @@ export function NextButton({ onPress, percentage }: NextButtonProps): JSX.Elemen
 
 const styles = ScaledSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },

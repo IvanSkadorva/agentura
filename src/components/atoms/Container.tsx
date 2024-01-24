@@ -22,9 +22,8 @@ const styles = ScaledSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    paddingHorizontal: '20@msr',
-    paddingBottom: '30@vs',
-    paddingTop: '20@vs',
+    paddingHorizontal: '20@s',
+    paddingVertical: '20@vs',
     backgroundColor: MAIN_WHITE,
   },
 });

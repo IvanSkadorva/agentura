@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Container } from '../components/atoms/Container.tsx';
-import { Animated, FlatList, SafeAreaView, type ViewToken } from 'react-native';
+import { Animated, FlatList, SafeAreaView, View, type ViewToken } from 'react-native';
 import { ms, ScaledSheet } from 'react-native-size-matters';
 import { OnboardingSlide } from '../components/organisms/OnboardingSlide.tsx';
 import { getOnboardingItems } from '../utils/onboarding-slides.ts';
@@ -37,26 +37,25 @@ export function Onboarding(): JSX.Element {
 
   return (
     <Container wrapperStyle={styles.wrapper}>
-      <FlatList
-        data={slides}
-        renderItem={({ item }) => (
-          <OnboardingSlide item={item}>
-            <Paginator data={slides} scrollX={scrollX} />
-          </OnboardingSlide>
-        )}
-        horizontal
-        bounces={false}
-        showsHorizontalScrollIndicator={false}
-        pagingEnabled
-        keyExtractor={(item) => item.id.toString()}
-        onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
-          useNativeDriver: false,
-        })}
-        onViewableItemsChanged={viewableItemsChanged}
-        viewabilityConfig={viewConfig}
-        scrollEventThrottle={32}
-        ref={slidesRef}
-      />
+      <View style={styles.container}>
+        <FlatList
+          data={slides}
+          renderItem={({ item }) => <OnboardingSlide item={item}></OnboardingSlide>}
+          horizontal
+          bounces={false}
+          showsHorizontalScrollIndicator={false}
+          pagingEnabled
+          keyExtractor={(item) => item.id.toString()}
+          onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
+            useNativeDriver: false,
+          })}
+          onViewableItemsChanged={viewableItemsChanged}
+          viewabilityConfig={viewConfig}
+          scrollEventThrottle={32}
+          ref={slidesRef}
+        />
+        <Paginator data={slides} scrollX={scrollX} />
+      </View>
 
       <NextButton onPress={scrollTo} percentage={(currentIndex + 1) * (100 / slides.length)} />
     </Container>
@@ -65,8 +64,7 @@ export function Onboarding(): JSX.Element {
 
 const styles = ScaledSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   wrapper: {

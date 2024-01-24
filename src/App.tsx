@@ -46,7 +46,7 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Timer" component={Timer} options={{ headerShown: false }} />
         <Stack.Screen name="Winner" component={Winner} options={{ headerShown: false }} />
         <Stack.Screen name="Info" component={Info} />
-        <Stack.Screen name="Onboarding" component={Onboarding} />
+        <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

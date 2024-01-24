@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Animated, useWindowDimensions } from 'react-native';
+import {
+  View,
+  Animated,
+  useWindowDimensions,
+  type ViewStyle,
+  type RegisteredStyle,
+} from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import { type OnboardingItem } from '../../utils/onboarding-slides.ts';
 import { CORAL_RED } from '../../styles/colors.ts';
@@ -7,12 +13,13 @@ import { CORAL_RED } from '../../styles/colors.ts';
 interface PaginatorProps {
   data: OnboardingItem[];
   scrollX: Animated.Value;
+  style?: RegisteredStyle<ViewStyle>;
 }
-export function Paginator({ data, scrollX }: PaginatorProps): JSX.Element {
+export function Paginator({ data, scrollX, style }: PaginatorProps): JSX.Element {
   const { width } = useWindowDimensions();
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {data.map((_, i) => {
         const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
 

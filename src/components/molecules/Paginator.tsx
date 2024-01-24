@@ -39,13 +39,12 @@ const styles = ScaledSheet.create({
   container: {
     flexDirection: 'row',
     alignSelf: 'center',
-    height: '64@vs',
   },
   dot: {
     height: '8@mvs',
     width: '8@ms',
-    borderRadius: '8@vs',
+    borderRadius: '18@mvs',
     backgroundColor: CORAL_RED,
-    marginHorizontal: '4@s',
+    marginHorizontal: '4@ms',
   },
 });

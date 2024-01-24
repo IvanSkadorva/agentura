@@ -56,7 +56,7 @@ export function NextButton({ onPress, percentage }: NextButtonProps): JSX.Elemen
             cx={center}
             cy={center}
             r={radius}
-            strokeWidth={strokeWidth}
+            strokeWidth={strokeWidth * 1.1}
             strokeDasharray={circumference}
             fill={MAIN_WHITE}
           />

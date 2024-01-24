@@ -36,10 +36,14 @@ export function Onboarding(): JSX.Element {
   };
 
   return (
-    <Container style={styles.safeArea} wrapperStyle={styles.wrapper}>
+    <Container wrapperStyle={styles.wrapper}>
       <FlatList
         data={slides}
-        renderItem={({ item }) => <OnboardingSlide item={item}></OnboardingSlide>}
+        renderItem={({ item }) => (
+          <OnboardingSlide item={item}>
+            <Paginator data={slides} scrollX={scrollX} />
+          </OnboardingSlide>
+        )}
         horizontal
         bounces={false}
         showsHorizontalScrollIndicator={false}
@@ -53,7 +57,7 @@ export function Onboarding(): JSX.Element {
         scrollEventThrottle={32}
         ref={slidesRef}
       />
-      <Paginator data={slides} scrollX={scrollX} />
+
       <NextButton onPress={scrollTo} percentage={(currentIndex + 1) * (100 / slides.length)} />
     </Container>
   );
@@ -65,10 +69,9 @@ const styles = ScaledSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  safeArea: {
-    flex: 3,
-  },
   wrapper: {
+    display: 'flex',
+    justifyContent: 'space-between',
     paddingHorizontal: 0,
   },
 });

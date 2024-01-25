@@ -2,7 +2,6 @@ import { type RegisteredStyle, TouchableOpacity, type ViewStyle } from 'react-na
 import { BaseText } from '../atoms/BaseText.tsx';
 import React from 'react';
 import { ScaledSheet } from 'react-native-size-matters';
-import { FONT_FAMILY_KINO } from '../../styles/typography.ts';
 import { CORAL_RED } from '../../styles/colors.ts';
 
 export enum ButtonType {
@@ -44,6 +43,7 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
     maxWidth: '300@msr',
     borderRadius: '24@msr',
+    alignSelf: 'center',
   },
   primary: {
     backgroundColor: CORAL_RED,

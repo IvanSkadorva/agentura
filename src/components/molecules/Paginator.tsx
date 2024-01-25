@@ -48,9 +48,9 @@ const styles = ScaledSheet.create({
     alignSelf: 'center',
   },
   dot: {
-    height: '8@mvs',
+    height: '9@mvs',
     width: '8@ms',
-    borderRadius: '18@mvs',
+    borderRadius: '6@ms',
     backgroundColor: CORAL_RED,
     marginHorizontal: '4@ms',
   },

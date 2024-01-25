@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, TouchableOpacity, View } from 'react-native';
+import {
+  Animated,
+  type RegisteredStyle,
+  TouchableOpacity,
+  View,
+  type ViewStyle,
+} from 'react-native';
 import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
 import { CORAL_RED, MAIN_WHITE } from '../../styles/colors.ts';
 import Svg, { Circle, G } from 'react-native-svg';
@@ -8,8 +14,9 @@ import ArrowRightLong from '../../assets/images/arrow-right-long.svg';
 interface NextButtonProps {
   onPress: () => void;
   percentage: number;
+  style?: RegisteredStyle<ViewStyle>;
 }
-export function NextButton({ onPress, percentage }: NextButtonProps): JSX.Element {
+export function NextButton({ onPress, percentage, style }: NextButtonProps): JSX.Element {
   const size = 128;
   const strokeWidth = 2;
   const center = size / 2;
@@ -46,7 +53,7 @@ export function NextButton({ onPress, percentage }: NextButtonProps): JSX.Elemen
   }, [percentage]);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Svg width={size} height={size}>
         <G rotation="-90" origin={center}>
           <Circle stroke={CORAL_RED} cx={center} cy={center} r={radius} strokeWidth={strokeWidth} />

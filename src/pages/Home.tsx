@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import MainSvg from '../assets/images/main.svg';
 import { ScaledSheet, s, vs } from 'react-native-size-matters';
@@ -11,8 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 import { type RootStackParamList } from '../App.tsx';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';
-import { Onboarding } from './Onboarding.tsx';
-
+import Settings from '../assets/images/settings.svg';
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export function Home(): JSX.Element {
@@ -40,7 +39,13 @@ export function Home(): JSX.Element {
         />
       </View>
       <View style={styles.buttonsContainer}>
-        <MusicButton />
+        <View style={styles.leftButtons}>
+          <MusicButton />
+          <TouchableOpacity>
+            <Settings />
+          </TouchableOpacity>
+        </View>
+
         <InfoButton
           onPress={() => {
             navigate('Info');
@@ -72,5 +77,12 @@ const styles = ScaledSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  leftButtons: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '24@msr',
+    alignItems: 'center',
   },
 });

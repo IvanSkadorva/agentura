@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, View } from 'react-native';
 import React from 'react';
 import MainSvg from '../assets/images/main.svg';
 import { ScaledSheet, s, vs } from 'react-native-size-matters';
@@ -11,7 +11,8 @@ import { useNavigation } from '@react-navigation/native';
 import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 import { type RootStackParamList } from '../App.tsx';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';
-import Settings from '../assets/images/settings.svg';
+import { LanguageSettings } from '../components/organisms/LanguageSettings.tsx';
+
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export function Home(): JSX.Element {
@@ -41,9 +42,7 @@ export function Home(): JSX.Element {
       <View style={styles.buttonsContainer}>
         <View style={styles.leftButtons}>
           <MusicButton />
-          <TouchableOpacity>
-            <Settings />
-          </TouchableOpacity>
+          <LanguageSettings />
         </View>
 
         <InfoButton

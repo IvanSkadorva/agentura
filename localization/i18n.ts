@@ -29,4 +29,14 @@ i18n
     },
   });
 
+interface Language {
+  id: string;
+  label: string;
+}
+export const languages: Language[] = [
+  { id: 'en', label: 'English' },
+  { id: 'be_la', label: 'Belarusian (Latin)' },
+  { id: 'be_cy', label: 'Belarusian (Cyrillic)' },
+];
+
 export default i18n;

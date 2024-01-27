@@ -40,6 +40,8 @@ const styles = ScaledSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
+    padding: '1@s',
   },
 });

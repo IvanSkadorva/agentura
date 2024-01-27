@@ -1,85 +1,45 @@
-import { type ImageSourcePropType } from 'react-native';
+import Onboarding1 from '../assets/images/onboarding-1.svg';
+import Onboarding2 from '../assets/images/onboarding-2.svg';
+import Onboarding3 from '../assets/images/onboarding-3.svg';
+import Onboarding4 from '../assets/images/onboarding-4.svg';
+import Onboarding5 from '../assets/images/onboarding-5.svg';
+import Onboarding6 from '../assets/images/onboarding-6.svg';
+import Onboarding7 from '../assets/images/onboarding-7.svg';
+import Onboarding8 from '../assets/images/onboarding-8.svg';
+import Onboarding9 from '../assets/images/onboarding-9.svg';
+import Onboarding10 from '../assets/images/onboarding-10.svg';
+import Onboarding11 from '../assets/images/onboarding-11.svg';
+import Onboarding12 from '../assets/images/onboarding-12.svg';
+import { type SvgProps } from 'react-native-svg';
+import { type FC } from 'react';
 
 export interface OnboardingItem {
   id: number;
   title: string;
   description: string;
-  image: ImageSourcePropType;
+  Icon: FC<SvgProps>;
 }
 
 export const getOnboardingItems = (): OnboardingItem[] => {
-  return [
-    {
-      id: 1,
-      title: 'onboarding.slide1.title',
-      description: 'onboarding.slide1.description',
-      image: require('../assets/images/onboarding-1.png'),
-    },
-    {
-      id: 2,
-      title: 'onboarding.slide2.title',
-      description: 'onboarding.slide2.description',
-      image: require('../assets/images/onboarding-2.png'),
-    },
-    {
-      id: 3,
-      title: 'onboarding.slide3.title',
-      description: 'onboarding.slide3.description',
-      image: require('../assets/images/onboarding-3.png'),
-    },
-    {
-      id: 4,
-      title: 'onboarding.slide4.title',
-      description: 'onboarding.slide4.description',
-      image: require('../assets/images/onboarding-4.png'),
-    },
-    {
-      id: 5,
-      title: 'onboarding.slide5.title',
-      description: 'onboarding.slide5.description',
-      image: require('../assets/images/onboarding-5.png'),
-    },
-    {
-      id: 6,
-      title: 'onboarding.slide6.title',
-      description: 'onboarding.slide6.description',
-      image: require('../assets/images/onboarding-6.png'),
-    },
-    {
-      id: 7,
-      title: 'onboarding.slide7.title',
-      description: 'onboarding.slide7.description',
-      image: require('../assets/images/onboarding-7.png'),
-    },
-    {
-      id: 8,
-      title: 'onboarding.slide8.title',
-      description: 'onboarding.slide8.description',
-      image: require('../assets/images/onboarding-8.png'),
-    },
-    {
-      id: 9,
-      title: 'onboarding.slide9.title',
-      description: 'onboarding.slide9.description',
-      image: require('../assets/images/onboarding-9.png'),
-    },
-    {
-      id: 10,
-      title: 'onboarding.slide10.title',
-      description: 'onboarding.slide10.description',
-      image: require('../assets/images/onboarding-10.png'),
-    },
-    {
-      id: 11,
-      title: 'onboarding.slide11.title',
-      description: 'onboarding.slide11.description',
-      image: require('../assets/images/onboarding-11.png'),
-    },
-    {
-      id: 12,
-      title: 'onboarding.slide12.title',
-      description: 'onboarding.slide12.description',
-      image: require('../assets/images/onboarding-12.png'),
-    },
+  const icons = [
+    Onboarding1,
+    Onboarding2,
+    Onboarding3,
+    Onboarding4,
+    Onboarding5,
+    Onboarding6,
+    Onboarding7,
+    Onboarding8,
+    Onboarding9,
+    Onboarding10,
+    Onboarding11,
+    Onboarding12,
   ];
+
+  return icons.map((Icon, index) => ({
+    id: index + 1,
+    title: `onboarding.slide${index + 1}.title`,
+    description: `onboarding.slide${index + 1}.description`,
+    Icon,
+  }));
 };

@@ -11,6 +11,8 @@ import { Timer } from './pages/Timer.tsx';
 import { Winner } from './pages/Winner.tsx';
 import { Info } from './pages/Info.tsx';
 import { Onboarding } from './pages/Onboarding.tsx';
+import { BackButton } from './components/atoms/BackButton.tsx';
+import { CORAL_RED, MAIN_BLACK, MAIN_WHITE } from './styles/colors.ts';
 
 export enum PlayerRole {
   CIVIL,
@@ -36,7 +38,16 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" screenOptions={{ headerTitle: '' }}>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={({ navigation }) => ({
+          headerTitle: '',
+          headerTintColor: MAIN_BLACK,
+          headerStyle: {
+            backgroundColor: MAIN_WHITE,
+          },
+        })}
+      >
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         <Stack.Screen name="Configuration" component={Configuration} />
         <Stack.Screen name="Locations" component={Locations} />

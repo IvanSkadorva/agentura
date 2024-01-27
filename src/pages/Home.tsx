@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import React from 'react';
 import MainSvg from '../assets/images/main.svg';
 import { ScaledSheet, s, vs } from 'react-native-size-matters';

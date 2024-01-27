@@ -58,8 +58,6 @@ const styles = ScaledSheet.create({
     display: 'flex',
     flexDirection: 'column',
     rowGap: '10@vs',
-    marginRight: '1@msr',
-    marginTop: '1@msr',
   },
   playButton: {
     alignSelf: 'center',

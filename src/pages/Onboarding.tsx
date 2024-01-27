@@ -55,11 +55,7 @@ export function Onboarding(): JSX.Element {
       <View style={styles.container}>
         <FlatList
           data={slides}
-          renderItem={({ item }) => (
-            <View style={[{ width, flex: 1 }]}>
-              <Image source={item?.image} style={[styles.image, { width }]} />
-            </View>
-          )}
+          renderItem={({ item }) => <item.Icon width={width} style={styles.icon} />}
           horizontal
           bounces={false}
           showsHorizontalScrollIndicator={false}
@@ -90,7 +86,7 @@ const styles = ScaledSheet.create({
     paddingHorizontal: 0,
     paddingTop: 0,
   },
-  image: {
+  icon: {
     resizeMode: 'contain',
     marginBottom: '20@vs',
   },

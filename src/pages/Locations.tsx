@@ -13,8 +13,8 @@ import { ScaledSheet } from 'react-native-size-matters';
 type LocalizationsProps = NativeStackScreenProps<RootStackParamList, 'Locations'>;
 
 export function Locations(): JSX.Element {
-  const localizations = useAppStore.use.locations();
-  const toggleLocalization = useAppStore.use.toggleLocalization();
+  const locations = useAppStore.use.locations();
+  const toggleLocation = useAppStore.use.toggleLocation();
   const navigation = useNavigation<LocalizationsProps['navigation']>();
   const { t } = useTranslation();
 
@@ -23,13 +23,13 @@ export function Locations(): JSX.Element {
       <View style={styles.wrapper}>
         <ScrollView>
           <View style={styles.localizationsContainer}>
-            {localizations.map(({ key, enabled, roles }) => (
+            {locations.map(({ key, enabled, roles }) => (
               <CheckboxWithLabel
                 key={key}
                 defaultValue={enabled}
                 label={t(key)}
                 onPress={(enabled: boolean) => {
-                  toggleLocalization({ key, enabled, roles });
+                  toggleLocation({ key, enabled, roles });
                 }}
               />
             ))}

@@ -17,7 +17,8 @@ const createSelectors = <S extends UseBoundStore<StoreApi<object>>>(
 
   return store;
 };
-interface Location {
+
+export interface Location {
   key: string;
   enabled: boolean;
   roles: string[];
@@ -41,7 +42,8 @@ interface AppState {
   setGameTimeInMinutes: (time: number) => void;
   setIsRoleGame: (isRoleGame: boolean) => void;
   setEnableHintsForSpies: (enableHintsForSpies: boolean) => void;
-  toggleLocalization: (localization: Location) => void;
+  toggleLocation: (localization: Location) => void;
+  setLocations: (locations: Location[]) => void;
   startGame: () => void;
 }
 
@@ -53,23 +55,7 @@ const useAppStoreBase = create<AppState>()(
     isRoleGame: false,
     currentGame: { players: [], location: { key: '', enabled: false, roles: [] } },
     enableHintsForSpies: false,
-    locations: [
-      {
-        key: 'Valozhyn',
-        enabled: true,
-        roles: ['Vania', 'Jahor', 'Maks', 'Koscik', 'Maks Minski'],
-      },
-      {
-        key: 'Minsktrans',
-        enabled: true,
-        roles: ['Kirouca', 'Chotsci', 'Pasazyr', 'Kantralior', 'Vania'],
-      },
-      {
-        key: 'Rahaczou',
-        enabled: true,
-        roles: ['Degustatar', 'Pracounik', 'Naczalnik', 'Razumnik', 'Praunik'],
-      },
-    ],
+    locations: [],
     setCivilsAmount: (civils) => {
       set((state) => ({ ...state, civils }));
     },
@@ -85,13 +71,16 @@ const useAppStoreBase = create<AppState>()(
     setEnableHintsForSpies: (enableHintsForSpies) => {
       set((state) => ({ ...state, enableHintsForSpies }));
     },
-    toggleLocalization: (affectedLocalization) => {
+    toggleLocation: (affectedLocalization) => {
       set((state) => {
         const selectedIndex = state.locations.findIndex(
           (l: Location) => l.key === affectedLocalization.key
         );
         state.locations[selectedIndex].enabled = affectedLocalization.enabled;
       });
+    },
+    setLocations: (locations) => {
+      set((state) => ({ ...state, locations }));
     },
     startGame: () => {
       set((state) => {

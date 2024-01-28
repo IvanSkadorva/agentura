@@ -3,18 +3,14 @@ import { Container } from '../components/atoms/Container.tsx';
 import {
   Animated,
   FlatList,
-  Image,
   Platform,
-  SafeAreaView,
   useWindowDimensions,
   View,
   type ViewToken,
 } from 'react-native';
-import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
-import { OnboardingSlide } from '../components/organisms/OnboardingSlide.tsx';
+import { ScaledSheet } from 'react-native-size-matters';
 import { getOnboardingItems } from '../utils/onboarding-slides.ts';
 import { Paginator } from '../components/molecules/Paginator.tsx';
-import { NextButton } from '../components/molecules/NextButton.tsx';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App.tsx';
@@ -52,7 +48,7 @@ export function Onboarding(): JSX.Element {
 
   return (
     <Container wrapperStyle={styles.wrapper}>
-      <View style={styles.container}>
+      <View>
         <FlatList
           data={slides}
           renderItem={({ item }) => <item.Icon width={width} style={styles.icon} />}
@@ -81,7 +77,6 @@ export function Onboarding(): JSX.Element {
 }
 
 const styles = ScaledSheet.create({
-  container: {},
   wrapper: {
     paddingHorizontal: 0,
     paddingTop: 0,

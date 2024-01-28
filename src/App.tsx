@@ -11,8 +11,7 @@ import { Timer } from './pages/Timer.tsx';
 import { Winner } from './pages/Winner.tsx';
 import { Info } from './pages/Info.tsx';
 import { Onboarding } from './pages/Onboarding.tsx';
-import { BackButton } from './components/atoms/BackButton.tsx';
-import { CORAL_RED, MAIN_BLACK, MAIN_WHITE } from './styles/colors.ts';
+import { MAIN_BLACK, MAIN_WHITE } from './styles/colors.ts';
 
 export enum PlayerRole {
   CIVIL,

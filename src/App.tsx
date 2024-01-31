@@ -12,6 +12,8 @@ import { Winner } from './pages/Winner.tsx';
 import { Info } from './pages/Info.tsx';
 import { Onboarding } from './pages/Onboarding.tsx';
 import { MAIN_BLACK, MAIN_WHITE } from './styles/colors.ts';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Button } from 'react-native';
 
 export enum PlayerRole {
   CIVIL,
@@ -36,29 +38,45 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App(): React.JSX.Element {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={({ navigation }) => ({
-          headerTitle: '',
-          headerTintColor: MAIN_BLACK,
-          headerStyle: {
-            backgroundColor: MAIN_WHITE,
-          },
-        })}
-      >
-        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="Configuration" component={Configuration} />
-        <Stack.Screen name="Locations" component={Locations} />
-        <Stack.Screen name="PlayerDistribution" component={PlayerDistribution} />
-        <Stack.Screen name="Role" component={Role} options={{ headerShown: false }} />
-        <Stack.Screen name="Hint" component={Hint} options={{ headerShown: false }} />
-        <Stack.Screen name="Timer" component={Timer} options={{ headerShown: false }} />
-        <Stack.Screen name="Winner" component={Winner} options={{ headerShown: false }} />
-        <Stack.Screen name="Info" component={Info} />
-        <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={({ navigation }) => ({
+            headerTitle: '',
+            headerTintColor: MAIN_BLACK,
+            headerStyle: {
+              backgroundColor: MAIN_WHITE,
+            },
+          })}
+        >
+          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+          <Stack.Screen name="Configuration" component={Configuration} />
+          <Stack.Screen
+            name="Locations"
+            component={Locations}
+            options={{
+              headerRight: () => (
+                <Button
+                  onPress={() => {
+                    console.log('This is a button!');
+                  }}
+                  title="Info"
+                  color="black"
+                />
+              ),
+            }}
+          />
+          <Stack.Screen name="PlayerDistribution" component={PlayerDistribution} />
+          <Stack.Screen name="Role" component={Role} options={{ headerShown: false }} />
+          <Stack.Screen name="Hint" component={Hint} options={{ headerShown: false }} />
+          <Stack.Screen name="Timer" component={Timer} options={{ headerShown: false }} />
+          <Stack.Screen name="Winner" component={Winner} options={{ headerShown: false }} />
+          <Stack.Screen name="Info" component={Info} />
+          <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
 

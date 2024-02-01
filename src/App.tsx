@@ -14,6 +14,7 @@ import { Onboarding } from './pages/Onboarding.tsx';
 import { MAIN_BLACK, MAIN_WHITE } from './styles/colors.ts';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Button } from 'react-native';
+import { LocationSettings } from './components/organisms/LocationSettings.tsx';
 
 export enum PlayerRole {
   CIVIL,
@@ -56,15 +57,7 @@ function App(): React.JSX.Element {
             name="Locations"
             component={Locations}
             options={{
-              headerRight: () => (
-                <Button
-                  onPress={() => {
-                    console.log('This is a button!');
-                  }}
-                  title="Info"
-                  color="black"
-                />
-              ),
+              headerRight: () => <LocationSettings />,
             }}
           />
           <Stack.Screen name="PlayerDistribution" component={PlayerDistribution} />

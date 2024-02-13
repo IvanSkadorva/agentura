@@ -13,7 +13,6 @@ import { Info } from './pages/Info.tsx';
 import { Onboarding } from './pages/Onboarding.tsx';
 import { MAIN_BLACK, MAIN_WHITE } from './styles/colors.ts';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Button } from 'react-native';
 import { LocationSettings } from './components/organisms/LocationSettings.tsx';
 
 export enum PlayerRole {
@@ -43,7 +42,7 @@ function App(): React.JSX.Element {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Home"
-          screenOptions={({ navigation }) => ({
+          screenOptions={() => ({
             headerTitle: '',
             headerTintColor: MAIN_BLACK,
             headerStyle: {

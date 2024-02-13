@@ -10,7 +10,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App.tsx';
 import { ms, ScaledSheet } from 'react-native-size-matters';
 import { RectButton, Swipeable } from 'react-native-gesture-handler';
-import { CORAL_RED } from '../styles/colors.ts';
+import { CORAL_RED, MAIN_ORANGE } from '../styles/colors.ts';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 
 type LocalizationsProps = NativeStackScreenProps<RootStackParamList, 'Locations'>;
@@ -18,6 +18,7 @@ type LocalizationsProps = NativeStackScreenProps<RootStackParamList, 'Locations'
 export function Locations(): JSX.Element {
   const locations = useAppStore.use.locations();
   const toggleLocation = useAppStore.use.toggleLocation();
+  const deleteLocation = useAppStore.use.deleteLocation();
   const navigation = useNavigation<LocalizationsProps['navigation']>();
   const { t } = useTranslation();
 
@@ -25,17 +26,13 @@ export function Locations(): JSX.Element {
     text: string,
     color: string,
     x: number,
-    progress: Animated.AnimatedInterpolation<number>
+    progress: Animated.AnimatedInterpolation<number>,
+    pressHandler: () => void
   ): JSX.Element => {
     const trans = progress.interpolate({
       inputRange: [0, 1],
       outputRange: [x, 0],
     });
-    const pressHandler = (): void => {
-      // this.close();
-      // // eslint-disable-next-line no-alert
-      // window.alert(text);
-    };
 
     return (
       <Animated.View style={[styles.swipeableButton, { transform: [{ translateX: trans }] }]}>
@@ -48,13 +45,21 @@ export function Locations(): JSX.Element {
     );
   };
 
+  const handleEdit = (key: string): void => {
+    console.log('edit', key);
+  };
+
   const renderRightActions = (
     progress: Animated.AnimatedInterpolation<number>,
-    dragAnimatedValue: Animated.AnimatedInterpolation<number>
+    itemKey: string
   ): JSX.Element => (
     <View style={styles.rightActionsWrapper}>
-      {renderRightAction('buttons.edit', '#ffab00', ms(240), progress)}
-      {renderRightAction('buttons.delete', CORAL_RED, ms(120), progress)}
+      {renderRightAction('buttons.edit', MAIN_ORANGE, ms(240), progress, () => {
+        handleEdit(itemKey);
+      })}
+      {renderRightAction('buttons.delete', CORAL_RED, ms(120), progress, () => {
+        deleteLocation(itemKey);
+      })}
     </View>
   );
 
@@ -66,7 +71,12 @@ export function Locations(): JSX.Element {
           ItemSeparatorComponent={() => <View style={styles.separator} />}
           renderItem={({ item }) => {
             return (
-              <Swipeable key={item.key} renderRightActions={renderRightActions}>
+              <Swipeable
+                key={item.key}
+                renderRightActions={(progressAnimatedValue) =>
+                  renderRightActions(progressAnimatedValue, item.key)
+                }
+              >
                 <CheckboxWithLabel
                   key={item.key}
                   defaultValue={item.enabled}

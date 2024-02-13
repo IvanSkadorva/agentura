@@ -12,18 +12,12 @@ import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 import { type RootStackParamList } from '../App.tsx';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';
 import { LanguageSettings } from '../components/organisms/LanguageSettings.tsx';
-import { useAppStore } from '../store/app-store.ts';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export function Home(): JSX.Element {
   const { t } = useTranslation();
   const { navigate } = useNavigation<HomeProps['navigation']>();
-  const setLocations = useAppStore.use.setLocations();
-
-  React.useEffect(() => {
-    setLocations(t('locations', { returnObjects: true }));
-  }, []);
 
   return (
     <Container>

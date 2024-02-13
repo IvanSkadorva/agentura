@@ -1,17 +1,17 @@
-import { Modal, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Modal, Platform, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 import ThreeDots from '../../assets/images/three-dots.svg';
 import { ScaledSheet } from 'react-native-size-matters';
-import { FONT_FAMILY_KINO } from '../../styles/typography.ts';
 import Close from '../../assets/images/close.svg';
-import { languages } from '../../../localization/i18n.ts';
 import { BaseText } from '../atoms/BaseText.tsx';
-import { MAIN_BLACK, MAIN_WHITE } from '../../styles/colors.ts';
+import { MAIN_WHITE } from '../../styles/colors.ts';
 import { useTranslation } from 'react-i18next';
+import { useAppStore } from '../../store/app-store.ts';
 
 export function LocationSettings(): JSX.Element {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
+  const resetLocations = useAppStore.use.resetLocations();
 
   const toggleModal = (): void => {
     setShowModal(!showModal);
@@ -31,17 +31,15 @@ export function LocationSettings(): JSX.Element {
               </TouchableOpacity>
               <View style={styles.settingsList}>
                 <View style={styles.textWrapper}>
-                  <TouchableOpacity onPress={() => {}}>
+                  <TouchableOpacity onPress={resetLocations}>
                     <BaseText>{t('locationSettings.reset')}</BaseText>
                   </TouchableOpacity>
-                  <View style={styles.lineStyle} />
                 </View>
 
                 <View style={styles.textWrapper}>
                   <TouchableOpacity onPress={() => {}}>
                     <BaseText>{t('locationSettings.addNew')}</BaseText>
                   </TouchableOpacity>
-                  <View style={styles.lineStyle} />
                 </View>
 
                 <View style={styles.textWrapper}>

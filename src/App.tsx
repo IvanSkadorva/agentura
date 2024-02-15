@@ -14,6 +14,7 @@ import { Onboarding } from './pages/Onboarding.tsx';
 import { MAIN_BLACK, MAIN_WHITE } from './styles/colors.ts';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { LocationSettings } from './components/organisms/LocationSettings.tsx';
+import { LocationForm } from './pages/LocationForm.tsx';
 
 export enum PlayerRole {
   CIVIL,
@@ -32,6 +33,7 @@ export type RootStackParamList = {
   Winner: { winner: PlayerRole };
   Info: undefined;
   Onboarding: undefined;
+  LocationForm: { id?: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -59,6 +61,8 @@ function App(): React.JSX.Element {
               headerRight: () => <LocationSettings />,
             }}
           />
+          <Stack.Screen name="LocationForm" component={LocationForm} />
+
           <Stack.Screen name="PlayerDistribution" component={PlayerDistribution} />
           <Stack.Screen name="Role" component={Role} options={{ headerShown: false }} />
           <Stack.Screen name="Hint" component={Hint} options={{ headerShown: false }} />

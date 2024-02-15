@@ -1,8 +1,9 @@
-import { create, type State, type StoreApi, type UseBoundStore } from 'zustand';
+import { create, type StoreApi, type UseBoundStore } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
 import sampleSize from 'lodash.samplesize';
 import i18n from 'i18next';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type WithSelectors<S> = S extends { getState: () => infer T }
   ? S & { use: { [K in keyof T]: () => T[K] } }
@@ -21,6 +22,7 @@ const createSelectors = <S extends UseBoundStore<StoreApi<object>>>(
 };
 
 export interface Location {
+  id: string;
   key: string;
   enabled: boolean;
   roles: string[];
@@ -47,9 +49,11 @@ interface AppActions {
   setGameTimeInMinutes: (time: number) => void;
   setIsRoleGame: (isRoleGame: boolean) => void;
   setEnableHintsForSpies: (enableHintsForSpies: boolean) => void;
-  toggleLocation: (localization: Location) => void;
+  toggleLocation: (id: string) => void;
   setLocations: (locations: Location[]) => void;
-  deleteLocation: (key: string) => void;
+  deleteLocation: (id: string) => void;
+  addLocation: (location: Location) => void;
+  editLocation: (location: Location) => void;
   startGame: () => void;
   resetLocations: () => void;
 }
@@ -59,7 +63,7 @@ const initialState: AppState = {
   spies: 1,
   gameTimeInMinutes: 5,
   isRoleGame: false,
-  currentGame: { players: [], location: { key: '', enabled: false, roles: [] } },
+  currentGame: { players: [], location: { id: '0', key: '', enabled: false, roles: [] } },
   enableHintsForSpies: false,
   locations: i18n.t('locations', { returnObjects: true }) as unknown as Location[],
 };
@@ -83,20 +87,18 @@ const useAppStoreBase = create<AppState & AppActions>()(
       setEnableHintsForSpies: (enableHintsForSpies) => {
         set((state) => ({ ...state, enableHintsForSpies }));
       },
-      toggleLocation: (affectedLocation) => {
+      toggleLocation: (id: string) => {
         set((state) => {
-          const selectedIndex = state.locations.findIndex(
-            (l: Location) => l.key === affectedLocation.key
-          );
-          state.locations[selectedIndex].enabled = affectedLocation.enabled;
+          const selectedIndex = state.locations.findIndex((l: Location) => l.id === id);
+          state.locations[selectedIndex].enabled = !state.locations[selectedIndex].enabled;
         });
       },
       setLocations: (locations) => {
         set((state) => ({ ...state, locations }));
       },
-      deleteLocation: (key: string) => {
+      deleteLocation: (id: string) => {
         set((state) => {
-          state.locations = state.locations.filter((l: Location) => l.key !== key);
+          state.locations = state.locations.filter((l: Location) => l.id !== id);
         });
       },
       startGame: () => {
@@ -134,11 +136,25 @@ const useAppStoreBase = create<AppState & AppActions>()(
         });
       },
       resetLocations: () => {
-        set((state) => ({ ...state, locations: initialState.locations }));
+        set((state) => {
+          state.locations = initialState.locations;
+        });
+      },
+      addLocation: (location) => {
+        set((state) => {
+          state.locations.push(location);
+        });
+      },
+      editLocation: (location) => {
+        set((state) => {
+          const selectedIndex = state.locations.findIndex((l: Location) => l.id === location.id);
+          state.locations[selectedIndex] = location;
+        });
       },
     })),
     {
       name: 'app-store',
+      storage: createJSONStorage(() => AsyncStorage),
     }
   )
 );

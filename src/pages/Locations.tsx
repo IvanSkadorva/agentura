@@ -19,7 +19,7 @@ export function Locations(): JSX.Element {
   const locations = useAppStore.use.locations();
   const toggleLocation = useAppStore.use.toggleLocation();
   const deleteLocation = useAppStore.use.deleteLocation();
-  const navigation = useNavigation<LocalizationsProps['navigation']>();
+  const { navigate } = useNavigation<LocalizationsProps['navigation']>();
   const { t } = useTranslation();
 
   const renderRightAction = (
@@ -45,20 +45,20 @@ export function Locations(): JSX.Element {
     );
   };
 
-  const handleEdit = (key: string): void => {
-    console.log('edit', key);
+  const handleEdit = (id: string): void => {
+    navigate('LocationForm', { id });
   };
 
   const renderRightActions = (
     progress: Animated.AnimatedInterpolation<number>,
-    itemKey: string
+    id: string
   ): JSX.Element => (
     <View style={styles.rightActionsWrapper}>
       {renderRightAction('buttons.edit', MAIN_ORANGE, ms(240), progress, () => {
-        handleEdit(itemKey);
+        handleEdit(id);
       })}
       {renderRightAction('buttons.delete', CORAL_RED, ms(120), progress, () => {
-        deleteLocation(itemKey);
+        deleteLocation(id);
       })}
     </View>
   );
@@ -74,15 +74,15 @@ export function Locations(): JSX.Element {
               <Swipeable
                 key={item.key}
                 renderRightActions={(progressAnimatedValue) =>
-                  renderRightActions(progressAnimatedValue, item.key)
+                  renderRightActions(progressAnimatedValue, item.id)
                 }
               >
                 <CheckboxWithLabel
                   key={item.key}
                   defaultValue={item.enabled}
                   label={t(item.key)}
-                  onPress={(enabled: boolean) => {
-                    toggleLocation({ key: item.key, enabled, roles: item.roles });
+                  onPress={() => {
+                    toggleLocation(item.id);
                   }}
                 />
               </Swipeable>
@@ -92,7 +92,7 @@ export function Locations(): JSX.Element {
         <ActionButton
           title={t('buttons.forward')}
           onPress={() => {
-            navigation.navigate('Configuration');
+            navigate('Configuration');
           }}
           style={styles.playButton}
         />

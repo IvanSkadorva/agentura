@@ -7,11 +7,17 @@ import { BaseText } from '../atoms/BaseText.tsx';
 import { MAIN_WHITE } from '../../styles/colors.ts';
 import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../store/app-store.ts';
+import { useNavigation } from '@react-navigation/native';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import type { RootStackParamList } from '../../App.tsx';
+
+type LocalizationsProps = NativeStackScreenProps<RootStackParamList, 'Locations'>;
 
 export function LocationSettings(): JSX.Element {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const resetLocations = useAppStore.use.resetLocations();
+  const { navigate } = useNavigation<LocalizationsProps['navigation']>();
 
   const toggleModal = (): void => {
     setShowModal(!showModal);
@@ -31,20 +37,24 @@ export function LocationSettings(): JSX.Element {
               </TouchableOpacity>
               <View style={styles.settingsList}>
                 <View style={styles.textWrapper}>
-                  <TouchableOpacity onPress={resetLocations}>
-                    <BaseText>{t('locationSettings.reset')}</BaseText>
-                  </TouchableOpacity>
-                </View>
-
-                <View style={styles.textWrapper}>
-                  <TouchableOpacity onPress={() => {}}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      navigate('LocationForm', {});
+                      toggleModal();
+                    }}
+                  >
                     <BaseText>{t('locationSettings.addNew')}</BaseText>
                   </TouchableOpacity>
                 </View>
 
                 <View style={styles.textWrapper}>
-                  <TouchableOpacity onPress={() => {}}>
-                    <BaseText>{t('locationSettings.info')}</BaseText>
+                  <TouchableOpacity
+                    onPress={() => {
+                      resetLocations();
+                      toggleModal();
+                    }}
+                  >
+                    <BaseText>{t('locationSettings.reset')}</BaseText>
                   </TouchableOpacity>
                 </View>
               </View>

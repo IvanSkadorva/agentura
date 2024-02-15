@@ -61,11 +61,7 @@ export const Configuration = (): JSX.Element => {
           </View>
         </View>
       </ScrollView>
-      <ActionButton
-        title={t('buttons.play')}
-        onPress={handlePlayButtonPress}
-        style={styles.playButton}
-      />
+      <ActionButton title={t('buttons.play')} onPress={handlePlayButtonPress} />
     </Container>
   );
 };
@@ -85,8 +81,5 @@ const styles = ScaledSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-  },
-  playButton: {
-    alignSelf: 'center',
   },
 });

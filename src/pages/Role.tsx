@@ -16,7 +16,6 @@ import SpyMan from '../assets/images/spy-man.svg';
 import { useAppStore } from '../store/app-store.ts';
 import { Platform, useWindowDimensions, View } from 'react-native';
 import { MAIN_WHITE } from '../styles/colors.ts';
-import { use } from 'i18next';
 
 type RoleProps = NativeStackScreenProps<RootStackParamList, 'Role'>;
 

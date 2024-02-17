@@ -1,145 +1,100 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { PlayerRole, type RootStackParamList } from '../App.tsx';
+import { type RootStackParamList } from '../App.tsx';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
-import Clock from '../assets/images/clock.svg';
-
-import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
+import { ms, ScaledSheet } from 'react-native-size-matters';
 import React, { useEffect, useRef, useState } from 'react';
 import { useAppStore } from '../store/app-store.ts';
 import { CORAL_RED } from '../styles/colors.ts';
-import { ActionButton } from '../components/molecules/ActionButton.tsx';
+import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
+import Pause from '../assets/images/pause.svg';
 
 type TimerProps = NativeStackScreenProps<RootStackParamList, 'Timer'>;
 
 export function Timer(): JSX.Element {
   const { t } = useTranslation();
-  const { navigate } = useNavigation<TimerProps['navigation']>();
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const { navigate, addListener } = useNavigation<TimerProps['navigation']>();
+
   const defaultTimeInSeconds = useAppStore.use.gameTimeInMinutes() * 60;
   const [time, setTime] = useState(defaultTimeInSeconds);
+  const [isPlaying, setIsPlaying] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout>();
 
   const toggleCountdown = (): void => {
-    console.log(time);
-
     if (intervalRef.current !== undefined) {
       clearInterval(intervalRef.current);
       intervalRef.current = undefined;
+      setIsPlaying(false);
     } else {
       intervalRef.current = setInterval(() => {
         setTime((prevTime) => prevTime - 1);
+        setIsPlaying(true);
       }, 1000);
     }
   };
 
-  const handleButtonPress = (winner: PlayerRole): void => {
-    navigate('Winner', { winner });
-  };
-
   useEffect(() => {
+    const unsubscribe = addListener('focus', () => {
+      toggleCountdown();
+    });
+
     return () => {
       clearInterval(intervalRef.current);
+      unsubscribe();
     };
   }, []);
 
   return (
-    <Container style={styles.wrapper}>
+    <Container style={styles.container}>
       <View style={styles.textContainer}>
         <BaseText>{t('hint.timeForQuestions').toUpperCase()}</BaseText>
       </View>
-      <TouchableOpacity style={styles.clockContainer} onPress={toggleCountdown}>
+      <TouchableOpacity
+        onPress={() => {
+          toggleCountdown();
+          navigate('VotingModal');
+        }}
+      >
+        <CountdownCircleTimer
+          isPlaying={isPlaying}
+          duration={time}
+          colors={CORAL_RED}
+          size={ms(200)}
+          strokeWidth={ms(8)}
+          strokeLinecap="butt"
+        >
+          {() => <Pause width={ms(50)} height={ms(50)} fill={CORAL_RED} />}
+        </CountdownCircleTimer>
+      </TouchableOpacity>
+
+      <View style={styles.textContainer}>
         <BaseText style={styles.clockTime}>
           {new Date(time * 1000).toISOString().slice(14, 19)}
         </BaseText>
-        <Clock width={ms(313)} height={mvs(313)} />
-      </TouchableOpacity>
-      <View style={styles.textContainer}>
         <BaseText>{t('timer.chooseThePerson')}</BaseText>
       </View>
-      <View style={styles.buttons}>
-        <ActionButton
-          title={t('timer.spies')}
-          onPress={() => {
-            handleButtonPress(PlayerRole.SPY);
-          }}
-        />
-        <ActionButton
-          title={t('timer.civils')}
-          onPress={() => {
-            handleButtonPress(PlayerRole.CIVIL);
-          }}
-        />
-      </View>
-
-      {/* <View style={styles.overlayContainer}> */}
-      {/*  <View style={styles.overlaySide}> */}
-      {/*    <SpySide width={ms(300)} height={mvs(290)} /> */}
-      {/*    <BaseText whiteText style={styles.overlayText}> */}
-      {/*      {t('timer.spies')} */}
-      {/*    </BaseText> */}
-      {/*  </View> */}
-      {/*  <BaseText>{t('timer.whoWon')}</BaseText> */}
-      {/*  <View style={styles.overlaySide}> */}
-      {/*    <CivilSide width={ms(300)} height={mvs(300)} /> */}
-      {/*    <BaseText whiteText style={styles.overlayText}> */}
-      {/*      {t('timer.civils')} */}
-      {/*    </BaseText> */}
-      {/*  </View> */}
-      {/* </View> */}
     </Container>
   );
 }
 
 const styles = ScaledSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
-  },
-  wrapper: {
-    display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: '60@mvs',
+    justifyContent: 'space-around',
+    height: '100%',
   },
   textContainer: {
     gap: '12@mvs',
   },
-  clockContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   clockTime: {
-    position: 'absolute',
     fontSize: '51@ms',
     lineHeight: '51@ms',
     fontWeight: '400',
     color: CORAL_RED,
-    paddingTop: '40@mvs',
-    zIndex: 1,
   },
-  overlayContainer: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    zIndex: 1,
-  },
-  overlaySide: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  overlayText: {
-    position: 'absolute',
-    paddingTop: '80@mvs',
-  },
-  buttons: { display: 'flex', flexDirection: 'row' },
 });

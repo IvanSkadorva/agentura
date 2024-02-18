@@ -72,7 +72,11 @@ function App(): React.JSX.Element {
           <Stack.Screen
             name="VotingModal"
             component={VotingModal}
-            options={{ headerShown: false, presentation: 'transparentModal' }}
+            options={{
+              headerShown: false,
+              presentation: 'containedModal',
+              // animation: 'none',
+            }}
           />
           <Stack.Screen name="Winner" component={Winner} options={{ headerShown: false }} />
           <Stack.Screen name="Info" component={Info} />

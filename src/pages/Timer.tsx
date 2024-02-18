@@ -86,7 +86,6 @@ const styles = ScaledSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-around',
-    height: '100%',
   },
   textContainer: {
     gap: '12@mvs',

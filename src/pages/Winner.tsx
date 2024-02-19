@@ -8,6 +8,7 @@ import { BaseText } from '../components/atoms/BaseText.tsx';
 import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
 import CivilWins from '../assets/images/civil-wins.svg';
 import SpyWins from '../assets/images/spy-wins.svg';
+import SpiesWin from '../assets/images/spies-win.svg';
 import { View } from 'react-native';
 import { useAppStore } from '../store/app-store.ts';
 import { ActionButton } from '../components/molecules/ActionButton.tsx';
@@ -20,12 +21,13 @@ export function Winner(): JSX.Element {
   const { t } = useTranslation();
   const currentGame = useAppStore.use.currentGame();
   const spies = currentGame.players.filter((player) => player.role === 'role.spy');
+  const SpyIcon = spies.length > 1 ? SpiesWin : SpyWins;
 
   return (
     <Container style={styles.wrapper}>
       <BaseText>{t('winner.won')}</BaseText>
       {winner === PlayerRole.SPY ? (
-        <SpyWins width={ms(203)} height={mvs(289)} />
+        <SpyIcon width={ms(203)} height={mvs(289)} />
       ) : (
         <CivilWins width={ms(313)} height={mvs(178)} />
       )}
@@ -34,8 +36,10 @@ export function Winner(): JSX.Element {
         <BaseText>{t('role.location')}</BaseText>
         <BaseText>{t(currentGame.location.key)}</BaseText>
       </View>
-      <View>
-        <BaseText>{t('winner.spiesWere')}</BaseText>
+      <View style={spies.length > 1 ? styles.spiesContainerColumn : styles.spiesContainerRow}>
+        <BaseText>
+          {t('winner.spiesWere', { count: spies.length, postProcess: 'interval' }) + '  '}
+        </BaseText>
         <View style={styles.spiesList}>
           {spies.map((spy, index) => (
             <BaseText key={spy.id}>
@@ -75,6 +79,14 @@ const styles = ScaledSheet.create({
   },
   textContainer: {
     gap: '10@mvs',
+  },
+  spiesContainerRow: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  spiesContainerColumn: {
+    display: 'flex',
+    flexDirection: 'column',
   },
   spiesList: {
     display: 'flex',

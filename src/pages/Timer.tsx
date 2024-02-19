@@ -1,5 +1,5 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { type RootStackParamList } from '../App.tsx';
+import { PlayerRole, type RootStackParamList } from '../App.tsx';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity, View } from 'react-native';
@@ -19,22 +19,14 @@ export function Timer(): JSX.Element {
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { navigate, addListener } = useNavigation<TimerProps['navigation']>();
 
-  const defaultTimeInSeconds = useAppStore.use.gameTimeInMinutes() * 60;
+  // useAppStore.use.gameTimeInMinutes() * 60
+  const defaultTimeInSeconds = 15;
   const [time, setTime] = useState(defaultTimeInSeconds);
   const [isPlaying, setIsPlaying] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout>();
 
   const toggleCountdown = (): void => {
-    if (intervalRef.current !== undefined) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = undefined;
-      setIsPlaying(false);
-    } else {
-      intervalRef.current = setInterval(() => {
-        setTime((prevTime) => prevTime - 1);
-        setIsPlaying(true);
-      }, 1000);
-    }
+    setIsPlaying(!isPlaying);
   };
 
   useEffect(() => {
@@ -61,11 +53,15 @@ export function Timer(): JSX.Element {
       >
         <CountdownCircleTimer
           isPlaying={isPlaying}
-          duration={time}
+          duration={defaultTimeInSeconds}
           colors={CORAL_RED}
           size={ms(200)}
           strokeWidth={ms(8)}
           strokeLinecap="butt"
+          onComplete={() => {
+            navigate('Winner', { winner: PlayerRole.SPY });
+          }}
+          onUpdate={setTime}
         >
           {() => <Pause width={ms(50)} height={ms(50)} fill={CORAL_RED} />}
         </CountdownCircleTimer>

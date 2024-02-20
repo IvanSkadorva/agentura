@@ -25,20 +25,23 @@ export function Winner(): JSX.Element {
 
   return (
     <Container style={styles.wrapper}>
-      <BaseText>{t('winner.won')}</BaseText>
+      <BaseText>{t('winner.won').toUpperCase()}</BaseText>
       {winner === PlayerRole.SPY ? (
-        <SpyIcon width={ms(203)} height={mvs(289)} />
+        <SpyIcon height={mvs(265)} />
       ) : (
         <CivilWins width={ms(313)} height={mvs(178)} />
       )}
-      <BaseText>{t(winner === PlayerRole.SPY ? 'timer.spies' : 'timer.civils')}</BaseText>
+      <BaseText>
+        {t(winner === PlayerRole.SPY ? 'timer.spies' : 'timer.civils').toUpperCase()}
+      </BaseText>
       <View>
-        <BaseText>{t('role.location')}</BaseText>
+        <BaseText>{t('role.location').toUpperCase()}</BaseText>
         <BaseText>{t(currentGame.location.key)}</BaseText>
       </View>
       <View style={spies.length > 1 ? styles.spiesContainerColumn : styles.spiesContainerRow}>
         <BaseText>
-          {t('winner.spiesWere', { count: spies.length, postProcess: 'interval' }) + '  '}
+          {t('winner.spiesWere', { count: spies.length, postProcess: 'interval' }).toUpperCase() +
+            '  '}
         </BaseText>
         <View style={styles.spiesList}>
           {spies.map((spy, index) => (
@@ -75,7 +78,7 @@ const styles = ScaledSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '36@mvs',
+    gap: '30@mvs',
   },
   textContainer: {
     gap: '10@mvs',

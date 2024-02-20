@@ -7,8 +7,8 @@ import { TimeStepper } from '../components/organisms/TimeStepper.tsx';
 import { CheckboxWithLabel } from '../components/molecules/CheckboxWithLabel.tsx';
 import { useTranslation } from 'react-i18next';
 import { BaseText } from '../components/atoms/BaseText.tsx';
-import Localization from '../assets/images/localization.svg';
-import { ActionButton } from '../components/molecules/ActionButton.tsx';
+import Location from '../assets/images/localization.svg';
+import { ActionButton, ButtonType } from '../components/molecules/ActionButton.tsx';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App.tsx';
@@ -43,21 +43,22 @@ export const Configuration = (): JSX.Element => {
             onPress={setIsRoleGame}
             defaultValue={isRoleGame}
           />
-          <CheckboxWithLabel
-            label={t('configuration.hintsForSpy')}
-            onPress={setEnableHintsForSpies}
-            defaultValue={enableHintsForSpies}
-          />
-          <View style={styles.localizationsContainer}>
+          {/* <CheckboxWithLabel */}
+          {/*  label={t('configuration.hintsForSpy')} */}
+          {/*  onPress={setEnableHintsForSpies} */}
+          {/*  defaultValue={enableHintsForSpies} */}
+          {/* /> */}
+          <View style={styles.locationContainer}>
             <BaseText>{t('configuration.localizationsChosen')}</BaseText>
             <BaseText>{locations.filter((value) => value.enabled).length}</BaseText>
-            <TouchableOpacity
+            <ActionButton
+              icon={<Location />}
+              style={styles.locationButton}
+              type={ButtonType.Secondary}
               onPress={() => {
                 navigation.navigate('Locations');
               }}
-            >
-              <Localization />
-            </TouchableOpacity>
+            />
           </View>
         </View>
       </ScrollView>
@@ -76,10 +77,14 @@ const styles = ScaledSheet.create({
     flexDirection: 'column',
     gap: '36@msr',
   },
-  localizationsContainer: {
+  locationContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  locationButton: {
+    width: '50@msr',
+    height: '50@msr',
   },
 });

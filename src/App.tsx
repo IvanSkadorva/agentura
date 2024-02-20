@@ -16,6 +16,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { LocationSettings } from './components/organisms/LocationSettings.tsx';
 import { LocationForm } from './pages/LocationForm.tsx';
 import { VotingModal } from './pages/VotingModal.tsx';
+import { ChooseWinner } from './pages/ChooseWinner.tsx';
 
 export enum PlayerRole {
   CIVIL,
@@ -36,6 +37,7 @@ export type RootStackParamList = {
   Onboarding: undefined;
   LocationForm: { id?: string };
   VotingModal: undefined;
+  ChooseWinner: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -65,7 +67,11 @@ function App(): React.JSX.Element {
           />
           <Stack.Screen name="LocationForm" component={LocationForm} />
 
-          <Stack.Screen name="PlayerDistribution" component={PlayerDistribution} />
+          <Stack.Screen
+            name="PlayerDistribution"
+            options={{ headerShown: false }}
+            component={PlayerDistribution}
+          />
           <Stack.Screen name="Role" component={Role} options={{ headerShown: false }} />
           <Stack.Screen name="Hint" component={Hint} options={{ headerShown: false }} />
           <Stack.Screen name="Timer" component={Timer} options={{ headerShown: false }} />
@@ -75,8 +81,12 @@ function App(): React.JSX.Element {
             options={{
               headerShown: false,
               presentation: 'containedModal',
-              // animation: 'none',
             }}
+          />
+          <Stack.Screen
+            name="ChooseWinner"
+            component={ChooseWinner}
+            options={{ headerShown: false }}
           />
           <Stack.Screen name="Winner" component={Winner} options={{ headerShown: false }} />
           <Stack.Screen name="Info" component={Info} />

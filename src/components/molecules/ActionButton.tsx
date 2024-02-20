@@ -10,7 +10,8 @@ export enum ButtonType {
 }
 
 interface ActionButtonProps {
-  title: string;
+  title?: string;
+  icon?: JSX.Element;
   onPress: () => void;
   type?: ButtonType;
   style?: RegisteredStyle<ViewStyle>;
@@ -21,6 +22,7 @@ export const ActionButton = ({
   onPress,
   type = ButtonType.Primary,
   style,
+  icon,
 }: ActionButtonProps): JSX.Element => {
   return (
     <TouchableOpacity
@@ -31,7 +33,8 @@ export const ActionButton = ({
       ]}
       onPress={onPress}
     >
-      <BaseText whiteText={type === ButtonType.Primary}>{title}</BaseText>
+      {icon != null && icon}
+      {title != null && <BaseText whiteText={type === ButtonType.Primary}>{title}</BaseText>}
     </TouchableOpacity>
   );
 };

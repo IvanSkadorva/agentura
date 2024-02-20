@@ -59,7 +59,7 @@ export function Timer(): JSX.Element {
           strokeWidth={ms(8)}
           strokeLinecap="butt"
           onComplete={() => {
-            navigate('Winner', { winner: PlayerRole.SPY });
+            navigate('ChooseWinner');
           }}
           onUpdate={setTime}
         >

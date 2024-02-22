@@ -1,0 +1,137 @@
+{
+  "buttons": {
+    "play": "Spielen",
+    "howToPlay": "Wie spielt man?",
+    "forward": "Weiter",
+    "showRole": "Rolle zeigen",
+    "ok": "OK",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "save": "Speichern",
+    "continue": "Fortfahren"
+  },
+  "gameTitle": "Spion",
+  "configuration": {
+    "civil": "Spieler",
+    "spy": "Spione",
+    "time": "Zeit",
+    "minutes": "(1-4)[Minuten];(5-inf)[Minuten];",
+    "enableRoles": "Mit Rollen spielen",
+    "hintsForSpy": "Hinweise für den Spion",
+    "localizationsChosen": "Ausgewählte Orte"
+  },
+  "playerDistribution": {
+    "player": "Spieler",
+    "showRoleExplanation": "Drücken Sie, um die Rolle anzuzeigen"
+  },
+  "role": {
+    "you": "Du",
+    "civil": "Spieler",
+    "spy": "Spion",
+    "location": "Ort:"
+  },
+  "hint": {
+    "timeForQuestions": "Zeit für Fragen",
+    "explanation": "Wenn bereit, tippen Sie auf den Bildschirm, um den Timer zu starten",
+    "chooseThePerson": "Wählen Sie eine Person aus, um die erste Frage zu stellen (oder den Spion aus dem vorherigen Spiel)"
+  },
+  "timer": {
+    "chooseThePerson": "Tippen Sie auf Pause und organisieren Sie die Abstimmung",
+    "hint": "Zeit für die Organisation der endgültigen Abstimmung oder für den Spion, um seinen Tipp abzugeben.",
+    "whoWon": "Wer hat gewonnen?",
+    "spies": "Spione",
+    "civils": "Spieler",
+    "pauseHint": "Wählen Sie die Gewinner oder setzen Sie das Spiel fort"
+  },
+  "winner": {
+    "won": "Gewonnen",
+    "newGame": "Neues Spiel",
+    "spiesWere": "(1)[Der Spion war:];(2-inf)[Die Spione waren:];"
+  },
+  "info": {
+    "aboutUs": "Über uns",
+    "aboutUsText": "Dieses Projekt wurde ins Leben gerufen, weil andere Spionagespiele nicht über die Möglichkeit verfügten, neue Orte zu bearbeiten und zu erstellen. Das musste behoben werden.",
+    "callToAction": "Wenn Sie Vorschläge haben, schreiben Sie an Telegram oder Instagram."
+  },
+  "onboarding": {
+    "slide1": {
+      "title": "Spion - ein Spiel, bei dem Fragen an dich gestellt werden!",
+      "description": "Alles, was du brauchst, sind mindestens drei Personen, Handys und das Lesen dieser Regeln."
+    },
+    "slide2": {
+      "title": "Dieses Spiel hat Spione und Einheimische",
+      "description": "Das Spiel bestimmt die Rollen und informiert Einheimische (nicht die Spione) über ihre Standorte."
+    },
+    "slide3": {
+      "title": "Das Hauptziel für die Einheimischen - die Spione finden",
+      "description": "Einheimische sehen den Ort und müssen, ohne ihn zu verraten, während des Spiels herausfinden, wer der Spion ist."
+    },
+    "slide4": {
+      "title": "Das Hauptziel für den Spion - den Ort verstehen",
+      "description": "Verrate dich nicht! Nur wenn du sicher bist, offenbare dich und sage deine Vermutung."
+    },
+    "slide5": {
+      "title": "Wähle eine Person aus, um die erste Frage zu stellen",
+      "description": "Nach der Antwort stelle die nächste Frage an einen beliebigen Spieler, außer an den, der die vorherige Frage gestellt hat."
+    },
+    "slide6": {
+      "title": "Fragt euch gegenseitig nach dem Ort",
+      "description": "Durch Fragen und Antworten versucht herauszufinden, wer den Ort wirklich kennt und wer nur vorgibt. Sei vorsichtig und verrate dich nicht!"
+    },
+    "slide7": {
+      "title": "Du bist der Spion und denkst, du hast den Ort verstanden?",
+      "description": "Tippe auf Pause und verkünde den Ort. Wenn du richtig geraten hast, gewinnst du! Wenn nicht, gewinnen die Einheimischen."
+    },
+    "slide8": {
+      "title": "Jeder Spieler kann nur einmal abstimmen",
+      "description": "Tippe auf Pause und teile deine Gedanken über den Spion mit. Wenn die Mehrheit auch für die vorgeschlagene Person stimmt, gibt diese Person ihre Rolle preis."
+    },
+    "slide9": {
+      "title": "Wenn diese Person der Spion ist",
+      "description": "Dann gewinnen die Einheimischen. Auf dem Bildschirm des Gewinners siehst du den Ort und wer der Spion war."
+    },
+    "slide10": {
+      "title": "Wenn diese Person ein Einheimischer ist",
+      "description": "Dann gewinnen die Spione. Wenn die Zeit abläuft und der Spion selbst während der endgültigen Abstimmung (nach Ablauf der Zeit) nicht gefunden wird, gewinnt der Spion."
+    },
+    "slide11": {
+      "title": "Mit Rollen spielen",
+      "description": "Wenn diese Option aktiviert ist, erhalten Einheimische Rollen. Beantworte und stelle Fragen unter Berücksichtigung deiner Rolle."
+    },
+    "slide12": {
+      "title": "Viel Spaß beim Spielen!",
+      "description": "Vergiss nicht, Einstellungen und Orte für interessantere Spiele und hitzige Diskussionen zu ändern! Du kannst die Orte bearbeiten, indem du auf das Karten-Symbol drückst und dann nach links wischst, um die Einstellungen für den Ort zu öffnen."
+    }
+  },
+  "locations": [
+    {
+      "id": "1",
+      "key": "Laden 'Heimische Ecke'",
+      "roles": ["Kassierer", "Kunde", "Inhaber", "Lader", "Lokaler Obdachloser", "Oma verkauft Tomaten", "Junge, von seinem Vater nach Brot geschickt", "Kunde", "Kunde", "Kollektivbauernhof-Manager"],
+      "enabled": true
+    },
+    {
+      "id": "2",
+      "key": "Lokaler Rat",
+      "roles": ["Oma in der Schlange", "Opa in der Schlange", "Einfach nachfragend", "Beamter", "Reinigungskraft", "Wächter", "Manager", "Besucher", "Besucher", "Verwirrter Besucher"],
+      "enabled": true
+    },
+    {
+      "id": "3",
+      "key": "Dorfclub",
+      "roles": ["DJ", "Traktorfahrer Tolya", "Stylischer Besucher", "Stylischster Kerl", "Stylischstes Mädchen", "Rap-Enthusiast", "Chanson-Enthusiast", "Tänzer", "Tänzer", "Betrunkener Akkordeonspieler"],
+      "enabled": true
+    }
+  ],
+  "locationSettings": {
+    "reset": "Zurücksetzen auf Standardeinstellungen",
+    "addNew": "Neuen Ort hinzufügen",
+    "info": "Information"
+  },
+  "locationForm": {
+    "name": "Ortsname",
+    "roles": "1-10 Rollen von Einheimischen durch Kommas getrennt (Panzerfahrer, Sanitäter, Scharfschütze...). Wenn weniger als 10, können einige Rollen während des Spiels wiederholt werden.",
+    "editLocation": "Ort bearbeiten",
+    "addLocation": "Ort hinzufügen"
+  }
+}

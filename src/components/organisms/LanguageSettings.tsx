@@ -7,10 +7,12 @@ import Settings from '../../assets/images/settings.svg';
 import { useTranslation } from 'react-i18next';
 import { ScaledSheet } from 'react-native-size-matters';
 import { MAIN_WHITE } from '../../styles/colors.ts';
+import { useAppStore } from '../../store/app-store.ts';
 
 export function LanguageSettings(): JSX.Element {
   const { i18n } = useTranslation();
   const [showModal, setShowModal] = useState(false);
+  const setLanguage = useAppStore.use.setLanguage();
 
   const toggleModal = (): void => {
     setShowModal(!showModal);
@@ -31,8 +33,9 @@ export function LanguageSettings(): JSX.Element {
               <View style={styles.languagesList}>
                 {languages.map(({ id, label }) => (
                   <TouchableOpacity
-                    onPress={async () => {
+                    onPress={async (): Promise<void> => {
                       await i18n.changeLanguage(id);
+                      setLanguage(id);
                       toggleModal();
                     }}
                     key={id}

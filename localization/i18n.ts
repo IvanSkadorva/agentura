@@ -6,6 +6,7 @@ import en from './en.json';
 import be_la from './be_la.json';
 import be_cy from './be_cy.json';
 import pl from './pl.json';
+import de from './de.json';
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -15,6 +16,7 @@ const resources = {
   be_la: { translation: be_la },
   be_cy: { translation: be_cy },
   pl: { translation: pl },
+  de: { translation: de },
 };
 
 i18n
@@ -22,7 +24,7 @@ i18n
   .use(intervalPlural) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: 'be_cy', // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+    lng: 'en', // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option
     compatibilityJSON: 'v3',
@@ -36,10 +38,11 @@ interface Language {
   label: string;
 }
 export const languages: Language[] = [
+  { id: 'pl', label: 'Polish' },
   { id: 'en', label: 'English' },
+  { id: 'de', label: 'German' },
   { id: 'be_la', label: 'Belarusian (Latin)' },
   { id: 'be_cy', label: 'Belarusian (Cyrillic)' },
-  { id: 'pl', label: 'Polish' },
 ];
 
 export default i18n;

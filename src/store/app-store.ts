@@ -4,6 +4,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import sampleSize from 'lodash.samplesize';
 import i18n from 'i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NativeModules, Platform } from 'react-native';
 
 type WithSelectors<S> = S extends { getState: () => infer T }
   ? S & { use: { [K in keyof T]: () => T[K] } }
@@ -41,6 +42,7 @@ interface AppState {
   isRoleGame: boolean;
   enableHintsForSpies: boolean;
   locations: Location[];
+  language: string;
 }
 
 interface AppActions {
@@ -56,8 +58,33 @@ interface AppActions {
   editLocation: (location: Location) => void;
   startGame: () => void;
   resetLocations: () => void;
+  setLanguage: (language: string) => void;
 }
 
+const getBaseLocations = (): Location[] => {
+  return i18n.t('locations', { returnObjects: true }) as unknown as Location[];
+};
+
+const getPreferredLanguage = (): string => {
+  const defaultLang = 'en';
+  const supportedLanguages = ['en', 'pl', 'ru', 'ua', 'be', 'by', 'de'];
+  const locale =
+    Platform.OS === 'ios'
+      ? NativeModules.SettingsManager?.settings?.AppleLocale ||
+        NativeModules.SettingsManager?.settings?.AppleLanguages[0] ||
+        ''
+      : NativeModules.I18nManager?.localeIdentifier || '';
+
+  const [lowerCaseLocale] = locale.toString().split('_');
+
+  if (supportedLanguages.includes(lowerCaseLocale as string)) {
+    console.log('locale', lowerCaseLocale);
+    return lowerCaseLocale === 'ru' || lowerCaseLocale === 'ua' ? 'be_cy' : lowerCaseLocale;
+  }
+  console.log(`locale ${lowerCaseLocale} is not supported, defaulting to ${defaultLang}`);
+
+  return defaultLang;
+};
 const initialState: AppState = {
   civils: 4,
   spies: 1,
@@ -65,7 +92,8 @@ const initialState: AppState = {
   isRoleGame: false,
   currentGame: { players: [], location: { id: '0', key: '', enabled: false, roles: [] } },
   enableHintsForSpies: false,
-  locations: i18n.t('locations', { returnObjects: true }) as unknown as Location[],
+  locations: getBaseLocations(),
+  language: getPreferredLanguage(),
 };
 
 const useAppStoreBase = create<AppState & AppActions>()(
@@ -137,12 +165,21 @@ const useAppStoreBase = create<AppState & AppActions>()(
       },
       resetLocations: () => {
         set((state) => {
-          state.locations = initialState.locations;
+          state.locations = getBaseLocations();
         });
       },
       addLocation: (location) => {
         set((state) => {
           state.locations.push(location);
+        });
+      },
+      setLanguage: (language) => {
+        set((state) => {
+          state.language = language;
+
+          const defaultLocations = getBaseLocations();
+          const customLocations = state.locations.filter((location) => location.id.length > 2);
+          state.locations = [...defaultLocations, ...customLocations];
         });
       },
       editLocation: (location) => {

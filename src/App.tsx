@@ -17,6 +17,9 @@ import { LocationSettings } from './components/organisms/LocationSettings.tsx';
 import { LocationForm } from './pages/LocationForm.tsx';
 import { VotingModal } from './pages/VotingModal.tsx';
 import { ChooseWinner } from './pages/ChooseWinner.tsx';
+import { useAppStore } from './store/app-store.ts';
+import { useEffect } from 'react';
+import i18n from 'i18next';
 
 export enum PlayerRole {
   CIVIL,
@@ -43,6 +46,12 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App(): React.JSX.Element {
+  const language = useAppStore((state) => state.language);
+
+  useEffect(() => {
+    void i18n.changeLanguage(language);
+  }, [language]);
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>

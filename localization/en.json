@@ -16,9 +16,9 @@
     "spy": "Spies",
     "time": "Time",
     "minutes": "(1-4)[minutes];(5-inf)[minutes];",
-    "enableRoles": "Play with Roles",
-    "hintsForSpy": "Hints for Spy",
-    "localizationsChosen": "Selected Locations"
+    "enableRoles": "Play with roles",
+    "hintsForSpy": "Hints for spy",
+    "localizationsChosen": "Selected locations"
   },
   "playerDistribution": {
     "player": "Player",
@@ -31,7 +31,7 @@
     "location": "Location:"
   },
   "hint": {
-    "timeForQuestions": "Time for Questions",
+    "timeForQuestions": "Time for questions",
     "explanation": "When ready, tap the screen to start the timer",
     "chooseThePerson": "Choose a person to ask the first question (or the spy from the previous game)"
   },
@@ -50,7 +50,7 @@
   },
   "info": {
     "aboutUs": "About Us",
-    "aboutUsText": "This project was created because other spy games lacked local Belarusian locations and language. It needed to be fixed.",
+    "aboutUsText": "This project was created because other spy games lacked  the editing and creating new locations functionality. It needed to be fixed.",
     "callToAction": "If you have any suggestions, write to Telegram or Instagram."
   },
   "onboarding": {

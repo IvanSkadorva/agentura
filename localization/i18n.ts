@@ -5,6 +5,7 @@ import intervalPlural from 'i18next-intervalplural-postprocessor';
 import en from './en.json';
 import be_la from './be_la.json';
 import be_cy from './be_cy.json';
+import pl from './pl.json';
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -13,6 +14,7 @@ const resources = {
   en: { translation: en },
   be_la: { translation: be_la },
   be_cy: { translation: be_cy },
+  pl: { translation: pl },
 };
 
 i18n
@@ -37,6 +39,7 @@ export const languages: Language[] = [
   { id: 'en', label: 'English' },
   { id: 'be_la', label: 'Belarusian (Latin)' },
   { id: 'be_cy', label: 'Belarusian (Cyrillic)' },
+  { id: 'pl', label: 'Polish' },
 ];
 
 export default i18n;

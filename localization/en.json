@@ -1,17 +1,138 @@
- {
-   "buttons": {
-     "play": "Play",
-     "howToPlay": "How to play?"
-   },
-   "gameTitle": "Spy",
-   "configuration": {
-     "civil": "Players",
-     "spy": "Spies",
-     "time": "Time",
-     "minutes": "minutes",
-     "enableRoles": "Enable roles",
-     "hintsForSpy": "Hints for spies",
-     "localizationsChosen": "Places chosen"
+{
+  "buttons": {
+    "play": "Play",
+    "howToPlay": "How to Play?",
+    "forward": "Forward",
+    "showRole": "Reveal Role",
+    "ok": "Okay",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "continue": "Continue"
+  },
+  "gameTitle": "Spy Game",
+  "configuration": {
+    "civil": "Players",
+    "spy": "Spies",
+    "time": "Time",
+    "minutes": "(1-4)[minutes];(5-inf)[minutes];",
+    "enableRoles": "Play with Roles",
+    "hintsForSpy": "Hints for Spy",
+    "localizationsChosen": "Selected Locations"
+  },
+  "playerDistribution": {
+    "player": "Player",
+    "showRoleExplanation": "Press to show role"
+  },
+  "role": {
+    "you": "You",
+    "civil": "Player",
+    "spy": "Spy",
+    "location": "Location:"
+  },
+  "hint": {
+    "timeForQuestions": "Time for Questions",
+    "explanation": "When ready, tap the screen to start the timer",
+    "chooseThePerson": "Choose a person to ask the first question (or the spy from the previous game)"
+  },
+  "timer": {
+    "chooseThePerson": "Tap on pause and organize the voting",
+    "hint": "Time to organize the final voting or for the spy to state their guess.",
+    "whoWon": "Who won?",
+    "spies": "Spies",
+    "civils": "Players",
+    "pauseHint": "Choose the winners or continue playing"
+  },
+  "winner": {
+    "won": "Won",
+    "newGame": "New Game",
+    "spiesWere": "(1)[Spy was:];(2-inf)[Spies were:];"
+  },
+  "info": {
+    "aboutUs": "About Us",
+    "aboutUsText": "This project was created because other spy games lacked local Belarusian locations and language. It needed to be fixed.",
+    "callToAction": "If you have any suggestions, write to Telegram or Instagram."
+  },
+  "onboarding": {
+    "slide1": {
+      "title": "Spy - a game, which has questions to you!",
+      "description": "All you need is at least three people, phones, and to read these rules."
+    },
+    "slide2": {
+      "title": "This game has spies and locals",
+      "description": "The game will determine roles and inform locals (not the spies) about their locations."
+    },
+    "slide3": {
+      "title": "The main goal for locals - find the spies",
+      "description": "Locals see the location and must, without revealing it, figure out who the spiy is during the game."
+    },
+    "slide4": {
+      "title": "The main goal for the spy - to understand the location",
+      "description": "Do not reveal yourself! Only when you are sure, reveal and say your guess."
+    },
+    "slide5": {
+      "title": "Choose a person to ask the first question",
+      "description": "After answering, ask the next question to any player except the one who asked the previous question."
+    },
+    "slide6": {
+      "title": "Ask each other about the location",
+      "description": "Through questions and answers, try to understand who really knows the location and who is just pretending. Be careful and do not reveal yourself!"
+    },
+    "slide7": {
+      "title": "You're the spy and think you've understood the location?",
+      "description": "Tap on pause and announce the location. If you guessed, you win! If not, the locals win."
+    },
+    "slide8": {
+      "title": "Each player can start voting once",
+      "description": "Tap on pause and share your thoughts about the spy. If the majority also votes for the proposed person, that person reveals their role."
+    },
+    "slide9": {
+      "title": "If that person is the spy",
+      "description": "Then the locals win. On the winner's screen, you can see the location and who the spy was."
+    },
+    "slide10": {
+      "title": "If that person is a local",
+      "description": "Then the spies win. If time runs out and the spy is not found even during the final voting (after the end of the time), the spy wins."
+    },
+    "slide11": {
+      "title": "Play with roles",
+      "description": "If this option is enabled, locals receive roles. Answer and ask questions considering your role."
+    },
+    "slide12": {
+      "title": "Enjoy the game!",
+      "description": "Don't forget to change settings and locations for more interesting games and heated discussions! You can edit locations by pressing the map icon, then swipe left to open location settings."
+    }
+  },
+  "locations": [
+    {
+      "id": "1",
+      "key": "Shop 'Native Corner'",
+      "roles": ["Cashier", "Customer", "Owner", "Loader", "Local homeless person", "Grandma selling tomatoes", "Boy sent by his father for bread", "Customer", "Customer", "Collective farm manager"],
+      "enabled": true
+    },
+    {
+      "id": "2",
+      "key": "Local Council",
+      "roles": ["Grandma in line", "Grandpa in line", "Just asking", "Official", "Cleaner", "Guard", "Manager", "Visitor", "Visitor", "Confused visitor"],
+      "enabled": true
+    },
+    {
+      "id": "3",
+      "key": "Village Club",
+      "roles": ["DJ", "Tractor driver Tolya", "Stylish visitor", "Most stylish guy", "Most stylish girl", "Rap enthusiast", "Chanson enthusiast", "Dancer", "Dancer", "Drunk accordion player"],
+      "enabled": true
+    }
+  ],
+  "locationSettings": {
+    "reset": "Reset to Default Settings",
+    "addNew": "Add New Location",
+    "info": "Information"
+  },
+  "locationForm": {
+    "name": "Location Name",
+    "roles": "1-10 roles of locals through commas (Tankist, Medic, Sniper...). If fewer than 10, some roles may repeat during the game.",
+    "editLocation": "Edit Location",
+    "addLocation": "Add Location"
+  }
+}
 
-   }
- }

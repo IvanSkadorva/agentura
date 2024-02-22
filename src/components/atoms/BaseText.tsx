@@ -17,7 +17,7 @@ const styles = ScaledSheet.create({
     fontFamily: FONT_FAMILY_CYGRE,
     fontWeight: 'normal',
     fontSize: '24@msr',
-    lineHeight: '28@msr',
+    lineHeight: '30@msr',
     color: 'black',
     textAlign: 'center',
   },

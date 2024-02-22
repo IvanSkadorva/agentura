@@ -1,0 +1,137 @@
+{
+  "buttons": {
+    "play": "Graj",
+    "howToPlay": "Jak grać?",
+    "forward": "Dalej",
+    "showRole": "Pokaż rolę",
+    "ok": "OK",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "save": "Zapisz",
+    "continue": "Kontynuuj"
+  },
+  "gameTitle": "Szpieg",
+  "configuration": {
+    "civil": "Gracze",
+    "spy": "Szpiedzy",
+    "time": "Czas",
+    "minutes": "(1-4)[minuty];(5-inf)[minut];",
+    "enableRoles": "Graj z rolami",
+    "hintsForSpy": "Wskazówki dla zzpiega",
+    "localizationsChosen": "Wybrane lokacje"
+  },
+  "playerDistribution": {
+    "player": "Gracz",
+    "showRoleExplanation": "Naciśnij, aby pokazać rolę"
+  },
+  "role": {
+    "you": "Ty",
+    "civil": "Gracz",
+    "spy": "Szpieg",
+    "location": "Lokalizacja:"
+  },
+  "hint": {
+    "timeForQuestions": "Czas na Pytania",
+    "explanation": "Kiedy będziesz gotowy, dotknij ekranu, aby uruchomić minutnik",
+    "chooseThePerson": "Wybierz osobę,która pyta pierwsza (lub szpiega z poprzedniej gry)"
+  },
+  "timer": {
+    "chooseThePerson": "Naciśnij pauzę i zorganizuj głosowanie",
+    "hint": "Czas na zorganizowanie ostatecznego głosowania lub na to, aby szpieg podał swoje zgadywanie.",
+    "whoWon": "Kto Wygrał?",
+    "spies": "Szpiedzy",
+    "civils": "Gracze",
+    "pauseHint": "Wybierz zwycięzców lub kontynuuj grę"
+  },
+  "winner": {
+    "won": "Wygrał",
+    "newGame": "Nowa Gra",
+    "spiesWere": "(1)[Szpiegiem był:];(2-inf)[Szpiedzy byli:];"
+  },
+  "info": {
+    "aboutUs": "O Nas",
+    "aboutUsText": "Ten projekt powstał, ponieważ inne podobne gry nie miały języka białoruskiego. To trzeba było naprawić.",
+    "callToAction": "Jeśli masz jakieś sugestie, napisz na Telegramie lub Instagramie."
+  },
+  "onboarding": {
+    "slide1": {
+      "title": "Szpieg - gra, u której są pytania do Ciebie!",
+      "description": "Wszystko, czego potrzebujesz, to co najmniej trzech ludzi, telefony i przeczytanie tych zasad."
+    },
+    "slide2": {
+      "title": "Ta gra ma szpiegów i miejscowych",
+      "description": "Gra określi role i poinformuje miejscowych (nie szpiegów) o ich lokalizacjach."
+    },
+    "slide3": {
+      "title": "Głównym celem miejscowych jest znalezienie szpiegów",
+      "description": "Miejscowi widzą lokalizację i muszą, nie ujawniając jej, zrozumieć kto jest szpiegiem podczas gry."
+    },
+    "slide4": {
+      "title": "Głównym celem szpiega jest zrozumienie lokalizacji",
+      "description": "Nie ujawniaj się! Tylko gdy jesteś pewny, zdradź i powiedz swoje zgadywanie."
+    },
+    "slide5": {
+      "title": "Wybierz osobę, aby zadać pierwsze pytanie",
+      "description": "Po odpowiedzi zadaj następne pytanie dowolnemu graczowi, z wyjątkiem tego, który zadał poprzednie pytanie."
+    },
+    "slide6": {
+      "title": "Pytajcie się nawzajem o lokalizację",
+      "description": "Poprzez pytania i odpowiedzi spróbuj zrozumieć kto naprawdę zna lokalizację, a kto tylko udaje. Bądź ostrożny i nie ujawniaj się!"
+    },
+    "slide7": {
+      "title": "Jesteś szpiegiem i myślisz, że zrozumiałeś lokalizację?",
+      "description": "Naciśnij pauzę i ogłoś lokalizację. Jeśli zgadłeś, wygrywasz! Jeśli nie, wygrywają miejscowi."
+    },
+    "slide8": {
+      "title": "Każdy gracz może rozpocząć głosowanie tylko raz",
+      "description": "Naciśnij pauzę i podziel się swoimi myślami na temat szpiega. Jeśli większość również głosuje za proponowaną osobą, ta osoba ujawnia swoją rolę."
+    },
+    "slide9": {
+      "title": "Jeśli ta osoba jest szpiegiem",
+      "description": "Wtedy wygrywają miejscowi. Na ekranie zwycięzców możesz zobaczyć lokalizację i kto był szpiegiem."
+    },
+    "slide10": {
+      "title": "Jeśli ta osoba jest miejscowym",
+      "description": "Wtedy wygrywają szpiedzy. Jeśli czas się skończy, a szpieg nie zostanie znaleziony nawet podczas ostatecznego głosowania (po zakończeniu czasu), szpieg wygrywa."
+    },
+    "slide11": {
+      "title": "Graj z rolami",
+      "description": "Jeśli ta opcja jest włączona, miejscowi otrzymują role. Odpowiadaj i zadawaj pytania, biorąc pod uwagę swoją rolę."
+    },
+    "slide12": {
+      "title": "Ciesz się grą!",
+      "description": "Nie zapomnij zmieniać ustawień i lokalizacji, aby mieć bardziej interesujące gry i gorące dyskusje! Możesz edytować lokalizacje, naciskając ikonę mapy, a następnie przesuwając w lewo, aby otworzyć ustawienia lokalizacji."
+    }
+  },
+  "locations": [
+    {
+      "id": "1",
+      "key": "Sklep 'Rodzinny Kąt'",
+      "roles": ["Kasjer", "Klient", "Właściciel", "Ładowacz", "Lokalny bezdomny", "Babcia sprzedająca pomidory", "Chłopiec posłany przez ojca po chleb", "Klient", "Klient", "Kierownik spółdzielni"],
+      "enabled": true
+    },
+    {
+      "id": "2",
+      "key": "Miejska Rada",
+      "roles": ["Babcia w kolejce", "Dziadek w kolejce", "Pytający", "Urzędnik", "Sprzątaczka", "Ochroniarz", "Kierownik", "Gość", "Gość", "Zdezorientowany gość"],
+      "enabled": true
+    },
+    {
+      "id": "3",
+      "key": "Wiejski Klub",
+      "roles": ["DJ", "Kierowca traktora Tolek", "Stylowy gość", "Najmodniejszy chłopak", "Najmodniejsza dziewczyna", "Miłośnik rapu", "Miłośnik szansonu", "Tancerz", "Tancerz", "Upity akordeonista"],
+      "enabled": true
+    }
+  ],
+  "locationSettings": {
+    "reset": "Zresetuj do domyślnych ustawień",
+    "addNew": "Dodaj nową lokalizację",
+    "info": "Informacje"
+  },
+  "locationForm": {
+    "name": "Nazwa Lokalizacji",
+    "roles": "1-10 ról miejscowych oddzielonych przecinkami (Czołgista, Sanitariusz, Snajper...). Jeśli jest mniej niż 10, niektóre role mogą się powtarzać podczas gry.",
+    "editLocation": "Edytuj Lokalizację",
+    "addLocation": "Dodaj Lokalizację"
+  }
+}

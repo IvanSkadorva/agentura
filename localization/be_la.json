@@ -1,16 +1,137 @@
 {
   "buttons": {
-    "play": "Hrać",
-    "howToPlay": "Jak huliać?"
+    "play": "Hulać",
+    "howToPlay": "Jak hulać?",
+    "forward": "Dalej",
+    "showRole": "Daviedacca",
+    "ok": "Zrazumieła",
+    "delete": "Vydalić",
+    "edit": "Redahavać",
+    "save": "Zachavać",
+    "continue": "Praciahnuć"
   },
   "gameTitle": "Agentura",
   "configuration": {
     "civil": "Hulcy",
     "spy": "Špijony",
     "time": "Čas",
-    "minutes": "(2-4)[сhvilin];(5-inf)[сhvilin];",
-    "enableRoles": "Hulnia pa roliach",
-    "hintsForSpy": "Padkazki dlia špijona",
+    "minutes":"(1-4)[chviliny];(5-inf)[chvilin];",
+    "enableRoles": "Hulnia pa rolach",
+    "hintsForSpy": "Padkazki dla špijona",
     "localizationsChosen": "Miescaŭ abrana"
+  },
+  "playerDistribution": {
+    "player": "Hulec",
+    "showRoleExplanation": "Naciśnicie, kab pakazać rolu"
+  },
+  "role": {
+    "you": "Ty",
+    "civil": "Hulec",
+    "spy": "Špijon",
+    "location": "Lakacyja:"
+  },
+  "hint": {
+    "timeForQuestions": "Čas na pytańni",
+    "explanation": "Kali budziecie hatovyja, naciśnicie na ekran kab zapuścić tajmier",
+    "chooseThePerson": "Abiarycie čałavieka, jaki zadaje pieršym pytańnie (albo špijon ź minułaj hulni)"
+  },
+  "timer": {
+    "chooseThePerson": "Ciśni na paŭzu, kab zładzić hałasavańnie",
+    "hint": "Čas ładzić astatniaje hałasavańnie albo špijonu skazać svaju zdahadku.",
+    "whoWon": "Chto pieramoh?",
+    "spies": "Špijony",
+    "civils": "Hulcy",
+    "pauseHint": "Vybiarycie pieramožcaŭ albo hulajcie dalej"
+  },
+  "winner": {
+    "won": "Pieramahli",
+    "newGame": "Novaja hulnia",
+    "spiesWere": "(1)[Špijonam byŭ:];(2-inf)[Špijonami byli:];"
+  },
+  "info": {
+    "aboutUs": "Ab nas",
+    "aboutUsText": "Heta prajekt paŭstaŭ tamu, što ŭ inšych špijonach niama lakalnych biełaruskich miescaŭ, a taksama biełaruskaj movy. Treba było heta vypravić",
+    "callToAction": "Kali ŭ vas jość niejkija prapanovy, pišycie ŭ Telegram albo Instagram"
+  },
+  "onboarding": {
+    "slide1": {
+    "title": "Agentura - hulnia, u jakoj jość patyńni da ciabie",
+    "description": "Usio, što treba - heta prynamsi try čałavieka, telefon i pračytać hetaja praviły"
+  },
+  "slide2": {
+    "title": "U hetaj hulnie jość agentura i tutejšyja",
+    "description": "Hulnia sama vyznačyć roli j painfarmuje tutejšych(nie Ahienturu) ab ich lakacyi"
+  },
+  "slide3": {
+    "title": "Hałoŭnaje meta tutejšych - znajści ahienturu ’Kramlia’",
+    "description": "Tutejšyja pabačać lakacyju i pavinny, nie vydavaja jaje, zrazumieć chto Agentura za čas hulni"
+  },
+  "slide4": {
+    "title": "Hałoŭnaje meta Agentury - daviedacca pra lakacyju",
+    "description": "Nie vydavaj siabie! Tolki kali budzieš upeŭnieny, raskryjsia i skažy svaju zdahadku"
+  },
+  "slide5": {
+    "title": "Vybiarycie čałavieka, jaki zadaje pieršaje pytańnie",
+    "description": "Adkazaŭšy zadaje lubomu hulcu nastupnaje pytańnie, akramia asoby, jakaja pierad hetym zadavała pytańnie"
+  },
+  "slide6": {
+    "title": "Pytajciesia adzin adnaho ab lakacyi",
+    "description": "Pa pytańniach i adkazach sparbuj zrazumieć chto sapraŭdy viedaju lakacyju, a chto tolki pretenduje. Budź uvažlivym i nie raskryvajsia, zrazumieła!"
+  },
+  "slide7": {
+    "title": "Ty Agentura i dumaješ, što zrazumieŭ lakacyju?",
+    "description": "Naciśni na paŭzu j ahuč miesca. Kali ty adhadaŭ, to pieramoh! Kali nie, to tutejšyja pieramahli"
+  },
+  "slide8": {
+    "title": "Kožny hulec moža pačać hałasavańnie 1 raz",
+    "description": "Naciśni na paŭzu i padzialisia svaimi dumkami nakont Agentury. Kali bolšaść taksama prahałasuje za prapanavanuju asobu, to hetaja asoba havoryć svaju rolu"
+  },
+  "slide9": {
+    "title": "Kali taja asoba - Agentura",
+    "description": "Tady tutejšyja vyjhrali. Na ekranie pieramožcaŭ možna budzie pabačyć lakacyju i chto byŭ Agenturaj"
+  },
+  "slide10": {
+    "title": "Kali taja asoba - tutejšy/aja",
+    "description": "Tady Agentura pieramahła. Kali čas skončyŭsia i Agentura nie była znojdziena navat padčas astatniaha hałasavańnia (paśla kanca času), to Agentura pieramahła"
+  },
+  "slide11": {
+    "title": "Hulnia pa rolach",
+    "description": "Kali hetaja opcyja uklučana, to tutejšyja atrymajuć roli. Adkazvajcie i pytajcie inšych, bieručy pad ŭvahu svaju rolu"
+  },
+  "slide12": {
+    "title": "Pryjemnaj hulni!",
+    "description": "Nie zabyvajcie mianiać nałady i lakacyi kab mieć bolš cikavyja hulni i haračyja dyskusyi! Redahavać lakacyi možna nacisnuŭšy na ikonku mapy, a potym svajpam uleva adčynić nałady lakacyi"
+  }
+},
+  "locations": [
+    {
+    "id": "1",
+    "key": "Krama ’Rodny kut’",
+    "roles": ["Kasir/ka", "Klijent/ka", "Uładalnik/ca", "Hruzčyk/ca", "Miascovy/aja biazdomny/aja", "Babula za pamidorami", "Chłopčyk, jakoha baćka pasłaŭ za pivam", "Klijent/ka", "Klijent/ka", "Načalnik/ca kałhasa"],
+    "enabled": true
+    },
+    {
+    "id": "2",
+    "key": "Rajvykankam",
+    "roles": ["Babula ŭ čarzie", "Dziadula ŭ čarzie", "Idzieš ’tolki zapytać’", "Čynoŭnik/ca", "Prybiralnik/ca", "Achoŭnik/ca", "Načalnik/ca", "Naviedvalnik/ca", "Naviedvalnik/ca", "Raźjušany naviedalnik/ca"],
+    "enabled": true
+    },
+    {
+      "id": "3",
+    "key": "Sielski klub",
+    "roles": ["Dzidžej", "Traktaryst Tolik", "Stały/aja naviedvalnik/ca", "Samy styliovy chłopiec", "Samaja styliovaja dziaŭčyna", "Amatar/ka repu", "Amatar/ka šansonu", "Tancor/ka", "Tancor/ka", "Pjany adnaviaskoviec"],
+    "enabled": true
+    }
+  ],
+  "locationSettings": {
+    "reset": "Skinuć da pačatkovych naładaŭ",
+    "addNew": "Dadać novuju lakacyju",
+    "info": "Daviedka"
+  },
+  "locationForm": {
+    "name": "Nazva lakacyi",
+    "roles": "1-10 rolaŭ tutejšych praz kosku (Tankist, Medyk, Snajpier...). Kali budzie mieńš 10, to niekatoryja roli mohuć paŭtaracca padčas hulni",
+    "editLocation": "Redahavać lakacyju",
+    "addLocation": "Dadać lakacyju"
   }
 }

@@ -9,6 +9,7 @@ import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import React from 'react';
 import { Container } from '../components/atoms/Container.tsx';
+import { FONT_FAMILY_KINO } from '../styles/typography.ts';
 
 type ChooseWinnerProps = NativeStackScreenProps<RootStackParamList, 'ChooseWinner'>;
 
@@ -28,19 +29,20 @@ export function ChooseWinner(): JSX.Element {
           handleButtonPress(PlayerRole.SPY);
         }}
       >
-        <SpySide width={ms(260)} height={mvs(250)} />
+        <SpySide width={ms(250)} height={mvs(240)} />
         <BaseText whiteText style={styles.overlayText}>
           {t('timer.spies')}
         </BaseText>
       </TouchableOpacity>
-      <BaseText>{t('timer.whoWon')}</BaseText>
+      <BaseText style={styles.hintText}>{t('timer.hint')}</BaseText>
+      <BaseText style={styles.whoWonText}>{t('timer.whoWon')}</BaseText>
       <TouchableOpacity
         style={styles.overlaySide}
         onPress={() => {
           handleButtonPress(PlayerRole.CIVIL);
         }}
       >
-        <CivilSide width={ms(260)} height={mvs(250)} />
+        <CivilSide width={ms(250)} height={mvs(240)} />
         <BaseText whiteText style={styles.overlayText}>
           {t('timer.civils')}
         </BaseText>
@@ -64,5 +66,12 @@ const styles = ScaledSheet.create({
     height: '100%',
     justifyContent: 'space-evenly',
     alignItems: 'center',
+  },
+  whoWonText: {
+    fontFamily: FONT_FAMILY_KINO,
+  },
+  hintText: {
+    fontSize: '20@msr',
+    lineHeight: '20@msr',
   },
 });

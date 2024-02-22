@@ -175,6 +175,7 @@ const useAppStoreBase = create<AppState & AppActions>()(
       },
       setLanguage: (language) => {
         set((state) => {
+          void i18n.changeLanguage(language);
           state.language = language;
 
           const defaultLocations = getBaseLocations();

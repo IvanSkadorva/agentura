@@ -7,11 +7,12 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { PlayerRole, type RootStackParamList } from '../App.tsx';
 import { TouchableOpacity, View } from 'react-native';
 import Play from '../assets/images/play.svg';
-import { CORAL_RED } from '../styles/colors.ts';
+import { CORAL_RED, MAIN_WHITE } from '../styles/colors.ts';
 import { useTranslation } from 'react-i18next';
 import SpySide from '../assets/images/spy-side.svg';
 import CivilSide from '../assets/images/civil-side.svg';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';
+import LinearGradient from 'react-native-linear-gradient';
 
 type VotingModalProps = NativeStackScreenProps<RootStackParamList, 'VotingModal'>;
 
@@ -24,46 +25,55 @@ export function VotingModal(): JSX.Element {
   };
 
   return (
-    <Container style={styles.container}>
-      <BaseText style={styles.pauseHint}>{t('timer.pauseHint').toUpperCase()}</BaseText>
-      <TouchableOpacity
-        onPress={() => {
-          navigate('Timer');
-        }}
-        style={styles.playButton}
-      >
-        <BaseText style={styles.overlayCaption}>{t('buttons.continue')}</BaseText>
-        <Play width={ms(45)} height={ms(40)} fill={CORAL_RED} />
-      </TouchableOpacity>
-      <View>
-        <BaseText>{t('timer.whoWon')}</BaseText>
+    <>
+      <LinearGradient
+        colors={['rgba(255, 140, 133, 0.5)', MAIN_WHITE]}
+        start={{ x: 0, y: 0 }}
+        locations={[0.2, 1]}
+        end={{ x: 0, y: 1 }}
+        style={styles.gradient}
+      />
+      <Container style={styles.container} transparentBackground>
+        <BaseText style={styles.pauseHint}>{t('timer.pauseHint').toUpperCase()}</BaseText>
+        <TouchableOpacity
+          onPress={() => {
+            navigate('Timer');
+          }}
+          style={styles.playButton}
+        >
+          <BaseText style={styles.overlayCaption}>{t('buttons.continue')}</BaseText>
+          <Play width={ms(45)} height={ms(40)} fill={CORAL_RED} />
+        </TouchableOpacity>
+        <View>
+          <BaseText>{t('timer.whoWon')}</BaseText>
 
-        <View style={styles.iconsContainer}>
-          <TouchableOpacity
-            style={styles.overlaySide}
-            onPress={() => {
-              handleButtonPress(PlayerRole.SPY);
-            }}
-          >
-            <SpySide width={ms(170)} height={mvs(160)} />
-            <BaseText whiteText style={styles.overlayText}>
-              {t('timer.spies')}
-            </BaseText>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.overlaySide}
-            onPress={() => {
-              handleButtonPress(PlayerRole.CIVIL);
-            }}
-          >
-            <CivilSide width={ms(170)} height={mvs(160)} />
-            <BaseText whiteText style={styles.overlayText}>
-              {t('timer.civils')}
-            </BaseText>
-          </TouchableOpacity>
+          <View style={styles.iconsContainer}>
+            <TouchableOpacity
+              style={styles.overlaySide}
+              onPress={() => {
+                handleButtonPress(PlayerRole.SPY);
+              }}
+            >
+              <SpySide width={ms(170)} height={mvs(160)} />
+              <BaseText whiteText style={styles.overlayText}>
+                {t('timer.spies')}
+              </BaseText>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.overlaySide}
+              onPress={() => {
+                handleButtonPress(PlayerRole.CIVIL);
+              }}
+            >
+              <CivilSide width={ms(170)} height={mvs(160)} />
+              <BaseText whiteText style={styles.overlayText}>
+                {t('timer.civils')}
+              </BaseText>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </Container>
+      </Container>
+    </>
   );
 }
 
@@ -99,5 +109,10 @@ const styles = ScaledSheet.create({
   },
   pauseHint: {
     paddingTop: '20@mvs',
+  },
+  gradient: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
   },
 });

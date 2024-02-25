@@ -20,7 +20,10 @@ export function Home(): JSX.Element {
   const { navigate } = useNavigation<HomeProps['navigation']>();
 
   return (
-    <Container>
+    <Container
+      background={require('../assets/images/backgrounds/bg-home.png')}
+      backgroundStyle={styles.background}
+    >
       <View style={styles.wrapper}>
         <MainSvg width={s(300)} height={vs(254)} />
         <Text style={styles.title}>{t('gameTitle')}</Text>
@@ -83,5 +86,12 @@ const styles = ScaledSheet.create({
     flexDirection: 'row',
     gap: '24@msr',
     alignItems: 'center',
+  },
+  background: {
+    alignSelf: 'flex-end',
+    left: '-80%',
+    bottom: '-13%',
+    width: '155%',
+    height: '125%',
   },
 });

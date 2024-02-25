@@ -18,6 +18,8 @@ import { Header } from '../components/atoms/Header.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import { useTranslation } from 'react-i18next';
 import { ActionButton } from '../components/molecules/ActionButton.tsx';
+import LinearGradient from 'react-native-linear-gradient';
+import { MAIN_WHITE } from '../styles/colors.ts';
 
 type OnboardingProps = NativeStackScreenProps<RootStackParamList, 'Onboarding'>;
 
@@ -47,39 +49,48 @@ export function Onboarding(): JSX.Element {
   };
 
   return (
-    <Container wrapperStyle={styles.wrapper}>
-      <View>
-        <FlatList
-          data={slides}
-          renderItem={({ item }) => <item.Icon width={width} style={styles.icon} />}
-          horizontal
-          bounces={false}
-          showsHorizontalScrollIndicator={false}
-          pagingEnabled
-          keyExtractor={(item) => item.id.toString()}
-          onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
-            useNativeDriver: false,
-          })}
-          onViewableItemsChanged={viewableItemsChanged}
-          viewabilityConfig={viewConfig}
-          scrollEventThrottle={32}
-          ref={slidesRef}
-        />
-        <Paginator data={slides} scrollX={scrollX} />
-        <View style={styles.slideFooter}>
-          <Header>{t(slides[currentIndex].title)}</Header>
-          <BaseText style={styles.text}>{t(slides[currentIndex].description)}</BaseText>
+    <>
+      <LinearGradient
+        colors={['rgba(255, 140, 133, 0.8)', MAIN_WHITE]}
+        start={{ x: 0, y: 1 }}
+        locations={[0.2, 1]}
+        end={{ x: 0, y: 0 }}
+        style={styles.gradient}
+      />
+      <Container wrapperStyle={styles.wrapper} transparentBackground>
+        <View>
+          <FlatList
+            data={slides}
+            renderItem={({ item }) => <item.Icon width={width} style={styles.icon} />}
+            horizontal
+            bounces={false}
+            showsHorizontalScrollIndicator={false}
+            pagingEnabled
+            keyExtractor={(item) => item.id.toString()}
+            onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
+              useNativeDriver: false,
+            })}
+            onViewableItemsChanged={viewableItemsChanged}
+            viewabilityConfig={viewConfig}
+            scrollEventThrottle={32}
+            ref={slidesRef}
+          />
+          <Paginator data={slides} scrollX={scrollX} />
+          <View style={styles.slideFooter}>
+            <Header>{t(slides[currentIndex].title)}</Header>
+            <BaseText style={styles.text}>{t(slides[currentIndex].description)}</BaseText>
+          </View>
         </View>
-      </View>
-      <ActionButton title={t('buttons.ok')} onPress={scrollTo} style={styles.button} />
-    </Container>
+        <ActionButton title={t('buttons.ok')} onPress={scrollTo} style={styles.button} />
+      </Container>
+    </>
   );
 }
 
 const styles = ScaledSheet.create({
   wrapper: {
     paddingHorizontal: 0,
-    paddingTop: 0,
+    paddingTop: '5@vs',
   },
   icon: {
     resizeMode: 'contain',
@@ -98,5 +109,10 @@ const styles = ScaledSheet.create({
   button: {
     position: 'absolute',
     bottom: Platform.OS === 'ios' ? '30@vs' : '10@vs',
+  },
+  gradient: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
   },
 });

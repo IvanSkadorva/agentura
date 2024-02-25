@@ -15,7 +15,8 @@ import CivilMan from '../assets/images/civil-man.svg';
 import SpyMan from '../assets/images/spy-man.svg';
 import { useAppStore } from '../store/app-store.ts';
 import { Platform, useWindowDimensions, View } from 'react-native';
-import { MAIN_WHITE } from '../styles/colors.ts';
+import { GRADIENT_BLACK, GRADIENT_RED, MAIN_WHITE } from '../styles/colors.ts';
+import LinearGradient from 'react-native-linear-gradient';
 
 type RoleProps = NativeStackScreenProps<RootStackParamList, 'Role'>;
 
@@ -44,34 +45,41 @@ export function Role(): JSX.Element {
   };
 
   return (
-    <View style={styles.commonContainer}>
-      <Icon style={styles.icon} width={width} height={Platform.OS === 'ios' ? height : '120%'} />
-      <Container wrapperStyle={styles.container}>
-        <View style={styles.wrapper}>
-          <View style={styles.textContainer}>
-            <BaseText whiteText>{t('role.you')}</BaseText>
-            <BaseText whiteText>{t(currentPlayer.role)}</BaseText>
-          </View>
-          <View style={styles.textContainer}>
-            <BaseText whiteText>{t('role.location')}</BaseText>
-            <BaseText whiteText>{t(location.key)}</BaseText>
-          </View>
+    <>
+      <LinearGradient
+        colors={[currentPlayer.role === 'role.spy' ? GRADIENT_BLACK : GRADIENT_RED, MAIN_WHITE]}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 0, y: 0 }}
+        style={styles.gradient}
+      />
+      <View style={styles.commonContainer}>
+        <Icon style={styles.icon} width={width} height={Platform.OS === 'ios' ? height : '120%'} />
+        <Container wrapperStyle={styles.container} transparentBackground>
+          <View style={styles.wrapper}>
+            <View style={styles.textContainer}>
+              <BaseText whiteText>{t('role.you')}</BaseText>
+              <BaseText whiteText>{t(currentPlayer.role)}</BaseText>
+            </View>
+            <View style={styles.textContainer}>
+              <BaseText whiteText>{t('role.location')}</BaseText>
+              <BaseText whiteText>{t(location.key)}</BaseText>
+            </View>
 
-          <ActionButton
-            title={t('buttons.forward')}
-            onPress={handleButtonPress}
-            style={styles.actionButton}
-          />
-        </View>
-      </Container>
-    </View>
+            <ActionButton
+              title={t('buttons.forward')}
+              onPress={handleButtonPress}
+              style={styles.actionButton}
+            />
+          </View>
+        </Container>
+      </View>
+    </>
   );
 }
 
 const styles = ScaledSheet.create({
   commonContainer: {
     flex: 1,
-    backgroundColor: MAIN_WHITE,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
@@ -83,6 +91,7 @@ const styles = ScaledSheet.create({
   },
   actionButton: {
     backgroundColor: 'transparent',
+    borderWidth: '1@msr',
   },
   container: {
     backgroundColor: 'transparent',
@@ -96,9 +105,13 @@ const styles = ScaledSheet.create({
     width: '100%',
     height: '100%',
     gap: '36@mvs',
-    backgroundColor: 'transparent',
   },
   textContainer: {
     gap: '10@mvs',
+  },
+  gradient: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
   },
 });

@@ -3,7 +3,7 @@ import { BaseText } from '../atoms/BaseText.tsx';
 import { View } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { ScaledSheet } from 'react-native-size-matters';
-import { CORAL_RED } from '../../styles/colors.ts';
+import { CORAL_RED, MAIN_BLACK } from '../../styles/colors.ts';
 
 interface CheckboxWithLabelProps {
   label: string;
@@ -28,7 +28,8 @@ export function CheckboxWithLabel({
       <CheckBox
         value={toggleCheckBox}
         onValueChange={handlePress}
-        tintColors={{ true: CORAL_RED }}
+        tintColor={MAIN_BLACK}
+        tintColors={{ true: CORAL_RED, false: MAIN_BLACK }}
         onCheckColor={CORAL_RED}
         onTintColor={CORAL_RED}
       />

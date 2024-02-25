@@ -8,7 +8,6 @@ import {
   type ViewStyle,
 } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
-import { MAIN_WHITE } from '../../styles/colors.ts';
 
 interface ContainerProps {
   children: ReactNode;
@@ -16,7 +15,6 @@ interface ContainerProps {
   wrapperStyle?: RegisteredStyle<ViewStyle>;
   background?: ImageBackgroundProps['source'];
   backgroundStyle?: RegisteredStyle<ViewStyle>;
-  transparentBackground?: boolean;
 }
 export const Container = ({
   children,
@@ -24,15 +22,8 @@ export const Container = ({
   wrapperStyle,
   background,
   backgroundStyle,
-  transparentBackground,
 }: ContainerProps): JSX.Element => (
-  <View
-    style={[
-      styles.container,
-      wrapperStyle,
-      transparentBackground === true ? styles.transparentBackground : null,
-    ]}
-  >
+  <View style={[styles.container, wrapperStyle]}>
     {background != null && (
       <ImageBackground
         source={background}
@@ -54,14 +45,10 @@ const styles = ScaledSheet.create({
     height: '100%',
     paddingHorizontal: '20@s',
     paddingVertical: '20@vs',
-    backgroundColor: MAIN_WHITE,
   },
   background: {
     position: 'absolute',
     elevation: -1,
     zIndex: -1,
-  },
-  transparentBackground: {
-    backgroundColor: 'transparent',
   },
 });

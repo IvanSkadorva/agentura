@@ -38,7 +38,6 @@ export function Winner(): JSX.Element {
       />
       <Container
         style={styles.wrapper}
-        transparentBackground
         background={spiesWon ? undefined : require('../assets/images/backgrounds/bg-winner.png')}
         backgroundStyle={styles.background}
       >

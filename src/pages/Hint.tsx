@@ -31,7 +31,6 @@ export function Hint(): JSX.Element {
       <TouchableOpacity onPress={handleScreenPress}>
         <Container
           style={styles.wrapper}
-          transparentBackground
           background={require('../assets/images/backgrounds/bg-hint.png')}
           backgroundStyle={styles.background}
         >

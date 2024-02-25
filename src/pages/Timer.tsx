@@ -52,7 +52,6 @@ export function Timer(): JSX.Element {
 
       <Container
         style={styles.container}
-        transparentBackground
         background={require('../assets/images/backgrounds/bg-timer.png')}
         backgroundStyle={styles.background}
       >
@@ -112,8 +111,8 @@ const styles = ScaledSheet.create({
   },
   background: {
     alignSelf: 'center',
-    left: '-25%',
-    top: '-28%',
+    left: '-85@ms',
+    top: '-18@mvs',
     width: '130%',
     height: '100%',
     zIndex: 3,

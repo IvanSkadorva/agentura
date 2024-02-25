@@ -12,6 +12,7 @@ import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 import { type RootStackParamList } from '../App.tsx';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';
 import { LanguageSettings } from '../components/organisms/LanguageSettings.tsx';
+import { MAIN_WHITE } from '../styles/colors.ts';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
@@ -23,6 +24,7 @@ export function Home(): JSX.Element {
     <Container
       background={require('../assets/images/backgrounds/bg-home.png')}
       backgroundStyle={styles.background}
+      wrapperStyle={styles.containerWrapper}
     >
       <View style={styles.wrapper}>
         <MainSvg width={s(300)} height={vs(254)} />
@@ -93,5 +95,8 @@ const styles = ScaledSheet.create({
     bottom: '-13%',
     width: '155%',
     height: '125%',
+  },
+  containerWrapper: {
+    backgroundColor: MAIN_WHITE,
   },
 });

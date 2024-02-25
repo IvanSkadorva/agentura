@@ -51,13 +51,13 @@ export function Onboarding(): JSX.Element {
   return (
     <>
       <LinearGradient
-        colors={['rgba(255, 140, 133, 0.8)', MAIN_WHITE]}
+        colors={['rgba(255, 140, 133, 0.7)', MAIN_WHITE]}
         start={{ x: 0, y: 1 }}
         locations={[0.2, 1]}
         end={{ x: 0, y: 0 }}
         style={styles.gradient}
       />
-      <Container wrapperStyle={styles.wrapper} transparentBackground>
+      <Container wrapperStyle={styles.wrapper}>
         <View>
           <FlatList
             data={slides}

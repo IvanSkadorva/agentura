@@ -54,7 +54,7 @@ export function Role(): JSX.Element {
       />
       <View style={styles.commonContainer}>
         <Icon style={styles.icon} width={width} height={Platform.OS === 'ios' ? height : '120%'} />
-        <Container wrapperStyle={styles.container} transparentBackground>
+        <Container wrapperStyle={styles.container}>
           <View style={styles.wrapper}>
             <View style={styles.textContainer}>
               <BaseText whiteText>{t('role.you')}</BaseText>

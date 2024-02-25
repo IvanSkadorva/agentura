@@ -32,7 +32,7 @@ export function ChooseWinner(): JSX.Element {
         end={{ x: 0, y: 1 }}
         style={styles.gradient}
       />
-      <Container style={styles.iconsContainer} transparentBackground>
+      <Container style={styles.iconsContainer}>
         <TouchableOpacity
           style={styles.overlaySide}
           onPress={() => {

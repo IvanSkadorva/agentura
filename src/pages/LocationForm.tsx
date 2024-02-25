@@ -11,6 +11,8 @@ import type { RootStackParamList } from '../App.tsx';
 import { useAppStore } from '../store/app-store.ts';
 import { FONT_FAMILY_CYGRE } from '../styles/typography.ts';
 import uuid from 'react-native-uuid';
+import LinearGradient from 'react-native-linear-gradient';
+import { MAIN_WHITE } from '../styles/colors.ts';
 
 type LocationFormProps = NativeStackScreenProps<RootStackParamList, 'LocationForm'>;
 
@@ -40,36 +42,45 @@ export function LocationForm(): JSX.Element {
 
   console.log('Location', id, location);
   return (
-    <Container style={styles.container}>
-      <View>
-        <BaseText>
-          {location?.id != null ? t('locationForm.editLocation') : t('locationForm.addLocation')}
-        </BaseText>
-        <TextInput
-          style={styles.input}
-          onChangeText={setName}
-          value={name}
-          autoCapitalize="words"
-          autoFocus
-          numberOfLines={1}
-          autoCorrect
-          placeholder={t('locationForm.name')}
-        />
-        <TextInput
-          style={styles.input}
-          onChangeText={setRoles}
-          value={roles}
-          editable
-          multiline
-          autoCapitalize="words"
-          autoFocus
-          numberOfLines={1}
-          autoCorrect
-          placeholder={t('locationForm.roles')}
-        />
-      </View>
-      <ActionButton title={t('buttons.save')} onPress={handleSave} style={styles.button} />
-    </Container>
+    <>
+      <LinearGradient
+        colors={['rgba(255, 0, 0, 0.25)', MAIN_WHITE]}
+        start={{ x: 1, y: 1 }}
+        locations={[0.1, 1]}
+        end={{ x: 0, y: 0 }}
+        style={styles.gradient}
+      />
+      <Container style={styles.container}>
+        <View>
+          <BaseText>
+            {location?.id != null ? t('locationForm.editLocation') : t('locationForm.addLocation')}
+          </BaseText>
+          <TextInput
+            style={styles.input}
+            onChangeText={setName}
+            value={name}
+            autoCapitalize="words"
+            autoFocus
+            numberOfLines={1}
+            autoCorrect
+            placeholder={t('locationForm.name')}
+          />
+          <TextInput
+            style={styles.input}
+            onChangeText={setRoles}
+            value={roles}
+            editable
+            multiline
+            autoCapitalize="words"
+            autoFocus
+            numberOfLines={1}
+            autoCorrect
+            placeholder={t('locationForm.roles')}
+          />
+        </View>
+        <ActionButton title={t('buttons.save')} onPress={handleSave} style={styles.button} />
+      </Container>
+    </>
   );
 }
 
@@ -90,5 +101,10 @@ const styles = ScaledSheet.create({
   },
   button: {
     marginTop: '10@msr',
+  },
+  gradient: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
   },
 });

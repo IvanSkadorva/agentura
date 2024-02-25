@@ -7,6 +7,8 @@ import { BaseText } from '../components/atoms/BaseText.tsx';
 import Instagram from '../assets/images/inst.svg';
 import Telegram from '../assets/images/telegram.svg';
 import { Linking, TouchableOpacity, View } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import { MAIN_WHITE } from '../styles/colors.ts';
 
 export function Info(): JSX.Element {
   const { t } = useTranslation();
@@ -20,22 +22,35 @@ export function Info(): JSX.Element {
   };
 
   return (
-    <Container style={styles.wrapper}>
-      <BaseText style={styles.header}>{t('info.aboutUs')}</BaseText>
-      <BaseText style={styles.text}>{t('info.aboutUsText')}</BaseText>
-      <BaseText style={styles.text}>{t('info.callToAction')}</BaseText>
+    <>
+      <LinearGradient
+        colors={['rgba(255, 0, 0, 0.25)', MAIN_WHITE]}
+        start={{ x: 1, y: 1 }}
+        locations={[0.1, 1]}
+        end={{ x: 0, y: 0 }}
+        style={styles.gradient}
+      />
+      <Container
+        style={styles.wrapper}
+        background={require('../assets/images/backgrounds/bg-info.png')}
+        backgroundStyle={styles.background}
+      >
+        <BaseText style={styles.header}>{t('info.aboutUs')}</BaseText>
+        <BaseText style={styles.text}>{t('info.aboutUsText')}</BaseText>
+        <BaseText style={styles.text}>{t('info.callToAction')}</BaseText>
 
-      <View style={styles.socialMediaContainer}>
-        <TouchableOpacity style={styles.socialMediaRow} onPress={() => openInstagram}>
-          <Instagram width={50} height={50} />
-          <BaseText>Instagram</BaseText>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.socialMediaRow} onPress={() => openTelegram}>
-          <Telegram width={50} height={50} />
-          <BaseText>Telegram</BaseText>
-        </TouchableOpacity>
-      </View>
-    </Container>
+        <View style={styles.socialMediaContainer}>
+          <TouchableOpacity style={styles.socialMediaRow} onPress={() => openInstagram}>
+            <Instagram width={50} height={50} />
+            <BaseText>Instagram</BaseText>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.socialMediaRow} onPress={() => openTelegram}>
+            <Telegram width={50} height={50} />
+            <BaseText>Telegram</BaseText>
+          </TouchableOpacity>
+        </View>
+      </Container>
+    </>
   );
 }
 
@@ -67,5 +82,16 @@ const styles = ScaledSheet.create({
     columnGap: '10@msr',
     justifyContent: 'flex-start',
     width: '100%',
+  },
+  gradient: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  background: {
+    bottom: '30%',
+    right: '100%',
+    width: '170%',
+    height: '140%',
   },
 });

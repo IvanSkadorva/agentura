@@ -10,8 +10,9 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App.tsx';
 import { ms, ScaledSheet } from 'react-native-size-matters';
 import { RectButton, Swipeable } from 'react-native-gesture-handler';
-import { CORAL_RED, MAIN_ORANGE } from '../styles/colors.ts';
+import { CORAL_RED, MAIN_ORANGE, MAIN_WHITE } from '../styles/colors.ts';
 import { BaseText } from '../components/atoms/BaseText.tsx';
+import LinearGradient from 'react-native-linear-gradient';
 
 type LocalizationsProps = NativeStackScreenProps<RootStackParamList, 'Locations'>;
 
@@ -64,40 +65,52 @@ export function Locations(): JSX.Element {
   );
 
   return (
-    <Container>
-      <View style={styles.wrapper}>
-        <FlatList
-          data={locations}
-          ItemSeparatorComponent={() => <View style={styles.separator} />}
-          renderItem={({ item }) => {
-            return (
-              <Swipeable
-                key={item.key}
-                renderRightActions={(progressAnimatedValue) =>
-                  renderRightActions(progressAnimatedValue, item.id)
-                }
-              >
-                <CheckboxWithLabel
+    <>
+      <LinearGradient
+        colors={['rgba(255, 0, 0, 0.25)', MAIN_WHITE]}
+        start={{ x: 1, y: 1 }}
+        locations={[0.1, 1]}
+        end={{ x: 0, y: 0 }}
+        style={styles.gradient}
+      />
+      <Container
+        background={require('../assets/images/backgrounds/bg-locations.png')}
+        backgroundStyle={styles.background}
+      >
+        <View style={styles.wrapper}>
+          <FlatList
+            data={locations}
+            ItemSeparatorComponent={() => <View style={styles.separator} />}
+            renderItem={({ item }) => {
+              return (
+                <Swipeable
                   key={item.key}
-                  defaultValue={item.enabled}
-                  label={t(item.key)}
-                  onPress={() => {
-                    toggleLocation(item.id);
-                  }}
-                />
-              </Swipeable>
-            );
-          }}
-        />
-        <ActionButton
-          title={t('buttons.forward')}
-          onPress={() => {
-            navigate('Configuration');
-          }}
-          style={styles.playButton}
-        />
-      </View>
-    </Container>
+                  renderRightActions={(progressAnimatedValue) =>
+                    renderRightActions(progressAnimatedValue, item.id)
+                  }
+                >
+                  <CheckboxWithLabel
+                    key={item.key}
+                    defaultValue={item.enabled}
+                    label={t(item.key)}
+                    onPress={() => {
+                      toggleLocation(item.id);
+                    }}
+                  />
+                </Swipeable>
+              );
+            }}
+          />
+          <ActionButton
+            title={t('buttons.forward')}
+            onPress={() => {
+              navigate('Configuration');
+            }}
+            style={styles.playButton}
+          />
+        </View>
+      </Container>
+    </>
   );
 }
 
@@ -129,5 +142,16 @@ const styles = ScaledSheet.create({
   button: {
     fontSize: '16@msr',
     lineHeight: '16@msr',
+  },
+  gradient: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  background: {
+    bottom: '0%',
+    right: '10%',
+    width: '120%',
+    height: '120%',
   },
 });

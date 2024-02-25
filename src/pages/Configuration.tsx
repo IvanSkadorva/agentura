@@ -27,6 +27,7 @@ export const Configuration = (): JSX.Element => {
   // const enableHintsForSpies = useAppStore.use.enableHintsForSpies();
   // const setEnableHintsForSpies = useAppStore.use.setEnableHintsForSpies();
   const startGame = useAppStore.use.startGame();
+  const enabledLocationsAmount = locations.filter((value) => value.enabled).length;
 
   const handlePlayButtonPress = (): void => {
     navigation.navigate('PlayerDistribution', { id: 1 });
@@ -44,7 +45,6 @@ export const Configuration = (): JSX.Element => {
       />
       <Container
         style={styles.container}
-        transparentBackground
         background={require('../assets/images/backgrounds/bg-configuration.png')}
         backgroundStyle={styles.background}
       >
@@ -65,7 +65,7 @@ export const Configuration = (): JSX.Element => {
             {/* /> */}
             <View style={styles.locationContainer}>
               <BaseText>{t('configuration.localizationsChosen')}</BaseText>
-              <BaseText>{locations.filter((value) => value.enabled).length}</BaseText>
+              <BaseText>{enabledLocationsAmount}</BaseText>
               <ActionButton
                 icon={<Location />}
                 style={styles.locationButton}
@@ -81,6 +81,7 @@ export const Configuration = (): JSX.Element => {
           title={t('buttons.play')}
           onPress={handlePlayButtonPress}
           style={styles.playButton}
+          disabled={enabledLocationsAmount < 1}
         />
       </Container>
     </>

@@ -33,7 +33,7 @@ export function VotingModal(): JSX.Element {
         end={{ x: 0, y: 1 }}
         style={styles.gradient}
       />
-      <Container style={styles.container} transparentBackground>
+      <Container style={styles.container}>
         <BaseText style={styles.pauseHint}>{t('timer.pauseHint').toUpperCase()}</BaseText>
         <TouchableOpacity
           onPress={() => {

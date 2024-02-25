@@ -29,7 +29,6 @@ export function PlayerDistribution(): JSX.Element {
       />
       <Container
         style={styles.container}
-        transparentBackground
         background={require('../assets/images/backgrounds/bg-distribution.png')}
         backgroundStyle={styles.background}
       >

@@ -28,7 +28,8 @@
     "you": "Ty",
     "civil": "Gracz",
     "spy": "Szpieg",
-    "location": "Lokalizacja:"
+    "location": "Lokalizacja:",
+    "unknown": "Nieznane"
   },
   "hint": {
     "timeForQuestions": "Czas na Pytania",
@@ -106,20 +107,242 @@
   "locations": [
     {
       "id": "1",
-      "key": "Sklep 'Rodzinny Kąt'",
-      "roles": ["Kasjer", "Klient", "Właściciel", "Ładowacz", "Lokalny bezdomny", "Babcia sprzedająca pomidory", "Chłopiec posłany przez ojca po chleb", "Klient", "Klient", "Kierownik spółdzielni"],
+      "key": "Szkoła",
+      "roles": ["Nauczyciel", "Uczeń", "Dyrektor", "Woźny", "Bibliotekarz", "Doradca", "Ochroniarz", "Rodzic", "Kucharz", "Pielęgniarka"],
       "enabled": true
     },
     {
       "id": "2",
-      "key": "Miejska Rada",
-      "roles": ["Babcia w kolejce", "Dziadek w kolejce", "Pytający", "Urzędnik", "Sprzątaczka", "Ochroniarz", "Kierownik", "Gość", "Gość", "Zdezorientowany gość"],
+      "key": "Bank",
+      "roles": ["Kasjer", "Ochroniarz", "Klient", "Kierownik Banku", "Specjalista ds. Kredytów", "Doradca Finansowy", "Księgowy", "Auditor", "Bankier Inwestycyjny", "Doradca Hipoteczny"],
       "enabled": true
     },
     {
       "id": "3",
-      "key": "Wiejski Klub",
-      "roles": ["DJ", "Kierowca traktora Tolek", "Stylowy gość", "Najmodniejszy chłopak", "Najmodniejsza dziewczyna", "Miłośnik rapu", "Miłośnik szansonu", "Tancerz", "Tancerz", "Upity akordeonista"],
+      "key": "Uniwersytet",
+      "roles": ["Profesor", "Student", "Dziekan", "Bibliotekarz", "Badacz", "Doradca", "Ochroniarz", "Woźny", "Administrator", "Gość"],
+      "enabled": true
+    },
+    {
+      "id": "4",
+      "key": "Basen",
+      "roles": ["Ratownik", "Pływak", "Trener", "Woźny", "Rodzic", "Dziecko", "Nastolatek", "Gość", "Kierownik Basenu", "Instruktor Pływania"],
+      "enabled": true
+    },
+    {
+      "id": "5",
+      "key": "Stacja Orbitalna",
+      "roles": ["Astronauta", "Inżynier", "Naukowiec", "Dowódca", "Pilot", "Lekarz", "Oficer ds. Komunikacji", "Robot", "Obcy", "Gość"],
+      "enabled": true
+    },
+    {
+      "id": "6",
+      "key": "Obóz Wojskowy",
+      "roles": ["Żołnierz", "Dowódca", "Medyk", "Kucharz", "Instruktor Drabiny", "Mechanik", "Oficer Wywiadu", "Kapelan", "Rekrut", "Gość"],
+      "enabled": true
+    },
+    {
+      "id": "7",
+      "key": "Szpital",
+      "roles": ["Lekarz", "Pielęgniarka", "Pacjent", "Chirurg", "Aptekarz", "Administrator", "Gość", "Woźny", "Ochroniarz", "Radiolog"],
+      "enabled": true
+    },
+    {
+      "id": "8",
+      "key": "Restauracja",
+      "roles": ["Kelner", "Kucharz", "Klient", "Gospodarz", "Barman", "Pomocnik", "Kierownik", "Zmywak", "Krytyk Kulinarny", "Dostawca"],
+      "enabled": true
+    },
+    {
+      "id": "9",
+      "key": "Supermarket",
+      "roles": ["Kasjer", "Klient", "Pracownik Magazynu", "Kierownik", "Ochroniarz", "Piekarz", "Rzeźnik", "Aptekarz", "Woźny", "Dostawca"],
+      "enabled": true
+    },
+    {
+      "id": "10",
+      "key": "Lotnisko",
+      "roles": ["Pilot", "Stewardesa", "Pasażer", "Funkcjonariusz Ochrony", "Kontroler Ruchu Powietrznego", "Agent Biletowy", "Bagażowy", "Celniczy", "Mechanik", "Woźny"],
+      "enabled": true
+    },
+    {
+      "id": "11",
+      "key": "Biblioteka",
+      "roles": ["Bibliotekarz", "Czytelnik", "Student", "Autor", "Woźny", "Badacz", "Archiwista", "Korepetytor", "Gość", "Ochroniarz"],
+      "enabled": true
+    },
+    {
+      "id": "12",
+      "key": "Posterunek Policji",
+      "roles": ["Policjant", "Detektyw", "Przestępca", "Naczelnik Policji", "Sekretarka", "Naukowiec Kryminalny", "Prawnik", "Dziennikarz", "Woźny", "Gość"],
+      "enabled": true
+    },
+    {
+      "id": "13",
+      "key": "Zoo",
+      "roles": ["Opiekun Zwierząt", "Gość", "Weterynarz", "Przewodnik Turystyczny", "Trener Zwierząt", "Woźny", "Ochroniarz", "Fotograf", "Student", "Badacz"],
+      "enabled": true
+    },
+    {
+      "id": "14",
+      "key": "Kino",
+      "roles": ["Widz", "Projekcjonista", "Kasjer", "Kierownik", "Woźny", "Ochroniarz", "Krytyk Filmowy", "Aktor", "Reżyser", "Sprzedawca Popcornu"],
+      "enabled": true
+    },
+    {
+      "id": "15",
+      "key": "Muzeum",
+      "roles": ["Gość", "Kurator", "Ochroniarz", "Przewodnik", "Historyk", "Student", "Artysta", "Fotograf", "Woźny", "Archiwista"],
+      "enabled": true
+    },
+    {
+      "id": "16",
+      "key": "Siłownia",
+      "roles": ["Trener", "Członek", "Woźny", "Dietetyk", "Kierownik", "Instruktor Jogi", "Kulturysta", "Fizjoterapeuta", "Trener Boksu", "Instruktor Pływania"],
+      "enabled": true
+    },
+    {
+      "id": "17",
+      "key": "Hotel",
+      "roles": ["Gość", "Recepcjonista", "Kierownik", "Boy Hotelowy", "Pokojówka", "Kucharz", "Ochroniarz", "Kelner", "Barman", "Portier"],
+      "enabled": true
+    },
+    {
+      "id": "18",
+      "key": "Farma",
+      "roles": ["Rolnik", "Weterynarz", "Pracownik", "Gość", "Agronom", "Zwierzę", "Ogrodnik", "Pszczelarz", "Rybak", "Producent Serów"],
+      "enabled": true
+    },
+    {
+      "id": "19",
+      "key": "Las",
+      "roles": ["Strażnik Leśny", "Myśliwy", "Wędrowiec", "Ornitolog", "Fotograf", "Naukowiec", "Survivalista", "Zwierzę", "Kempingowiec", "Leśniczy"],
+      "enabled": true
+    },
+    {
+      "id": "20",
+      "key": "Podwodny Okręt",
+      "roles": ["Kapitan", "Inżynier", "Żeglarz", "Kucharz", "Nawigator", "Operator Radiowy", "Lekarz", "Naukowiec", "Nurek", "Więzień"],
+      "enabled": true
+    },
+    {
+      "id": "21",
+      "key": "Plaża",
+      "roles": ["Ratownik", "Plażowicz", "Surfer", "Sprzedawca Lodów", "Turysta", "Fotograf", "Rybak", "Piknikowicz", "Biegacz", "Budowniczy Zamków Piaskowych"],
+      "enabled": true
+    },
+    {
+      "id": "22",
+      "key": "Dworzec Kolejowy",
+      "roles": ["Konduktor", "Pasażer", "Sprzedawca Biletów", "Ochroniarz", "Woźny", "Turysta", "Sprzedawca", "Maszynista", "Bagażowy", "Pracownik Informacji"],
+      "enabled": true
+    },
+    {
+      "id": "23",
+      "key": "Park Rozrywki",
+      "roles": ["Gość", "Operator Wesołego Miasteczka", "Woźny", "Ochroniarz", "Sprzedawca Biletów", "Sprzedawca Jedzenia", "Klaun", "Maskotka", "Fotograf", "Przewodnik Turystyczny"],
+      "enabled": true
+    },
+    {
+      "id": "24",
+      "key": "Kawiarnia",
+      "roles": ["Kelner", "Klient", "Barista", "Kucharz", "Kasjer", "Kierownik", "Piekarz", "Dostawca", "Krytyk Kulinarny", "Woźny"],
+      "enabled": true
+    },
+    {
+      "id": "25",
+      "key": "Centrum Handlowe",
+      "roles": ["Kupujący", "Ochroniarz", "Kasjer", "Woźny", "Kierownik Sklepu", "Sprzedawca", "Pracownik Stoiska z Jedzeniem", "Przedstawiciel Obsługi Klienta", "Pracownik Utrzymania Ruchu", "Dziecko"],
+      "enabled": true
+    },
+    {
+      "id": "26",
+      "key": "Stadion",
+      "roles": ["Sportowiec", "Trener", "Kibic", "Sędzia", "Ochroniarz", "Woźny", "Sprzedawca Jedzenia", "Reporter", "Fotograf", "Komentator"],
+      "enabled": true
+    },
+    {
+      "id": "27",
+      "key": "Góra",
+      "roles": ["Wspinacz", "Przewodnik", "Fotograf", "Geolog", "Pracownik Ratownictwa", "Turysta", "Biolog", "Kempingowiec", "Ornitolog", "Wędrowiec"],
+      "enabled": true
+    },
+    {
+      "id": "28",
+      "key": "Pustynia",
+      "roles": ["Eksplorator", "Turysta", "Archeolog", "Fotograf", "Geolog", "Jeździec na Wielbłądzie", "Nomada", "Pracownik Ratownictwa", "Naukowiec", "Survivalista"],
+      "enabled": true
+    },
+    {
+      "id": "29",
+      "key": "Wyspa",
+      "roles": ["Turysta", "Rybak", "Ratownik", "Fotograf", "Eksplorator", "Biolog", "Kapitan Łodzi", "Kempingowiec", "Pracownik Ratownictwa", "Survivalista"],
+      "enabled": true
+    },
+    {
+      "id": "30",
+      "key": "Zamek",
+      "roles": ["Król", "Królowa", "Rycerz", "Błazen", "Sługa", "Strażnik", "Gość", "Historyk", "Archeolog", "Duch"],
+      "enabled": true
+    },
+    {
+      "id": "31",
+      "key": "Stacja Kosmiczna",
+      "roles": ["Astronauta", "Inżynier", "Naukowiec", "Dowódca", "Pilot", "Lekarz", "Oficer ds. Komunikacji", "Robot", "Obcy", "Gość"],
+      "enabled": true
+    },
+    {
+      "id": "32",
+      "key": "Dżungla",
+      "roles": ["Eksplorator", "Turysta", "Przewodnik", "Fotograf", "Biolog", "Antropolog", "Survivalista", "Myśliwy", "Naukowiec", "Zwierzę"],
+      "enabled": true
+    },
+    {
+      "id": "33",
+      "key": "Ośrodek Narciarski",
+      "roles": ["Narciarz", "Snowboardzista", "Instruktor", "Ratownik", "Turysta", "Fotograf", "Pracownik Ratownictwa", "Sprzedawca", "Pracownik Utrzymania Ruchu", "Kierownik Hotelu"],
+      "enabled": true
+    },
+    {
+      "id": "34",
+      "key": "Winnica",
+      "roles": ["Winotwórca", "Pracownik Winnicy", "Turysta", "Degustator", "Fotograf", "Agronom", "Mistrz Piwnicy", "Winiarz", "Kupiec Wina", "Kucharz"],
+      "enabled": true
+    },
+    {
+      "id": "35",
+      "key": "Piekarnia",
+      "roles": ["Piekarz", "Klient", "Kasjer", "Cukiernik", "Dostawca", "Krytyk Kulinarny", "Woźny", "Kierownik", "Dekorator", "Pakowacz"],
+      "enabled": true
+    },
+    {
+      "id": "36",
+      "key": "Teatr",
+      "roles": ["Aktor", "Reżyser", "Członek Publiczności", "Dramatopisarz", "Kierownik Sceny", "Projektant Kostiumów", "Technik Oświetleniowy", "Inżynier Dźwięku", "Usher", "Krytyk"],
+      "enabled": true
+    },
+    {
+      "id": "37",
+      "key": "Akwarium",
+      "roles": ["Gość", "Akwarysta", "Biolog Morski", "Przewodnik Turystyczny", "Fotograf", "Ochroniarz", "Woźny", "Sprzedawca Biletów", "Weterynarz", "Nurek"],
+      "enabled": true
+    },
+    {
+      "id": "38",
+      "key": "Szklarnia",
+      "roles": ["Ogrodnik", "Gość", "Botanik", "Fotograf", "Przewodnik Turystyczny", "Naukowiec", "Student", "Deweloper Szkodników", "Hodowca Roślin", "Hodowca Ogrodów"],
+      "enabled": true
+    },
+    {
+      "id": "39",
+      "key": "Galeria Sztuki",
+      "roles": ["Gość", "Artysta", "Kurator", "Ochroniarz", "Krytyk Sztuki", "Fotograf", "Przewodnik Turystyczny", "Dealer Sztuki", "Restaurator", "Woźny"],
+      "enabled": true
+    },
+    {
+      "id": "40",
+      "key": "Festiwal Muzyczny",
+      "roles": ["Muzyk", "Fan", "Ochroniarz", "Organizator Wydarzenia", "Inżynier Dźwięku", "Sprzedawca Jedzenia", "Fotograf", "Technik Sceniczny", "Dziennikarz", "Pracownik Pierwszej Pomocy"],
       "enabled": true
     }
   ],

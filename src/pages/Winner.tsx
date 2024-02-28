@@ -125,6 +125,7 @@ const styles = ScaledSheet.create({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'center',
     gap: '8@msr',
   },
   gradient: {

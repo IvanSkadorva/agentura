@@ -179,7 +179,7 @@ const useAppStoreBase = create<AppState & AppActions>()(
           state.language = language;
 
           const defaultLocations = getBaseLocations();
-          const customLocations = state.locations.filter((location) => location.id.length > 2);
+          const customLocations = state.locations.filter((location) => location.id.length > 3);
           state.locations = [...defaultLocations, ...customLocations];
         });
       },

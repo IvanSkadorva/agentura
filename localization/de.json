@@ -28,7 +28,8 @@
     "you": "Du",
     "civil": "Spieler",
     "spy": "Spion",
-    "location": "Ort:"
+    "location": "Ort:",
+    "unknown": "Unbekannt"
   },
   "hint": {
     "timeForQuestions": "Zeit für Fragen",
@@ -104,25 +105,247 @@
     }
   },
   "locations": [
-    {
-      "id": "1",
-      "key": "Laden 'Heimische Ecke'",
-      "roles": ["Kassierer", "Kunde", "Inhaber", "Lader", "Lokaler Obdachloser", "Oma verkauft Tomaten", "Junge, von seinem Vater nach Brot geschickt", "Kunde", "Kunde", "Kollektivbauernhof-Manager"],
-      "enabled": true
-    },
-    {
-      "id": "2",
-      "key": "Lokaler Rat",
-      "roles": ["Oma in der Schlange", "Opa in der Schlange", "Einfach nachfragend", "Beamter", "Reinigungskraft", "Wächter", "Manager", "Besucher", "Besucher", "Verwirrter Besucher"],
-      "enabled": true
-    },
-    {
-      "id": "3",
-      "key": "Dorfclub",
-      "roles": ["DJ", "Traktorfahrer Tolya", "Stylischer Besucher", "Stylischster Kerl", "Stylischstes Mädchen", "Rap-Enthusiast", "Chanson-Enthusiast", "Tänzer", "Tänzer", "Betrunkener Akkordeonspieler"],
-      "enabled": true
-    }
-  ],
+  {
+    "id": "1",
+    "key": "Schule",
+    "roles": ["Lehrer", "Schüler", "Schulleiter", "Reinigungskraft", "Bibliothekar", "Berater", "Sicherheitsbeauftragter", "Elternteil", "Koch", "Krankenschwester"],
+    "enabled": true
+  },
+  {
+    "id": "2",
+    "key": "Bank",
+    "roles": ["Kassierer", "Sicherheitsbeauftragter", "Kunde", "Bankmanager", "Kreditberater", "Finanzberater", "Buchhalter", "Wirtschaftsprüfer", "Investmentbanker", "Hypothekenberater"],
+    "enabled": true
+  },
+  {
+    "id": "3",
+    "key": "Universität",
+    "roles": ["Professor", "Student", "Dekan", "Bibliothekar", "Forscher", "Berater", "Sicherheitsbeauftragter", "Reinigungskraft", "Administrator", "Besucher"],
+    "enabled": true
+  },
+  {
+    "id": "4",
+    "key": "Schwimmbad",
+    "roles": ["Bademeister", "Schwimmer", "Trainer", "Reinigungskraft", "Elternteil", "Kind", "Teenager", "Besucher", "Poolmanager", "Schwimminstrukteur"],
+    "enabled": true
+  },
+  {
+    "id": "5",
+    "key": "Orbitalstation",
+    "roles": ["Astronaut", "Ingenieur", "Wissenschaftler", "Kommandant", "Pilot", "Arzt", "Kommunikationsoffizier", "Roboter", "Außerirdischer", "Besucher"],
+    "enabled": true
+  },
+  {
+    "id": "6",
+    "key": "Militärlager",
+    "roles": ["Soldat", "Kommandant", "Sanitäter", "Koch", "Drill-Instruktor", "Mechaniker", "Geheimdienstoffizier", "Kaplan", "Rekrut", "Besucher"],
+    "enabled": true
+  },
+  {
+    "id": "7",
+    "key": "Krankenhaus",
+    "roles": ["Arzt", "Krankenschwester", "Patient", "Chirurg", "Apotheker", "Administrator", "Besucher", "Reinigungskraft", "Sicherheitsbeauftragter", "Radiologe"],
+    "enabled": true
+  },
+  {
+    "id": "8",
+    "key": "Restaurant",
+    "roles": ["Kellner", "Koch", "Kunde", "Gastgeber", "Barkeeper", "Abräumer", "Manager", "Spüler", "Gastrokritiker", "Lieferfahrer"],
+    "enabled": true
+  },
+  {
+    "id": "9",
+    "key": "Supermarkt",
+    "roles": ["Kassierer", "Kunde", "Regalpfleger", "Manager", "Sicherheitsbeauftragter", "Bäcker", "Metzger", "Apotheker", "Reinigungskraft", "Lieferfahrer"],
+    "enabled": true
+  },
+  {
+    "id": "10",
+    "key": "Flughafen",
+    "roles": ["Pilot", "Flugbegleiter", "Passagier", "Sicherheitsbeauftragter", "Fluglotsen", "Ticketschaltermitarbeiter", "Gepäckabfertiger", "Zollbeamter", "Mechaniker", "Reinigungskraft"],
+    "enabled": true
+  },
+  {
+    "id": "11",
+    "key": "Bibliothek",
+    "roles": ["Bibliothekar", "Leser", "Student", "Autor", "Reinigungskraft", "Forscher", "Archivar", "Tutor", "Besucher", "Sicherheitsbeauftragter"],
+    "enabled": true
+  },
+  {
+    "id": "12",
+    "key": "Polizeistation",
+    "roles": ["Polizist", "Detektiv", "Krimineller", "Polizeichef", "Sekretär", "Forensiker", "Anwalt", "Journalist", "Reinigungskraft", "Besucher"],
+    "enabled": true
+  },
+  {
+    "id": "13",
+    "key": "Zoo",
+    "roles": ["Tierpfleger", "Besucher", "Tierarzt", "Tourguide", "Tiertrainer", "Reinigungskraft", "Sicherheitsbeauftragter", "Fotograf", "Student", "Forscher"],
+    "enabled": true
+  },
+  {
+    "id": "14",
+    "key": "Kino",
+    "roles": ["Zuschauer", "Filmvorführer", "Kassierer", "Manager", "Reinigungskraft", "Sicherheitsbeauftragter", "Filmkritiker", "Schauspieler", "Regisseur", "Popcorn-Verkäufer"],
+    "enabled": true
+  },
+  {
+    "id": "15",
+    "key": "Museum",
+    "roles": ["Besucher", "Kurator", "Sicherheitsbeauftragter", "Tourguide", "Historiker", "Student", "Künstler", "Fotograf", "Reinigungskraft", "Archivar"],
+    "enabled": true
+  },
+  {
+    "id": "16",
+    "key": "Fitnessstudio",
+    "roles": ["Trainer", "Mitglied", "Reinigungskraft", "Ernährungsberater", "Manager", "Yogalehrer", "Bodybuilder", "Physiotherapeut", "Boxtrainer", "Schwimmlehrer"],
+    "enabled": true
+  },
+  {
+    "id": "17",
+    "key": "Hotel",
+    "roles": ["Gast", "Rezeptionist", "Manager", "Hotelpage", "Zimmermädchen", "Koch", "Sicherheitsbeauftragter", "Kellner", "Barkeeper", "Concierge"],
+    "enabled": true
+  },
+  {
+    "id": "18",
+    "key": "Bauernhof",
+    "roles": ["Bauer", "Tierarzt", "Arbeiter", "Besucher", "Agronom", "Tier", "Gärtner", "Imker", "Fischer", "Käsemacher"],
+    "enabled": true
+  },
+  {
+    "id": "19",
+    "key": "Wald",
+    "roles": ["Ranger", "Jäger", "Wanderer", "Vogelbeobachter", "Fotograf", "Wissenschaftler", "Survivalist", "Tier", "Camper", "Forstwirt"],
+    "enabled": true
+  },
+  {
+    "id": "20",
+    "key": "U-Boot",
+    "roles": ["Kapitän", "Ingenieur", "Matrose", "Koch", "Navigator", "Funkoperator", "Arzt", "Wissenschaftler", "Taucher", "Gefangener"],
+    "enabled": true
+  },
+  {
+    "id": "21",
+    "key": "Strand",
+    "roles": ["Bademeister", "Strandbesucher", "Surfer", "Eisverkäufer", "Tourist", "Fotograf", "Fischer", "Picknicker", "Jogger", "Sandburgbauer"],
+    "enabled": true
+  },
+  {
+    "id": "22",
+    "key": "Bahnhof",
+    "roles": ["Schaffner", "Passagier", "Fahrkartenverkäufer", "Sicherheitsbeauftragter", "Reinigungskraft", "Tourist", "Verkäufer", "Zugführer", "Gepäckabfertiger", "Informationsschalterbeamter"],
+    "enabled": true
+  },
+  {
+    "id": "23",
+    "key": "Vergnügungspark",
+    "roles": ["Besucher", "Fahrgeschäftsbediener", "Reinigungskraft", "Sicherheitsbeauftragter", "Kartenverkäufer", "Essensverkäufer", "Clown", "Maskottchen", "Fotograf", "Tourguide"],
+    "enabled": true
+  },
+  {
+    "id": "24",
+    "key": "Café",
+    "roles": ["Kellner", "Kunde", "Barista", "Koch", "Kassierer", "Manager", "Bäcker", "Lieferfahrer", "Gastrokritiker", "Reinigungskraft"],
+    "enabled": true
+  },
+  {
+    "id": "25",
+    "key": "Einkaufszentrum",
+    "roles": ["Shopper", "Sicherheitsbeauftragter", "Kassierer", "Reinigungskraft", "Filialleiter", "Verkäufer", "Mitarbeiter der Food Court", "Kundenbetreuungsvertreter", "Wartungstechniker", "Kind"],
+    "enabled": true
+  },
+  {
+    "id": "26",
+    "key": "Stadion",
+    "roles": ["Athlet", "Trainer", "Zuschauer", "Schiedsrichter", "Sicherheitsbeauftragter", "Reinigungskraft", "Essensverkäufer", "Reporter", "Fotograf", "Kommentator"],
+    "enabled": true
+  },
+  {
+    "id": "27",
+    "key": "Berg",
+    "roles": ["Bergsteiger", "Führer", "Fotograf", "Geologe", "Rettungskraft", "Tourist", "Biologe", "Camper", "Vogelbeobachter", "Wanderer"],
+    "enabled": true
+  },
+  {
+    "id": "28",
+    "key": "Wüste",
+    "roles": ["Forscher", "Tourist", "Archäologe", "Fotograf", "Geologe", "Kamelreiter", "Nomade", "Rettungskraft", "Wissenschaftler", "Survivalist"],
+    "enabled": true
+  },
+  {
+    "id": "29",
+    "key": "Insel",
+    "roles": ["Tourist", "Fischer", "Bademeister", "Fotograf", "Forscher", "Biologe", "Bootkapitän", "Camper", "Rettungskraft", "Survivalist"],
+    "enabled": true
+  },
+  {
+    "id": "30",
+    "key": "Schloss",
+    "roles": ["König", "Königin", "Ritter", "Hofnarr", "Diener", "Wächter", "Besucher", "Historiker", "Archäologe", "Geist"],
+    "enabled": true
+  },
+  {
+    "id": "31",
+    "key": "Weltraumstation",
+    "roles": ["Astronaut", "Ingenieur", "Wissenschaftler", "Kommandant", "Pilot", "Arzt", "Kommunikationsoffizier", "Roboter", "Außerirdischer", "Besucher"],
+    "enabled": true
+  },
+  {
+    "id": "32",
+    "key": "Dschungel",
+    "roles": ["Forscher", "Tourist", "Führer", "Fotograf", "Biologe", "Anthropologe", "Survivalist", "Jäger", "Wissenschaftler", "Tier"],
+    "enabled": true
+  },
+  {
+    "id": "33",
+    "key": "Skigebiet",
+    "roles": ["Skifahrer", "Snowboarder", "Instrukteur", "Bademeister", "Tourist", "Fotograf", "Rettungskraft", "Verkäufer", "Wartungstechniker", "Hotelmanager"],
+    "enabled": true
+  },
+  {
+    "id": "34",
+    "key": "Weingut",
+    "roles": ["Winzer", "Weingutmitarbeiter", "Tourist", "Verkoster", "Fotograf", "Agronom", "Kellermeister", "Weinbauer", "Weinhändler", "Koch"],
+    "enabled": true
+  },
+  {
+    "id": "35",
+    "key": "Bäckerei",
+    "roles": ["Bäcker", "Kunde", "Kassierer", "Konditor", "Lieferfahrer", "Gastrokritiker", "Reinigungskraft", "Manager", "Dekorateur", "Verpacker"],
+    "enabled": true
+  },
+  {
+    "id": "36",
+    "key": "Theater",
+    "roles": ["Schauspieler", "Regisseur", "Zuschauer", "Dramatiker", "Bühnenmanager", "Kostümbildner", "Lichttechniker", "Tontechniker", "Platzanweiser", "Kritiker"],
+    "enabled": true
+  },
+  {
+    "id": "37",
+    "key": "Aquarium",
+    "roles": ["Besucher", "Aquarianer", "Meeresbiologe", "Tourguide", "Fotograf", "Sicherheitsbeauftragter", "Reinigungskraft", "Ticketseller", "Tierarzt", "Taucher"],
+    "enabled": true
+  },
+  {
+    "id": "38",
+    "key": "Gewächshaus",
+    "roles": ["Gärtner", "Besucher", "Botaniker", "Fotograf", "Tourguide", "Wissenschaftler", "Student", "Schädlingsbekämpfer", "Pflanzenzüchter", "Gartenbauingenieur"],
+    "enabled": true
+  },
+  {
+    "id": "39",
+    "key": "Kunstgalerie",
+    "roles": ["Besucher", "Künstler", "Kurator", "Sicherheitsbeauftragter", "Kunstkritiker", "Fotograf", "Tourguide", "Kunsthändler", "Restaurator", "Reinigungskraft"],
+    "enabled": true
+  },
+  {
+    "id": "40",
+    "key": "Musikfestival",
+    "roles": ["Musiker", "Fan", "Sicherheitsbeauftragter", "Veranstaltungsorganisator", "Tontechniker", "Essensverkäufer", "Fotograf", "Roadie", "Journalist", "Ersthelfer"],
+    "enabled": true
+  }
+],
   "locationSettings": {
     "reset": "Zurücksetzen auf Standardeinstellungen",
     "addNew": "Neuen Ort hinzufügen",

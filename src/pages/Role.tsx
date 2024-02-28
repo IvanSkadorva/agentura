@@ -62,7 +62,9 @@ export function Role(): JSX.Element {
             </View>
             <View style={styles.textContainer}>
               <BaseText whiteText>{t('role.location')}</BaseText>
-              <BaseText whiteText>{t(location.key)}</BaseText>
+              <BaseText whiteText>
+                {currentPlayer.role === 'role.spy' ? t('role.unknown') : t(location.key)}
+              </BaseText>
             </View>
 
             <ActionButton

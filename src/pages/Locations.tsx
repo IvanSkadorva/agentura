@@ -119,6 +119,7 @@ const styles = ScaledSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    // maxWidth: '300,
     flex: 1,
   },
   separator: {

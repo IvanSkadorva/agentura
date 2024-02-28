@@ -28,7 +28,8 @@
     "you": "You",
     "civil": "Player",
     "spy": "Spy",
-    "location": "Location:"
+    "location": "Location:",
+    "unknown": "Unknown"
   },
   "hint": {
     "timeForQuestions": "Time for questions",
@@ -106,20 +107,242 @@
   "locations": [
     {
       "id": "1",
-      "key": "Shop 'Native Corner'",
-      "roles": ["Cashier", "Customer", "Owner", "Loader", "Local homeless person", "Grandma selling tomatoes", "Boy sent by his father for bread", "Customer", "Customer", "Collective farm manager"],
+      "key": "School",
+      "roles": ["Teacher", "Student", "Principal", "Janitor", "Librarian", "Counselor", "Security Guard", "Parent", "Cook", "Nurse"],
       "enabled": true
     },
     {
       "id": "2",
-      "key": "Local Council",
-      "roles": ["Grandma in line", "Grandpa in line", "Just asking", "Official", "Cleaner", "Guard", "Manager", "Visitor", "Visitor", "Confused visitor"],
+      "key": "Bank",
+      "roles": ["Teller", "Security Guard", "Customer", "Bank Manager", "Loan Officer", "Financial Advisor", "Accountant", "Auditor", "Investment Banker", "Mortgage Consultant"],
       "enabled": true
     },
     {
       "id": "3",
-      "key": "Village Club",
-      "roles": ["DJ", "Tractor driver Tolya", "Stylish visitor", "Most stylish guy", "Most stylish girl", "Rap enthusiast", "Chanson enthusiast", "Dancer", "Dancer", "Drunk accordion player"],
+      "key": "University",
+      "roles": ["Professor", "Student", "Dean", "Librarian", "Researcher", "Counselor", "Security Guard", "Janitor", "Administrator", "Visitor"],
+      "enabled": true
+    },
+    {
+      "id": "4",
+      "key": "Swimming Pool",
+      "roles": ["Lifeguard", "Swimmer", "Coach", "Janitor", "Parent", "Child", "Teenager", "Visitor", "Pool Manager", "Swim Instructor"],
+      "enabled": true
+    },
+    {
+      "id": "5",
+      "key": "Orbital Station",
+      "roles": ["Astronaut", "Engineer", "Scientist", "Commander", "Pilot", "Doctor", "Communications Officer", "Robot", "Alien", "Visitor"],
+      "enabled": true
+    },
+    {
+      "id": "6",
+      "key": "Military Camp",
+      "roles": ["Soldier", "Commander", "Medic", "Cook", "Drill Instructor", "Mechanic", "Intelligence Officer", "Chaplain", "Recruit", "Visitor"],
+      "enabled": true
+    },
+    {
+      "id": "7",
+      "key": "Hospital",
+      "roles": ["Doctor", "Nurse", "Patient", "Surgeon", "Pharmacist", "Administrator", "Visitor", "Janitor", "Security Guard", "Radiologist"],
+      "enabled": true
+    },
+    {
+      "id": "8",
+      "key": "Restaurant",
+      "roles": ["Waiter", "Chef", "Customer", "Host", "Bartender", "Busser", "Manager", "Dishwasher", "Food Critic", "Delivery Driver"],
+      "enabled": true
+    },
+    {
+      "id": "9",
+      "key": "Supermarket",
+      "roles": ["Cashier", "Customer", "Stock Clerk", "Manager", "Security Guard", "Baker", "Butcher", "Pharmacist", "Janitor", "Delivery Driver"],
+      "enabled": true
+    },
+    {
+      "id": "10",
+      "key": "Airport",
+      "roles": ["Pilot", "Flight Attendant", "Passenger", "Security Officer", "Air Traffic Controller", "Ticket Agent", "Baggage Handler", "Customs Officer", "Mechanic", "Janitor"],
+      "enabled": true
+    },
+    {
+      "id": "11",
+      "key": "Library",
+      "roles": ["Librarian", "Reader", "Student", "Author", "Janitor", "Researcher", "Archivist", "Tutor", "Visitor", "Security Guard"],
+      "enabled": true
+    },
+    {
+      "id": "12",
+      "key": "Police Station",
+      "roles": ["Police Officer", "Detective", "Criminal", "Chief of Police", "Secretary", "Forensic Scientist", "Lawyer", "Journalist", "Janitor", "Visitor"],
+      "enabled": true
+    },
+    {
+      "id": "13",
+      "key": "Zoo",
+      "roles": ["Zookeeper", "Visitor", "Veterinarian", "Tour Guide", "Animal Trainer", "Janitor", "Security Guard", "Photographer", "Student", "Researcher"],
+      "enabled": true
+    },
+    {
+      "id": "14",
+      "key": "Cinema",
+      "roles": ["Viewer", "Projectionist", "Cashier", "Manager", "Janitor", "Security Guard", "Film Critic", "Actor", "Director", "Popcorn Seller"],
+      "enabled": true
+    },
+    {
+      "id": "15",
+      "key": "Museum",
+      "roles": ["Visitor", "Curator", "Security Guard", "Tour Guide", "Historian", "Student", "Artist", "Photographer", "Janitor", "Archivist"],
+      "enabled": true
+    },
+    {
+      "id": "16",
+      "key": "Gym",
+      "roles": ["Trainer", "Member", "Janitor", "Nutritionist", "Manager", "Yoga Instructor", "Bodybuilder", "Physiotherapist", "Boxing Coach", "Swimming Coach"],
+      "enabled": true
+    },
+    {
+      "id": "17",
+      "key": "Hotel",
+      "roles": ["Guest", "Receptionist", "Manager", "Bellboy", "Housekeeper", "Chef", "Security Guard", "Waiter", "Bartender", "Concierge"],
+      "enabled": true
+    },
+    {
+      "id": "18",
+      "key": "Farm",
+      "roles": ["Farmer", "Veterinarian", "Worker", "Visitor", "Agronomist", "Animal", "Gardener", "Beekeeper", "Fisherman", "Cheese Maker"],
+      "enabled": true
+    },
+    {
+      "id": "19",
+      "key": "Forest",
+      "roles": ["Ranger", "Hunter", "Hiker", "Birdwatcher", "Photographer", "Scientist", "Survivalist", "Animal", "Camper", "Forester"],
+      "enabled": true
+    },
+    {
+      "id": "20",
+      "key": "Submarine",
+      "roles": ["Captain", "Engineer", "Sailor", "Cook", "Navigator", "Radio Operator", "Doctor", "Scientist", "Diver", "Prisoner"],
+      "enabled": true
+    },
+    {
+      "id": "21",
+      "key": "Beach",
+      "roles": ["Lifeguard", "Beachgoer", "Surfer", "Ice Cream Vendor", "Tourist", "Photographer", "Fisherman", "Picnicker", "Jogger", "Sandcastle Builder"],
+      "enabled": true
+    },
+    {
+      "id": "22",
+      "key": "Train Station",
+      "roles": ["Conductor", "Passenger", "Ticket Seller", "Security Guard", "Janitor", "Tourist", "Vendor", "Train Driver", "Baggage Handler", "Information Desk Officer"],
+      "enabled": true
+    },
+    {
+      "id": "23",
+      "key": "Amusement Park",
+      "roles": ["Visitor", "Ride Operator", "Janitor", "Security Guard", "Ticket Seller", "Food Vendor", "Clown", "Mascot", "Photographer", "Tour Guide"],
+      "enabled": true
+    },
+    {
+      "id": "24",
+      "key": "Cafe",
+      "roles": ["Waiter", "Customer", "Barista", "Chef", "Cashier", "Manager", "Baker", "Delivery Driver", "Food Critic", "Janitor"],
+      "enabled": true
+    },
+    {
+      "id": "25",
+      "key": "Mall",
+      "roles": ["Shopper", "Security Guard", "Cashier", "Janitor", "Store Manager", "Salesperson", "Food Court Worker", "Customer Service Representative", "Maintenance Worker", "Child"],
+      "enabled": true
+    },
+    {
+      "id": "26",
+      "key": "Stadium",
+      "roles": ["Athlete", "Coach", "Spectator", "Referee", "Security Guard", "Janitor", "Food Vendor", "Reporter", "Photographer", "Commentator"],
+      "enabled": true
+    },
+    {
+      "id": "27",
+      "key": "Mountain",
+      "roles": ["Climber", "Guide", "Photographer", "Geologist", "Rescue Worker", "Tourist", "Biologist", "Camper", "Birdwatcher", "Hiker"],
+      "enabled": true
+    },
+    {
+      "id": "28",
+      "key": "Desert",
+      "roles": ["Explorer", "Tourist", "Archaeologist", "Photographer", "Geologist", "Camel Rider", "Nomad", "Rescue Worker", "Scientist", "Survivalist"],
+      "enabled": true
+    },
+    {
+      "id": "29",
+      "key": "Island",
+      "roles": ["Tourist", "Fisherman", "Lifeguard", "Photographer", "Explorer", "Biologist", "Boat Captain", "Camper", "Rescue Worker", "Survivalist"],
+      "enabled": true
+    },
+    {
+      "id": "30",
+      "key": "Castle",
+      "roles": ["King", "Queen", "Knight", "Jester", "Servant", "Guard", "Visitor", "Historian", "Archaeologist", "Ghost"],
+      "enabled": true
+    },
+    {
+      "id": "31",
+      "key": "Space Station",
+      "roles": ["Astronaut", "Engineer", "Scientist", "Commander", "Pilot", "Doctor", "Communications Officer", "Robot", "Alien", "Visitor"],
+      "enabled": true
+    },
+    {
+      "id": "32",
+      "key": "Jungle",
+      "roles": ["Explorer", "Tourist", "Guide", "Photographer", "Biologist", "Anthropologist", "Survivalist", "Hunter", "Scientist", "Animal"],
+      "enabled": true
+    },
+    {
+      "id": "33",
+      "key": "Ski Resort",
+      "roles": ["Skier", "Snowboarder", "Instructor", "Lifeguard", "Tourist", "Photographer", "Rescue Worker", "Vendor", "Maintenance Worker", "Hotel Manager"],
+      "enabled": true
+    },
+    {
+      "id": "34",
+      "key": "Vineyard",
+      "roles": ["Winemaker", "Vineyard Worker", "Tourist", "Taster", "Photographer", "Agronomist", "Cellar Master", "Viticulturist", "Wine Merchant", "Chef"],
+      "enabled": true
+    },
+    {
+      "id": "35",
+      "key": "Bakery",
+      "roles": ["Baker", "Customer", "Cashier", "Pastry Chef", "Delivery Driver", "Food Critic", "Janitor", "Manager", "Decorator", "Packager"],
+      "enabled": true
+    },
+    {
+      "id": "36",
+      "key": "Theater",
+      "roles": ["Actor", "Director", "Audience Member", "Playwright", "Stage Manager", "Costume Designer", "Lighting Technician", "Sound Engineer", "Usher", "Critic"],
+      "enabled": true
+    },
+    {
+      "id": "37",
+      "key": "Aquarium",
+      "roles": ["Visitor", "Aquarist", "Marine Biologist", "Tour Guide", "Photographer", "Security Guard", "Janitor", "Ticket Seller", "Veterinarian", "Diver"],
+      "enabled": true
+    },
+    {
+      "id": "38",
+      "key": "Greenhouse",
+      "roles": ["Gardener", "Visitor", "Botanist", "Photographer", "Tour Guide", "Scientist", "Student", "Pest Controller", "Plant Breeder", "Horticulturist"],
+      "enabled": true
+    },
+    {
+      "id": "39",
+      "key": "Art Gallery",
+      "roles": ["Visitor", "Artist", "Curator", "Security Guard", "Art Critic", "Photographer", "Tour Guide", "Art Dealer", "Restorer", "Janitor"],
+      "enabled": true
+    },
+    {
+      "id": "40",
+      "key": "Music Festival",
+      "roles": ["Musician", "Fan", "Security Guard", "Event Organizer", "Sound Engineer", "Food Vendor", "Photographer", "Roadie", "Journalist", "First Aid Worker"],
       "enabled": true
     }
   ],

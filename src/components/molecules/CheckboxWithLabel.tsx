@@ -24,7 +24,9 @@ export function CheckboxWithLabel({
 
   return (
     <View style={styles.container}>
-      <BaseText>{label}</BaseText>
+      <View style={styles.textContainer}>
+        <BaseText style={styles.label}>{label}</BaseText>
+      </View>
       <CheckBox
         value={toggleCheckBox}
         onValueChange={handlePress}
@@ -44,5 +46,11 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '1@s',
+  },
+  textContainer: {
+    flex: 1,
+  },
+  label: {
+    textAlign: 'left',
   },
 });

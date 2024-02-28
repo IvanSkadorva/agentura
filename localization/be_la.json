@@ -28,7 +28,8 @@
     "you": "Ty",
     "civil": "Hulec",
     "spy": "Špijon",
-    "location": "Lakacyja:"
+    "location": "Lakacyja:",
+    "unknown": "Nieviadoma"
   },
   "hint": {
     "timeForQuestions": "Čas na pytańni",
@@ -105,13 +106,13 @@
 },
   "locations": [
     {
-    "id": "1",
+      "id": "1",
     "key": "Krama ’Rodny kut’",
-    "roles": ["Kasir/ka", "Klijent/ka", "Uładalnik/ca", "Hruzčyk/ca", "Miascovy/aja biazdomny/aja", "Babula za pamidorami", "Chłopčyk, jakoha baćka pasłaŭ za pivam", "Klijent/ka", "Klijent/ka", "Načalnik/ca kałhasa"],
+    "roles": ["Kasir/ka", "Klijent/ka", "Uładalnik/ca", "Hruzčyk/ca", "Miascovy/aja biazdomny/aja", "Babula", "Chłopčyk, jakoha baćka pasłaŭ za pivam", "Klijent/ka", "Klijent/ka", "Načalnik/ca kałhasa"],
     "enabled": true
     },
     {
-    "id": "2",
+      "id": "2",
     "key": "Rajvykankam",
     "roles": ["Babula ŭ čarzie", "Dziadula ŭ čarzie", "Idzieš ’tolki zapytać’", "Čynoŭnik/ca", "Prybiralnik/ca", "Achoŭnik/ca", "Načalnik/ca", "Naviedvalnik/ca", "Naviedvalnik/ca", "Raźjušany naviedalnik/ca"],
     "enabled": true
@@ -119,7 +120,127 @@
     {
       "id": "3",
     "key": "Sielski klub",
-    "roles": ["Dzidžej", "Traktaryst Tolik", "Stały/aja naviedvalnik/ca", "Samy styliovy chłopiec", "Samaja styliovaja dziaŭčyna", "Amatar/ka repu", "Amatar/ka šansonu", "Tancor/ka", "Tancor/ka", "Pjany adnaviaskoviec"],
+    "roles": ["Dzidžej", "Traktaryst Tolik", "Stały/aja naviedvalnik/ca", "Samy stylovy chłopiec", "Samaja stylovaja dziaŭčyna", "Amatar/ka repu", "Amatar/ka šansonu", "Tancor/ka", "Tancor/ka", "Pjany adnaviaskoviec"],
+    "enabled": true
+    },
+    {
+      "id": "4",
+    "key": "Safijski sabor u Połacku",
+    "roles": ["Hid", "Historyk", "Archieołah", "Achoŭnik/ca", "Dyrektar/ka sabora", "Naviedvalnik/ca", "Fatohraf", "Miascovy/aja žychar/ka", "Naviedvalnik/ca", "Naviedvalnik/ca"],
+    "enabled": true
+    },
+    {
+      "id": "5",
+    "key": "Dziaržaŭny cyrk",
+    "roles": ["Artyst/ka", "Hladač/ka", "Dyrektar/ka cyrka", "Kłoŭn", "Achoŭnik/ca", "Trener", "Fatohraf", "Dresieroŭščyk/ca žyvioł", "Naviedvalnik/ca", "Naviedvalnik/ca"],
+    "enabled": true
+    },
+    {
+      "id": "6",
+    "key": "Rahačoŭski małočnakanservavy kambinat",
+    "roles": ["Rabočy/aja", "Inžynier/ka", "Dyrektar/ka kambinata", "Technik", "Achoŭnik/ca", "Fasoŭščyk/ca", "Ahient/ka z ’Hłybockaj fabryki’", "Ahient/ka z ’Hłybockaj fabryki’", "Fasoŭščyk/ca", "Dehustatar/ka"],
+    "enabled": true
+    },
+    {
+      "id": "7",
+    "key": "Hrunvaldzkaja bitva",
+    "roles": ["Vitaŭt", "Žaŭnier", "Žaŭnier", "Vieršnik", "Kryžak", "Kryžak", "Vialiki mahistar Ulrych fon Junhinhien", "Artyrelist", "Tatar na baku VKŁ", "Vieršnik"],
+    "enabled": true
+    },
+    {
+      "id": "8",
+    "key": "Słavianski bazar",
+    "roles": ["Śpiavak", "Hladač/ka", "Viadučy/aja", "Saładucha", "Narodny ansambal", "Hladač/ka", "Hukaaperatar/ka", "Žurnalist/ka", "Dyrektar/ka", "Pryjšoŭ z baćkami"],
+    "enabled": true
+    },
+    {
+      "id": "9",
+    "key": "Na biełaruska-polskaj miažy",
+    "roles": ["Kiroŭca aŭtobusu", "Pasažyr/ka", "Pasažyr/ka", "Mytnik/ca", "Pamiežnik/ca", "Rovaryst/ka", "Jedzieš u Biełastok na zakupy", "Pasažyr/ka, užo 12 hadzin na miažy", "Błohier/ka", "Kiroŭca busiku"],
+    "enabled": true
+    },
+    {
+      "id": "10",
+    "key": "Mirski zamak",
+    "roles": ["Kiroŭca aŭtobusu", "Hid", "Naviedvalnik/ca", "Naviedvalnik/ca", "Achoŭnik/ca", "Historyk", "Archieołah", "Naviedvalnik/ca", "Błohier/ka", "Hid"],
+    "enabled": true
+    },
+    {
+      "id": "11",
+    "key": "Biełavieskaja pušča",
+    "roles": ["Zubr", "Hid", "Naviedvalnik/ca", "Naviedvalnik/ca", "Lis", "Dzik", "Miascovaja vaviorka", "Kačka", "Vierabiej", "Fatohraf/ka"],
+    "enabled": true
+    },
+    {
+      "id": "12",
+    "key": "Na Paleśsi",
+    "roles": ["Palašuk/čka", "Palašuk/čka", "Palašuk/čka", "Rybak", "Traktaryst/ka", "Rovaryst/ka", "Turyst/ka", "Palaŭničy/aja", "Hančar", "Dryvasiek"],
+    "enabled": true
+    },
+    {
+      "id": "13",
+    "key": "Na Marsie",
+    "roles": ["Pierasialeniec/ka", "Pierasialeniec/ka", "Navukoviec", "Inžynier/ka", "Chimik", "Fermier", "Piśmieńnik", "Inžynier/ka", "Kamandujučy/aja", "Vajskoviec"],
+    "enabled": true
+    },
+    {
+      "id": "14",
+    "key": "Psychijatryčny špital «Navinki»",
+    "roles": ["Lekar/ka", "Lekar/ka", "Pacyjent/ka", "Pacyjent/ka", "Prybiralnik/ščyca", "Źje’chaŭšy/aja z hłuzdu", "Kosiš ad vojska", "Kosiš ad vojska", "Kuchar/ka", "Sanitar/ka"],
+    "enabled": true
+    },
+    {
+      "id": "15",
+    "key": "U Hruzyi",
+    "roles": ["Hruzin/ka", "Hruzin/ka", "Hid", "Adpačyvaješ na mory", "Amatar chinkali", "Amatar chačapury", "Parbuješ miačcovaje vino", "Jedzieš u hory na eksukrsiju", "Turyst/ka", "Damaŭlajeśsia pra košt z taksoŭščykam"],
+    "enabled": true
+    },
+    {
+      "id": "16",
+    "key": "Dziaržynskaja hara",
+    "roles": ["Alpinist/ka", "Turyst/ka", "Miascovy/aja žychar/ka", "Hieohraf", "Vučań", "Naviedvalnik/ca", "Alpinist/ka", "Nastaŭnica z hrupaj", "Vučań", "Hieohraf"],
+    "enabled": true
+    },
+    {
+      "id": "17",
+    "key": "Škoła №1",
+    "roles": ["Nastaŭnik/ca fizyki", "Nastaŭnik/ca biełaruskaj movy", "Nastaŭnik/ca matematyki", "Vučań staršych klas", "Vučań pieršaj klasy", "Baćki na schodzie", "Kuchar/ka", "Achoŭnik/ca", "Nastaŭnik/ca historyi", "Fizruk"],
+    "enabled": true
+    },
+    {
+      "id": "18",
+    "key": "Pachod kryžakoŭ na Horadniu",
+    "roles": ["Kryžak", "Kryžak", "Mahistr", "Koń", "Prus", "Haradzieniec/ka", "Vajar VKŁ", "Haradzieniec/ka", "Vajar VKŁ", "Vajavoda"],
+    "enabled": true
+    },
+    {
+      "id": "19",
+    "key": "Padvodnaja łodka",
+    "roles": ["Matros", "Matros", "Inžynier", "Kamandzir", "Pałkoŭnik", "Elektryk", "Tarpiedyst", "Mechanik", "Vachcior", "Matros"],
+    "enabled": true
+    },
+    {
+      "id": "20",
+    "key": "Karparatyŭ",
+    "roles": ["Šef firmy", "Pracaŭnik/ca", "Pracaŭnik/ca", "Viadučy/aja", "Niapjučy/aja", "Muzyka", "Muzyka", "Ničoha nie pamiataješ", "Prajšoŭ/ła za darma pajeści", "Prybiralnik/ščyca"],
+    "enabled": true
+    },
+    {
+      "id": "21",
+    "key": "Mienskaje metro",
+    "roles": ["Kiroŭca vahonaŭ", "Pasažyr/ka", "Pasažyr/ka", "Pasažyr/ka", "Achoŭnik", "Mechanik", "Milicyjant/ka", "Kiroŭca vahonaŭ", "Kasir/ka", "Prybiralnik/ščyca"],
+    "enabled": true
+    },
+    {
+      "id": "22",
+    "key": "Skład",
+    "roles": ["Hruzčyk", "Kiroŭca mašyny", "Hruzčyk", "Hruzčyk", "Achoŭnik/ca", "Mechanik", "Načalnik/ca", "Kantralor/ka", "Inžynier", "Kiroŭca mašyny"],
+    "enabled": true
+    },
+    {
+      "id": "23",
+    "key": "Barysaŭ-Arena",
+    "roles": ["Futbalist/ka", "Futbalist/ka", "Futbalist/ka", "Sudździa", "Zaŭziatar/ka", "Zaŭziatar/ka", "Zaŭziatar/ka", "Reparter/ka", "Bufetčyk/ca", "Žurnalist/ka"],
     "enabled": true
     }
   ],

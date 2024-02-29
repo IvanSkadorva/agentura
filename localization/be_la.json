@@ -239,9 +239,111 @@
     },
     {
       "id": "23",
-    "key": "Barysaŭ-Arena",
-    "roles": ["Futbalist/ka", "Futbalist/ka", "Futbalist/ka", "Sudździa", "Zaŭziatar/ka", "Zaŭziatar/ka", "Zaŭziatar/ka", "Reparter/ka", "Bufetčyk/ca", "Žurnalist/ka"],
-    "enabled": true
+      "key": "Barysaŭ-Arena",
+      "roles": ["Futbalist/ka", "Futbalist/ka", "Futbalist/ka", "Sudździa", "Zaŭziatar/ka", "Zaŭziatar/ka", "Zaŭziatar/ka", "Reparter/ka", "Bufetčyk/ca", "Žurnalist/ka"],
+      "enabled": true
+    },
+    {
+      "id": "24",
+      "key": "Škoła N1",
+      "roles": ["Nastaŭnik/ca", "Student/ka", "Dyrektar/ka", "Dvornik", "Biblijatekar/ka", "Nastaŭnik/ca", "Achoŭnik/ca", "Baćka", "Kuchar/ka", "Lekar/ka"],
+      "enabled": true
+    },
+    {
+      "id": "25",
+      "key": "Bank",
+      "roles": ["Kasir/ka", "Achoŭnik/ca", "Klijent/ka", "Kiraŭnik/ca banka", "Kredytny/aja inspektar/ka", "Finansavy/aja kansultant/ka", "Buchhaltar/ka", "Aŭdytar/ka", "Investycyjny/aja bankir/ka", "Klijent/ka"],
+      "enabled": true
+    },
+    {
+      "id": "26",
+      "key": "Universytet",
+      "roles": ["Prafesar/ka", "Student/ka", "Dekan", "Biblijatekar/ka", "Daśledčyk/ca", "Student/ka", "Achoŭnik/ca", "Dvornik", "Administratar/ka", "Naviedvalnik/ca"],
+      "enabled": true
+    },
+    {
+      "id": "27",
+      "key": "Płavalny basejn",
+      "roles": ["Rataŭničy/aja", "Płaviec", "Trener/ka", "Prybiralščyk/ca", "Babula", "Dzicia", "Padletak", "Naviedvalnik/ca", "Kiraŭnik/ca basejna", "Instruktar/ka pa płavańni"],
+      "enabled": true
+    },
+    {
+      "id": "28",
+      "key": "Arbitalnaja stancyja",
+      "roles": ["Astranaŭt/ka", "Inžynier/ka", "Navukoviec", "Kamandzir/ka", "Pilot/ka", "Lekar/ka", "Aficer/ka pa suviazi", "Robat", "Inšaplaniecianin/ka", "Astarnaŭt/ka"],
+      "enabled": true
+    },
+    {
+      "id": "29",
+      "key": "Partyzanski lahier",
+      "roles": ["Vajskoviec", "Kamandzir/ka", "Medyk", "Kuchar/ka", "Artyrelist/ka", "Mechanik", "Aficer/ka", "Ksiondz", "Šerahoviec", "Vajskoviec"],
+      "enabled": true
+    },
+    {
+      "id": "30",
+      "key": "Špital",
+      "roles": ["Lekar/ka", "Miedsiastra", "Pacyjent/ka", "Chirurh", "Farmaceŭt", "Administratar/ka", "Naviedvalnik/ca", "Prybiralnik/ca", "Achoŭnik/ca", "Kardyjołah"],
+      "enabled": true
+    },
+    {
+      "id": "31",
+      "key": "Restaran",
+      "roles": ["Kielner/ka", "Kuchar/ka", "Klijent/ka", "Uładalnik/ca", "Barmien/ka", "Prybiralščyk/ca", "Kiraŭnik/ca", "Klijent/ka", "Krytyk", "Hruzčyk"],
+      "enabled": true
+    },
+    {
+      "id": "32",
+      "key": "Supermarkiet",
+      "roles": ["Kasir/ka", "Klijent/ka", "Hruzčyk", "Kiraŭnik/ca", "Achoŭnik/ca", "Piakar", "Miaśnik", "Kuchar/ka", "Prybiralščyk/ca", "Dastaŭščyk/ca"],
+      "enabled": true
+    },
+    {
+      "id": "33",
+      "key": "Aeraport",
+      "roles": ["Pilot/ka", "Ściuardesa", "Pasažyr/ka", "Aficer/ka biaśpieki", "Dyśpietčar/ka pavietranaha ruchu", "Ahient/ka pa biletach", "Rabočy/aja pa bahažu", "Mytnik/ca", "Mechanik", "Prybiralščyk/ca"],
+      "enabled": true
+    },
+    {
+      "id": "34",
+      "key": "Biblijateka",
+      "roles": ["Biblijatekar/ka", "Čytač/ka", "Student/ka", "Aŭtar/ka", "Čytač/ka", "Daśledčyk/ca", "Archivaryjus", "Repietytar/ka", "Naviedvalnik/ca", "Achoŭnik/ca"],
+      "enabled": true
+    },
+    {
+      "id": "35",
+      "key": "Paliciejskaje adździaleńnie",
+      "roles": ["Paliciejski/aja", "Detektyŭ/ka", "Złačynca", "Načalnik/ca palicyi", "Sakratar/ka", "Sudmiedekspert/ka", "Praŭnik", "Žurnalist/ka", "Prybiralščyk/ca", "Naviedvalnik/ca"],
+      "enabled": true
+    },
+    {
+      "id": "36",
+      "key": "Zaapark",
+      "roles": ["Leŭ", "Naviedvalnik/ca", "Vieterynar/ka", "Hid", "Dresiroŭščyk/ca", "Pinhvin", "Zubr", "Fatohraf/ka", "Student/ka", "Vaviorka"],
+      "enabled": true
+    },
+    {
+      "id": "37",
+      "key": "Kinateatr",
+      "roles": ["Hladač/ka", "Hladač/ka", "Kasir/ka", "Kiraŭnik/ca", "Inžynier/ka", "Achoŭnik/ca", "Kinakrytyk", "Hladač/ka", "Režyser/ka", "Pradaviec papkornu"],
+      "enabled": true
+    },
+    {
+      "id": "38",
+      "key": "Muzej imia Janki Kupały",
+      "roles": ["Naviedvalnik/ca", "Kuratar/ka", "Achoŭnik/ca", "Hid", "Historyk", "Student/ka", "Mastak/čka", "Fatohraf/ka", "Naviedvalnik/ca", "Archivar/ka"],
+      "enabled": true
+    },
+    {
+      "id": "39",
+      "key": "Spartzał",
+      "roles": ["Trener/ka", "Naviedvalnik/ca", "Naviedvalnik/ca", "Nutrycyjanist", "Menedžar/ka", "Instruktar/ka pa jozie", "Bodzibiłdzier/ka", "Fizyjaterapeŭt/ka", "Trener/ka pa boksie", "Trener/ka pa płavańni"],
+      "enabled": true
+    },
+    {
+      "id": "40",
+      "key": "Hatel",
+      "roles": ["Hość", "Recepcyjanist/ka", "Menedžar/ka", "Hość", "Achoŭnik/ca", "Barmien/ka", "Kanśjerž", "Prybiralščyk/ca", "Recepcyjanist/ka", "Hość"],
+      "enabled": true
     }
   ],
   "locationSettings": {

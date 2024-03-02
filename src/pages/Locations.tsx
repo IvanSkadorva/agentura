@@ -161,8 +161,8 @@ const styles = ScaledSheet.create({
     height: '120%',
   },
   hint: {
-    fontSize: '16@msr',
-    fontFamily: 'Kino-Regular',
+    fontSize: '14@msr',
+    fontWeight: 'bold',
     textAlign: 'left',
     paddingBottom: '14@msr',
   },

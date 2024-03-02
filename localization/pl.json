@@ -8,7 +8,7 @@
     "delete": "Usuń",
     "edit": "Edytuj",
     "save": "Zapisz",
-    "continue": "Kontynuuj"
+    "continue": "Kontynuj"
   },
   "gameTitle": "Szpieg",
   "configuration": {
@@ -43,7 +43,7 @@
     "whoWon": "Kto Wygrał?",
     "spies": "Szpiedzy",
     "civils": "Gracze",
-    "pauseHint": "Wybierz zwycięzców lub kontynuuj grę"
+    "pauseHint": "Wybierz zwycięzców lub kontynuj grę"
   },
   "winner": {
     "won": "Wygrał",

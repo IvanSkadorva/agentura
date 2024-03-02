@@ -1,17 +1,22 @@
-import { TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import { Pressable } from 'react-native';
+import React from 'react';
 import MusicButtonSvg from '../../assets/images/music-button.svg';
 import MusicButtonMutedSvg from '../../assets/images/music-button-muted.svg';
+import { useAppStore, SoundFile } from '../../store/app-store.ts';
+
 export const MusicButton = (): JSX.Element => {
-  const [muted, setMuted] = useState(false);
+  const isSoundEnabled = useAppStore.use.isSoundEnabled();
+  const toggleSound = useAppStore.use.toggleSound();
+  const playSound = useAppStore.use.playSound();
 
   const handlePress = (): void => {
-    setMuted(!muted);
+    playSound(SoundFile.Secondary);
+    toggleSound();
   };
 
   return (
-    <TouchableOpacity onPress={handlePress}>
-      {muted ? <MusicButtonMutedSvg /> : <MusicButtonSvg />}
-    </TouchableOpacity>
+    <Pressable onPress={handlePress} android_disableSound>
+      {isSoundEnabled ? <MusicButtonSvg /> : <MusicButtonMutedSvg />}
+    </Pressable>
   );
 };

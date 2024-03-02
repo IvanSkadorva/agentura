@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import MainSvg from '../assets/images/main.svg';
 import { ScaledSheet, s, vs } from 'react-native-size-matters';
 import { useTranslation } from 'react-i18next';
@@ -13,12 +13,14 @@ import { type RootStackParamList } from '../App.tsx';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';
 import { LanguageSettings } from '../components/organisms/LanguageSettings.tsx';
 import { MAIN_WHITE } from '../styles/colors.ts';
+import { SoundFile, useAppStore } from '../store/app-store.ts';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export function Home(): JSX.Element {
   const { t } = useTranslation();
   const { navigate } = useNavigation<HomeProps['navigation']>();
+  const playSound = useAppStore.use.playSound();
 
   return (
     <Container
@@ -33,6 +35,7 @@ export function Home(): JSX.Element {
           title={t('buttons.play')}
           onPress={() => {
             navigate('Configuration');
+            playSound(SoundFile.Background);
           }}
           style={styles.playButton}
         />

@@ -1,4 +1,4 @@
-import { Modal, TouchableOpacity, View } from 'react-native';
+import { Modal, Pressable, View } from 'react-native';
 import Close from '../../assets/images/close.svg';
 import { languages } from '../../../localization/i18n.ts';
 import { BaseText } from '../atoms/BaseText.tsx';
@@ -6,11 +6,12 @@ import React, { useState } from 'react';
 import Settings from '../../assets/images/settings.svg';
 import { ScaledSheet } from 'react-native-size-matters';
 import { MAIN_WHITE } from '../../styles/colors.ts';
-import { useAppStore } from '../../store/app-store.ts';
+import { useAppStore, SoundFile } from '../../store/app-store.ts';
 
 export function LanguageSettings(): JSX.Element {
   const [showModal, setShowModal] = useState(false);
   const setLanguage = useAppStore.use.setLanguage();
+  const playSound = useAppStore.use.playSound();
 
   const toggleModal = (): void => {
     setShowModal(!showModal);
@@ -18,27 +19,48 @@ export function LanguageSettings(): JSX.Element {
 
   return (
     <>
-      <TouchableOpacity onPress={toggleModal}>
+      <Pressable
+        onPress={() => {
+          playSound(SoundFile.Secondary);
+          toggleModal();
+        }}
+        android_disableSound
+      >
         <Settings />
-      </TouchableOpacity>
+      </Pressable>
       <View style={[styles.modalWrapper, styles.modalCenteredView]}>
-        <Modal animationType="fade" transparent visible={showModal} onRequestClose={toggleModal}>
+        <Modal
+          animationType="fade"
+          transparent
+          visible={showModal}
+          onRequestClose={() => {
+            playSound(SoundFile.Secondary);
+            toggleModal();
+          }}
+        >
           <View style={styles.modalCenteredView}>
             <View style={styles.modalView}>
-              <TouchableOpacity onPress={toggleModal}>
+              <Pressable
+                onPress={() => {
+                  playSound(SoundFile.Secondary);
+                  toggleModal();
+                }}
+                android_disableSound
+              >
                 <Close width={40} height={40} style={styles.closeButton} />
-              </TouchableOpacity>
+              </Pressable>
               <View style={styles.languagesList}>
                 {languages.map(({ id, label }) => (
-                  <TouchableOpacity
+                  <Pressable
                     onPress={(): void => {
+                      playSound(SoundFile.Primary);
                       setLanguage(id);
                       toggleModal();
                     }}
                     key={id}
                   >
                     <BaseText>{label}</BaseText>
-                  </TouchableOpacity>
+                  </Pressable>
                 ))}
               </View>
             </View>

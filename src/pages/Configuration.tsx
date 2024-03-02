@@ -56,7 +56,7 @@ export const Configuration = (): JSX.Element => {
             <CheckboxWithLabel
               label={t('configuration.enableRoles')}
               onPress={setIsRoleGame}
-              defaultValue={isRoleGame}
+              value={isRoleGame}
             />
             {/* <CheckboxWithLabel */}
             {/*  label={t('configuration.hintsForSpy')} */}

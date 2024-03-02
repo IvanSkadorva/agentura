@@ -18,7 +18,8 @@
     "minutes":"(1-4)[хвіліны];(5-inf)[хвілін];",
     "enableRoles": "Гульня па ролях",
     "hintsForSpy": "Падказкі для шпіёна",
-    "localizationsChosen": "Месцаў абрана"
+    "localizationsChosen": "Месцаў абрана",
+    "swipeLeft": "*Свайп улева каб рэдагаваць альбо выдаліць лакацыю"
   },
   "playerDistribution": {
     "player": "Гулец",

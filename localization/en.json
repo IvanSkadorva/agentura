@@ -18,7 +18,8 @@
     "minutes": "(1-4)[minutes];(5-inf)[minutes];",
     "enableRoles": "Play with roles",
     "hintsForSpy": "Hints for spy",
-    "localizationsChosen": "Selected locations"
+    "localizationsChosen": "Selected locations",
+    "swipeLeft": "*Swipe left to delete or edit location"
   },
   "playerDistribution": {
     "player": "Player",

@@ -7,17 +7,20 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App.tsx';
 import { ScaledSheet, ms, mvs } from 'react-native-size-matters';
 import ArrowRight from '../assets/images/arrow-right.svg';
-import { TouchableOpacity, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { GRADIENT_RED, MAIN_WHITE } from '../styles/colors.ts';
+import { SoundFile, useAppStore } from '../store/app-store.ts';
 
 type HintProps = NativeStackScreenProps<RootStackParamList, 'Hint'>;
 
 export function Hint(): JSX.Element {
   const { t } = useTranslation();
   const { navigate } = useNavigation<HintProps['navigation']>();
+  const playSound = useAppStore.use.playSound();
 
   const handleScreenPress = (): void => {
+    playSound(SoundFile.Timer);
     navigate('Timer');
   };
   return (
@@ -28,7 +31,7 @@ export function Hint(): JSX.Element {
         end={{ x: 0, y: 0 }}
         style={styles.gradient}
       />
-      <TouchableOpacity onPress={handleScreenPress}>
+      <Pressable onPress={handleScreenPress} android_disableSound>
         <Container
           style={styles.wrapper}
           background={require('../assets/images/backgrounds/bg-hint.png')}
@@ -43,7 +46,7 @@ export function Hint(): JSX.Element {
           </View>
           <ArrowRight width={ms(40)} height={mvs(40)} />
         </Container>
-      </TouchableOpacity>
+      </Pressable>
     </>
   );
 }

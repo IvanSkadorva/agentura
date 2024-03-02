@@ -4,21 +4,19 @@ import { View } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { ScaledSheet } from 'react-native-size-matters';
 import { CORAL_RED, MAIN_BLACK } from '../../styles/colors.ts';
+import { useAppStore, SoundFile } from '../../store/app-store.ts';
 
 interface CheckboxWithLabelProps {
   label: string;
   onPress: (newValue: boolean) => void;
-  defaultValue?: boolean;
+  value: boolean;
 }
 
-export function CheckboxWithLabel({
-  label,
-  onPress,
-  defaultValue = false,
-}: CheckboxWithLabelProps): JSX.Element {
-  const [toggleCheckBox, setToggleCheckBox] = useState(defaultValue);
+export function CheckboxWithLabel({ label, onPress, value }: CheckboxWithLabelProps): JSX.Element {
+  const playSound = useAppStore.use.playSound();
+
   const handlePress = (newValue: boolean): void => {
-    setToggleCheckBox(newValue);
+    playSound(SoundFile.Secondary);
     onPress(newValue);
   };
 
@@ -28,7 +26,7 @@ export function CheckboxWithLabel({
         <BaseText style={styles.label}>{label}</BaseText>
       </View>
       <CheckBox
-        value={toggleCheckBox}
+        value={value}
         onValueChange={handlePress}
         tintColor={MAIN_BLACK}
         tintColors={{ true: CORAL_RED, false: MAIN_BLACK }}

@@ -2,16 +2,16 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { type RootStackParamList } from '../App.tsx';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import { ms, ScaledSheet } from 'react-native-size-matters';
 import React, { useEffect, useRef, useState } from 'react';
-import { CORAL_RED, GRADIENT_RED, MAIN_WHITE } from '../styles/colors.ts';
+import { CORAL_RED, MAIN_WHITE } from '../styles/colors.ts';
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
 import Pause from '../assets/images/pause.svg';
 import LinearGradient from 'react-native-linear-gradient';
-import { useAppStore } from '../store/app-store.ts';
+import { SoundFile, useAppStore } from '../store/app-store.ts';
 
 type TimerProps = NativeStackScreenProps<RootStackParamList, 'Timer'>;
 
@@ -19,6 +19,7 @@ export function Timer(): JSX.Element {
   const { t } = useTranslation();
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { navigate, addListener } = useNavigation<TimerProps['navigation']>();
+  const playSound = useAppStore.use.playSound();
 
   const defaultTimeInSeconds = useAppStore.use.gameTimeInMinutes() * 60;
   const [time, setTime] = useState(defaultTimeInSeconds);
@@ -61,11 +62,13 @@ export function Timer(): JSX.Element {
             {new Date(time * 1000).toISOString().slice(14, 19)}
           </BaseText>
         </View>
-        <TouchableOpacity
+        <Pressable
           onPress={() => {
             toggleCountdown();
             navigate('VotingModal');
+            playSound(SoundFile.Primary);
           }}
+          android_disableSound
           style={styles.playButton}
         >
           <CountdownCircleTimer
@@ -83,7 +86,7 @@ export function Timer(): JSX.Element {
           >
             {() => <Pause width={ms(50)} height={ms(50)} fill={CORAL_RED} />}
           </CountdownCircleTimer>
-        </TouchableOpacity>
+        </Pressable>
 
         <View style={styles.textContainer}>
           <BaseText>{t('timer.chooseThePerson')}</BaseText>

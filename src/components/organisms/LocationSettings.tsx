@@ -1,4 +1,4 @@
-import { Modal, Platform, TouchableOpacity, View } from 'react-native';
+import { Modal, Platform, Pressable, View } from 'react-native';
 import React, { useState } from 'react';
 import ThreeDots from '../../assets/images/three-dots.svg';
 import { ScaledSheet } from 'react-native-size-matters';
@@ -6,7 +6,7 @@ import Close from '../../assets/images/close.svg';
 import { BaseText } from '../atoms/BaseText.tsx';
 import { MAIN_WHITE } from '../../styles/colors.ts';
 import { useTranslation } from 'react-i18next';
-import { useAppStore } from '../../store/app-store.ts';
+import { useAppStore, SoundFile } from '../../store/app-store.ts';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../../App.tsx';
@@ -17,6 +17,8 @@ export function LocationSettings(): JSX.Element {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const resetLocations = useAppStore.use.resetLocations();
+  const playSound = useAppStore.use.playSound();
+
   const { navigate } = useNavigation<LocalizationsProps['navigation']>();
 
   const toggleModal = (): void => {
@@ -25,37 +27,61 @@ export function LocationSettings(): JSX.Element {
 
   return (
     <>
-      <TouchableOpacity style={styles.icon} onPress={toggleModal}>
+      <Pressable
+        style={styles.icon}
+        onPress={() => {
+          playSound(SoundFile.Secondary);
+          toggleModal();
+        }}
+        android_disableSound
+      >
         <ThreeDots width={30} height={30} />
-      </TouchableOpacity>
+      </Pressable>
       <View style={[styles.modalWrapper, styles.modalCenteredView]}>
-        <Modal animationType="fade" transparent visible={showModal} onRequestClose={toggleModal}>
+        <Modal
+          animationType="fade"
+          transparent
+          visible={showModal}
+          onRequestClose={() => {
+            playSound(SoundFile.Secondary);
+            toggleModal();
+          }}
+        >
           <View style={styles.modalCenteredView}>
             <View style={styles.modalView}>
-              <TouchableOpacity onPress={toggleModal}>
+              <Pressable
+                onPress={() => {
+                  playSound(SoundFile.Secondary);
+                  toggleModal();
+                }}
+                android_disableSound
+              >
                 <Close width={40} height={40} style={styles.closeButton} />
-              </TouchableOpacity>
+              </Pressable>
               <View style={styles.settingsList}>
                 <View style={styles.textWrapper}>
-                  <TouchableOpacity
+                  <Pressable
+                    android_disableSound
                     onPress={() => {
+                      playSound(SoundFile.Primary);
                       navigate('LocationForm', {});
                       toggleModal();
                     }}
                   >
                     <BaseText>{t('locationSettings.addNew')}</BaseText>
-                  </TouchableOpacity>
+                  </Pressable>
                 </View>
 
                 <View style={styles.textWrapper}>
-                  <TouchableOpacity
+                  <Pressable
+                    android_disableSound
                     onPress={() => {
                       resetLocations();
                       toggleModal();
                     }}
                   >
                     <BaseText>{t('locationSettings.reset')}</BaseText>
-                  </TouchableOpacity>
+                  </Pressable>
                 </View>
               </View>
             </View>

@@ -11,6 +11,7 @@ import { BaseText } from '../components/atoms/BaseText.tsx';
 import WhoSvg from '../assets/images/who.svg';
 import LinearGradient from 'react-native-linear-gradient';
 import { GRADIENT_RED, MAIN_WHITE } from '../styles/colors.ts';
+import { SoundFile } from '../store/app-store.ts';
 
 type PlayerDistributionProps = NativeStackScreenProps<RootStackParamList, 'PlayerDistribution'>;
 export function PlayerDistribution(): JSX.Element {
@@ -40,6 +41,7 @@ export function PlayerDistribution(): JSX.Element {
           <BaseText>{t('playerDistribution.showRoleExplanation')}</BaseText>
           <ActionButton
             title={t('buttons.showRole')}
+            sound={SoundFile.RoleReveal}
             onPress={() => {
               navigation.navigate('Role', { id });
             }}

@@ -18,7 +18,8 @@
     "minutes": "(1-4)[Minuten];(5-inf)[Minuten];",
     "enableRoles": "Mit Rollen spielen",
     "hintsForSpy": "Hinweise für den Spion",
-    "localizationsChosen": "Ausgewählte Orte"
+    "localizationsChosen": "Ausgewählte Orte",
+    "swipeLeft": "Wischen Sie nach links, um den Ort zu löschen oder zu bearbeiten"
   },
   "playerDistribution": {
     "player": "Spieler",

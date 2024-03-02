@@ -18,7 +18,8 @@
     "minutes": "(1-4)[minuty];(5-inf)[minut];",
     "enableRoles": "Graj z rolami",
     "hintsForSpy": "Wskazówki dla zzpiega",
-    "localizationsChosen": "Wybrane lokacje"
+    "localizationsChosen": "Wybrane lokacje",
+    "swipeLeft": "*Przesuń w lewo, aby usunąć/edytować lokalizację"
   },
   "playerDistribution": {
     "player": "Gracz",

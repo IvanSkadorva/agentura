@@ -1,7 +1,7 @@
 import React from 'react';
 import { Animated, FlatList, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
-import { useAppStore } from '../store/app-store.ts';
+import { SoundFile, useAppStore } from '../store/app-store.ts';
 import { useTranslation } from 'react-i18next';
 import { CheckboxWithLabel } from '../components/molecules/CheckboxWithLabel.tsx';
 import { ActionButton } from '../components/molecules/ActionButton.tsx';
@@ -20,6 +20,8 @@ export function Locations(): JSX.Element {
   const locations = useAppStore.use.locations();
   const toggleLocation = useAppStore.use.toggleLocation();
   const deleteLocation = useAppStore.use.deleteLocation();
+  const playSound = useAppStore.use.playSound();
+
   const { navigate } = useNavigation<LocalizationsProps['navigation']>();
   const { t } = useTranslation();
 
@@ -47,6 +49,7 @@ export function Locations(): JSX.Element {
   };
 
   const handleEdit = (id: string): void => {
+    playSound(SoundFile.Secondary);
     navigate('LocationForm', { id });
   };
 
@@ -59,6 +62,7 @@ export function Locations(): JSX.Element {
         handleEdit(id);
       })}
       {renderRightAction('buttons.delete', CORAL_RED, ms(120), progress, () => {
+        playSound(SoundFile.Secondary);
         deleteLocation(id);
       })}
     </View>
@@ -78,6 +82,7 @@ export function Locations(): JSX.Element {
         backgroundStyle={styles.background}
       >
         <View style={styles.wrapper}>
+          <BaseText style={styles.hint}>{t('configuration.swipeLeft')}</BaseText>
           <FlatList
             data={locations}
             ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -91,7 +96,7 @@ export function Locations(): JSX.Element {
                 >
                   <CheckboxWithLabel
                     key={item.key}
-                    defaultValue={item.enabled}
+                    value={item.enabled}
                     label={t(item.key)}
                     onPress={() => {
                       toggleLocation(item.id);
@@ -154,5 +159,11 @@ const styles = ScaledSheet.create({
     right: '10%',
     width: '120%',
     height: '120%',
+  },
+  hint: {
+    fontSize: '16@msr',
+    fontFamily: 'Kino-Regular',
+    textAlign: 'left',
+    paddingBottom: '14@msr',
   },
 });

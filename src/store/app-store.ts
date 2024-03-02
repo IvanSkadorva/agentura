@@ -5,6 +5,7 @@ import sampleSize from 'lodash.samplesize';
 import i18n from 'i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NativeModules, Platform } from 'react-native';
+import Sound from 'react-native-sound';
 
 type WithSelectors<S> = S extends { getState: () => infer T }
   ? S & { use: { [K in keyof T]: () => T[K] } }
@@ -28,6 +29,14 @@ export interface Location {
   enabled: boolean;
   roles: string[];
 }
+export enum SoundFile {
+  Primary = 'button_primary.mp3',
+  Secondary = 'button_secondary.mp3',
+  Winner = 'winner.mp3',
+  Timer = 'timer.mp3',
+  Background = 'background.mp3',
+  RoleReveal = 'role_reveal.mp3',
+}
 
 interface CurrentGame {
   players: Array<{ id: number; role: string }>;
@@ -43,6 +52,8 @@ interface AppState {
   enableHintsForSpies: boolean;
   locations: Location[];
   language: string;
+  isSoundEnabled: boolean;
+  isFirstTime: boolean;
 }
 
 interface AppActions {
@@ -59,6 +70,8 @@ interface AppActions {
   startGame: () => void;
   resetLocations: () => void;
   setLanguage: (language: string) => void;
+  toggleSound: () => void;
+  playSound: (file: SoundFile) => void;
 }
 
 const getBaseLocations = (): Location[] => {
@@ -94,6 +107,7 @@ const initialState: AppState = {
   enableHintsForSpies: false,
   locations: getBaseLocations(),
   language: getPreferredLanguage(),
+  isSoundEnabled: false,
 };
 
 const useAppStoreBase = create<AppState & AppActions>()(
@@ -187,6 +201,22 @@ const useAppStoreBase = create<AppState & AppActions>()(
         set((state) => {
           const selectedIndex = state.locations.findIndex((l: Location) => l.id === location.id);
           state.locations[selectedIndex] = location;
+        });
+      },
+      playSound: (file: SoundFile, volume = 1) => {
+        if (useAppStore.getState().isSoundEnabled) {
+          console.log('playSound', file, volume);
+          const sound = new Sound(file, Sound.MAIN_BUNDLE, () => {
+            sound.setVolume(volume);
+            sound.play();
+          });
+          sound.release();
+        }
+      },
+      toggleSound: () => {
+        set((state) => {
+          console.log('toggleSound', state.isSoundEnabled, Platform.OS);
+          state.isSoundEnabled = !state.isSoundEnabled;
         });
       },
     })),

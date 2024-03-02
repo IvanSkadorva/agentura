@@ -18,7 +18,8 @@
     "minutes":"(1-4)[chviliny];(5-inf)[chvilin];",
     "enableRoles": "Hulnia pa rolach",
     "hintsForSpy": "Padkazki dla špijona",
-    "localizationsChosen": "Miescaŭ abrana"
+    "localizationsChosen": "Miescaŭ abrana",
+    "swipeLeft": "*Svajp uleva kab redahavać albo vydalić lakacyju"
   },
   "playerDistribution": {
     "player": "Hulec",

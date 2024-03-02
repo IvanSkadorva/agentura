@@ -24,6 +24,12 @@
 		7530EC2DA1D74AFFB6CCC340 /* Cygre-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37ABC67FA371467CBCE9696D /* Cygre-SemiBold.ttf */; };
 		766363D35317429291C28D5C /* Cygre-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC9A518294AFBB4051048 /* Cygre-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Agentura-AgenturaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Agentura-AgenturaTests.a */; };
+		7719D3A62B93284E00F33641 /* role_reveal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7719D3A02B93284E00F33641 /* role_reveal.mp3 */; };
+		7719D3A72B93284E00F33641 /* winner.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7719D3A12B93284E00F33641 /* winner.mp3 */; };
+		7719D3A82B93284E00F33641 /* button_secondary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7719D3A22B93284E00F33641 /* button_secondary.mp3 */; };
+		7719D3A92B93284E00F33641 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7719D3A32B93284E00F33641 /* background.mp3 */; };
+		7719D3AA2B93284E00F33641 /* button_primary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7719D3A42B93284E00F33641 /* button_primary.mp3 */; };
+		7719D3AB2B93284E00F33641 /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7719D3A52B93284E00F33641 /* timer.mp3 */; };
 		7FC08202250B4011954F02E3 /* Cygre-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A49E6415501402284D2FA73 /* Cygre-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C56E264979A48BF8B3C79DE /* Cygre-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA41DBE3B4A645D9A1637D6A /* Cygre-Light.ttf */; };
@@ -55,32 +61,38 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Agentura/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Agentura/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Agentura/main.m; sourceTree = "<group>"; };
-		18D5FE34B3CA4178B1E863B9 /* Cygre-SemiBoldIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-SemiBoldIt.ttf"; path = "../src/assets/fonts/Cygre-SemiBoldIt.ttf"; sourceTree = "<group>"; };
-		19266CCBCA6B40DFBAE86E08 /* Cygre-BlackIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-BlackIt.ttf"; path = "../src/assets/fonts/Cygre-BlackIt.ttf"; sourceTree = "<group>"; };
-		193F0224B0434AC185279946 /* Cygre-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-ExtraBold.ttf"; path = "../src/assets/fonts/Cygre-ExtraBold.ttf"; sourceTree = "<group>"; };
+		18D5FE34B3CA4178B1E863B9 /* Cygre-SemiBoldIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-SemiBoldIt.ttf"; path = "../src/assets/fonts/Cygre-SemiBoldIt.ttf"; sourceTree = "<group>"; };
+		19266CCBCA6B40DFBAE86E08 /* Cygre-BlackIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-BlackIt.ttf"; path = "../src/assets/fonts/Cygre-BlackIt.ttf"; sourceTree = "<group>"; };
+		193F0224B0434AC185279946 /* Cygre-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-ExtraBold.ttf"; path = "../src/assets/fonts/Cygre-ExtraBold.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Agentura-AgenturaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agentura-AgenturaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AAE9FA42B234FD58857F467 /* Cygre-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Bold.ttf"; path = "../src/assets/fonts/Cygre-Bold.ttf"; sourceTree = "<group>"; };
-		1D167CBF5CAA47EEBCE8554B /* Cygre-ExtraBoldIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-ExtraBoldIt.ttf"; path = "../src/assets/fonts/Cygre-ExtraBoldIt.ttf"; sourceTree = "<group>"; };
-		37ABC67FA371467CBCE9696D /* Cygre-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-SemiBold.ttf"; path = "../src/assets/fonts/Cygre-SemiBold.ttf"; sourceTree = "<group>"; };
+		1AAE9FA42B234FD58857F467 /* Cygre-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Bold.ttf"; path = "../src/assets/fonts/Cygre-Bold.ttf"; sourceTree = "<group>"; };
+		1D167CBF5CAA47EEBCE8554B /* Cygre-ExtraBoldIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-ExtraBoldIt.ttf"; path = "../src/assets/fonts/Cygre-ExtraBoldIt.ttf"; sourceTree = "<group>"; };
+		37ABC67FA371467CBCE9696D /* Cygre-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-SemiBold.ttf"; path = "../src/assets/fonts/Cygre-SemiBold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Agentura.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agentura.debug.xcconfig"; path = "Target Support Files/Pods-Agentura/Pods-Agentura.debug.xcconfig"; sourceTree = "<group>"; };
-		50CEC9A518294AFBB4051048 /* Cygre-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Medium.ttf"; path = "../src/assets/fonts/Cygre-Medium.ttf"; sourceTree = "<group>"; };
+		50CEC9A518294AFBB4051048 /* Cygre-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Medium.ttf"; path = "../src/assets/fonts/Cygre-Medium.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Agentura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agentura.release.xcconfig"; path = "Target Support Files/Pods-Agentura/Pods-Agentura.release.xcconfig"; sourceTree = "<group>"; };
-		5AAEBBC42AE248BC8431A570 /* Cygre-BookIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-BookIt.ttf"; path = "../src/assets/fonts/Cygre-BookIt.ttf"; sourceTree = "<group>"; };
+		5AAEBBC42AE248BC8431A570 /* Cygre-BookIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-BookIt.ttf"; path = "../src/assets/fonts/Cygre-BookIt.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Agentura-AgenturaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agentura-AgenturaTests.debug.xcconfig"; path = "Target Support Files/Pods-Agentura-AgenturaTests/Pods-Agentura-AgenturaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Agentura.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agentura.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		677BDF0F377A41E18319DF82 /* Cygre-MediumIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-MediumIt.ttf"; path = "../src/assets/fonts/Cygre-MediumIt.ttf"; sourceTree = "<group>"; };
-		6F23CF00D5B14060B90D8DB5 /* Cygre-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Book.ttf"; path = "../src/assets/fonts/Cygre-Book.ttf"; sourceTree = "<group>"; };
-		749F39F3B1EC4D7F92BB15C6 /* Cygre-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Black.ttf"; path = "../src/assets/fonts/Cygre-Black.ttf"; sourceTree = "<group>"; };
-		7A49E6415501402284D2FA73 /* Cygre-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Thin.ttf"; path = "../src/assets/fonts/Cygre-Thin.ttf"; sourceTree = "<group>"; };
+		677BDF0F377A41E18319DF82 /* Cygre-MediumIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-MediumIt.ttf"; path = "../src/assets/fonts/Cygre-MediumIt.ttf"; sourceTree = "<group>"; };
+		6F23CF00D5B14060B90D8DB5 /* Cygre-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Book.ttf"; path = "../src/assets/fonts/Cygre-Book.ttf"; sourceTree = "<group>"; };
+		749F39F3B1EC4D7F92BB15C6 /* Cygre-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Black.ttf"; path = "../src/assets/fonts/Cygre-Black.ttf"; sourceTree = "<group>"; };
+		7719D3A02B93284E00F33641 /* role_reveal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = role_reveal.mp3; path = ../../../Desktop/sounds/role_reveal.mp3; sourceTree = "<group>"; };
+		7719D3A12B93284E00F33641 /* winner.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = winner.mp3; path = ../../../Desktop/sounds/winner.mp3; sourceTree = "<group>"; };
+		7719D3A22B93284E00F33641 /* button_secondary.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = button_secondary.mp3; path = ../../../Desktop/sounds/button_secondary.mp3; sourceTree = "<group>"; };
+		7719D3A32B93284E00F33641 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = ../../../Desktop/sounds/background.mp3; sourceTree = "<group>"; };
+		7719D3A42B93284E00F33641 /* button_primary.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = button_primary.mp3; path = ../../../Desktop/sounds/button_primary.mp3; sourceTree = "<group>"; };
+		7719D3A52B93284E00F33641 /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = timer.mp3; path = ../../../Desktop/sounds/timer.mp3; sourceTree = "<group>"; };
+		7A49E6415501402284D2FA73 /* Cygre-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Thin.ttf"; path = "../src/assets/fonts/Cygre-Thin.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Agentura/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Agentura-AgenturaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agentura-AgenturaTests.release.xcconfig"; path = "Target Support Files/Pods-Agentura-AgenturaTests/Pods-Agentura-AgenturaTests.release.xcconfig"; sourceTree = "<group>"; };
-		8ACBF0650DFC46C68B9AB73E /* Cygre-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Regular.ttf"; path = "../src/assets/fonts/Cygre-Regular.ttf"; sourceTree = "<group>"; };
-		8C7B37FF688D4B28BB82164A /* Cygre-ThinIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-ThinIt.ttf"; path = "../src/assets/fonts/Cygre-ThinIt.ttf"; sourceTree = "<group>"; };
-		932BC8DBA4C247508B51F8D9 /* Kino-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Kino-Regular.ttf"; path = "../src/assets/fonts/Kino-Regular.ttf"; sourceTree = "<group>"; };
-		B182F240111446CDA383F778 /* Cygre-LightIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-LightIt.ttf"; path = "../src/assets/fonts/Cygre-LightIt.ttf"; sourceTree = "<group>"; };
-		C020F4D137454C52BA243BC7 /* Cygre-BoldIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-BoldIt.ttf"; path = "../src/assets/fonts/Cygre-BoldIt.ttf"; sourceTree = "<group>"; };
-		C4510FB017884E5F8C191CED /* Cygre-RegularIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-RegularIt.ttf"; path = "../src/assets/fonts/Cygre-RegularIt.ttf"; sourceTree = "<group>"; };
-		EA41DBE3B4A645D9A1637D6A /* Cygre-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Light.ttf"; path = "../src/assets/fonts/Cygre-Light.ttf"; sourceTree = "<group>"; };
+		8ACBF0650DFC46C68B9AB73E /* Cygre-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Regular.ttf"; path = "../src/assets/fonts/Cygre-Regular.ttf"; sourceTree = "<group>"; };
+		8C7B37FF688D4B28BB82164A /* Cygre-ThinIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-ThinIt.ttf"; path = "../src/assets/fonts/Cygre-ThinIt.ttf"; sourceTree = "<group>"; };
+		932BC8DBA4C247508B51F8D9 /* Kino-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Kino-Regular.ttf"; path = "../src/assets/fonts/Kino-Regular.ttf"; sourceTree = "<group>"; };
+		B182F240111446CDA383F778 /* Cygre-LightIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-LightIt.ttf"; path = "../src/assets/fonts/Cygre-LightIt.ttf"; sourceTree = "<group>"; };
+		C020F4D137454C52BA243BC7 /* Cygre-BoldIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-BoldIt.ttf"; path = "../src/assets/fonts/Cygre-BoldIt.ttf"; sourceTree = "<group>"; };
+		C4510FB017884E5F8C191CED /* Cygre-RegularIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-RegularIt.ttf"; path = "../src/assets/fonts/Cygre-RegularIt.ttf"; sourceTree = "<group>"; };
+		EA41DBE3B4A645D9A1637D6A /* Cygre-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Light.ttf"; path = "../src/assets/fonts/Cygre-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -168,7 +180,6 @@
 				932BC8DBA4C247508B51F8D9 /* Kino-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -181,6 +192,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				7719D3A32B93284E00F33641 /* background.mp3 */,
+				7719D3A42B93284E00F33641 /* button_primary.mp3 */,
+				7719D3A22B93284E00F33641 /* button_secondary.mp3 */,
+				7719D3A02B93284E00F33641 /* role_reveal.mp3 */,
+				7719D3A52B93284E00F33641 /* timer.mp3 */,
+				7719D3A12B93284E00F33641 /* winner.mp3 */,
 				13B07FAE1A68108700A75B9A /* Agentura */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AgenturaTests */,
@@ -308,17 +325,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				7719D3AA2B93284E00F33641 /* button_primary.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				22AA5673AEE2446DAB57DFFD /* Cygre-Black.ttf in Resources */,
 				6CD02DF90DB849878A00DCA9 /* Cygre-BlackIt.ttf in Resources */,
 				0497DDCE14D04CF7A314BA0E /* Cygre-Bold.ttf in Resources */,
 				208EC5AA45314BFE93763C7C /* Cygre-BoldIt.ttf in Resources */,
+				7719D3A92B93284E00F33641 /* background.mp3 in Resources */,
+				7719D3AB2B93284E00F33641 /* timer.mp3 in Resources */,
 				C0F0B74A92D940B690F7DBBC /* Cygre-Book.ttf in Resources */,
 				6D317535D7714E2297ED6669 /* Cygre-BookIt.ttf in Resources */,
 				0231CF57A2C3461792C2F6DD /* Cygre-ExtraBold.ttf in Resources */,
+				7719D3A62B93284E00F33641 /* role_reveal.mp3 in Resources */,
 				BC04A6B72B5149918EF9759B /* Cygre-ExtraBoldIt.ttf in Resources */,
 				8C56E264979A48BF8B3C79DE /* Cygre-Light.ttf in Resources */,
 				F1BBB034A9D348C1B586B2D0 /* Cygre-LightIt.ttf in Resources */,
+				7719D3A82B93284E00F33641 /* button_secondary.mp3 in Resources */,
 				766363D35317429291C28D5C /* Cygre-Medium.ttf in Resources */,
 				109FAA3CBE68432BA85D75FF /* Cygre-MediumIt.ttf in Resources */,
 				25FB820B666D4C68B541D596 /* Cygre-Regular.ttf in Resources */,
@@ -327,6 +349,7 @@
 				099F737CC5EF414D8B9A4E0B /* Cygre-SemiBoldIt.ttf in Resources */,
 				7FC08202250B4011954F02E3 /* Cygre-Thin.ttf in Resources */,
 				E49771CA86F24123909E6984 /* Cygre-ThinIt.ttf in Resources */,
+				7719D3A72B93284E00F33641 /* winner.mp3 in Resources */,
 				94E807E3A74C4EEF88E10DE1 /* Kino-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

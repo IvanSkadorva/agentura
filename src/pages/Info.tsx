@@ -13,12 +13,12 @@ import { MAIN_WHITE } from '../styles/colors.ts';
 export function Info(): JSX.Element {
   const { t } = useTranslation();
 
-  const openInstagram = async (): Promise<void> => {
-    await Linking.openURL('https://www.instagram.com/skivander/');
+  const openInstagram = (): void => {
+    void Linking.openURL('https://www.instagram.com/skivander/');
   };
 
-  const openTelegram = async (): Promise<void> => {
-    await Linking.openURL('https://t.me/skivander');
+  const openTelegram = (): void => {
+    void Linking.openURL('https://t.me/skivander');
   };
 
   return (
@@ -40,11 +40,11 @@ export function Info(): JSX.Element {
         <BaseText style={styles.text}>{t('info.callToAction')}</BaseText>
 
         <View style={styles.socialMediaContainer}>
-          <TouchableOpacity style={styles.socialMediaRow} onPress={() => openInstagram}>
+          <TouchableOpacity style={styles.socialMediaRow} onPress={openInstagram}>
             <Instagram width={50} height={50} />
             <BaseText>Instagram</BaseText>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.socialMediaRow} onPress={() => openTelegram}>
+          <TouchableOpacity style={styles.socialMediaRow} onPress={openTelegram}>
             <Telegram width={50} height={50} />
             <BaseText>Telegram</BaseText>
           </TouchableOpacity>

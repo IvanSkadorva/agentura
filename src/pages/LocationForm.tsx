@@ -40,7 +40,6 @@ export function LocationForm(): JSX.Element {
     goBack();
   };
 
-  console.log('Location', id, location);
   return (
     <>
       <LinearGradient

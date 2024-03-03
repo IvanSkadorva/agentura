@@ -38,6 +38,13 @@ export enum SoundFile {
   RoleReveal = 'role_reveal.mp3',
 }
 
+const buttonPrimarySound = new Sound(SoundFile.Primary, Sound.MAIN_BUNDLE);
+const buttonSecondarySound = new Sound(SoundFile.Secondary, Sound.MAIN_BUNDLE);
+const winnerSound = new Sound(SoundFile.Winner, Sound.MAIN_BUNDLE);
+const timerSound = new Sound(SoundFile.Timer, Sound.MAIN_BUNDLE);
+const backgroundSound = new Sound(SoundFile.Background, Sound.MAIN_BUNDLE);
+const roleRevealSound = new Sound(SoundFile.RoleReveal, Sound.MAIN_BUNDLE);
+
 interface CurrentGame {
   players: Array<{ id: number; role: string }>;
   location: Location;
@@ -54,6 +61,7 @@ interface AppState {
   language: string;
   isSoundEnabled: boolean;
   showLocationsHint: boolean;
+  sounds: Sound[];
 }
 
 interface AppActions {
@@ -110,6 +118,14 @@ const initialState: AppState = {
   language: getPreferredLanguage(),
   isSoundEnabled: false,
   showLocationsHint: true,
+  sounds: [
+    buttonPrimarySound,
+    buttonSecondarySound,
+    winnerSound,
+    timerSound,
+    backgroundSound,
+    roleRevealSound,
+  ],
 };
 
 const useAppStoreBase = create<AppState & AppActions>()(
@@ -211,18 +227,20 @@ const useAppStoreBase = create<AppState & AppActions>()(
         });
       },
       playSound: (file: SoundFile, volume = 1) => {
+        const index = Object.values(SoundFile).indexOf(file);
         if (useAppStore.getState().isSoundEnabled) {
-          console.log('playSound', file, volume);
-          const sound = new Sound(file, Sound.MAIN_BUNDLE, () => {
-            sound.setVolume(volume);
+          const sound = useAppStore.getInitialState().sounds[index]?.setVolume(volume);
+
+          if (sound.isPlaying()) {
+            sound.stop();
             sound.play();
-          });
-          sound.release();
+          } else {
+            sound.play();
+          }
         }
       },
       toggleSound: () => {
         set((state) => {
-          console.log('toggleSound', state.isSoundEnabled, Platform.OS);
           state.isSoundEnabled = !state.isSoundEnabled;
         });
       },

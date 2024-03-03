@@ -18,8 +18,8 @@ import { LocationForm } from './pages/LocationForm.tsx';
 import { VotingModal } from './pages/VotingModal.tsx';
 import { ChooseWinner } from './pages/ChooseWinner.tsx';
 import { useAppStore } from './store/app-store.ts';
-import { useEffect } from 'react';
 import i18n from 'i18next';
+import { useEffect } from 'react';
 
 export enum PlayerRole {
   CIVIL,

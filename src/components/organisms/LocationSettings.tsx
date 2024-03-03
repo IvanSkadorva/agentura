@@ -76,6 +76,7 @@ export function LocationSettings(): JSX.Element {
                   <Pressable
                     android_disableSound
                     onPress={() => {
+                      playSound(SoundFile.Primary);
                       resetLocations();
                       toggleModal();
                     }}

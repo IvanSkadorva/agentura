@@ -7,6 +7,7 @@ import be_la from './be_la.json';
 import be_cy from './be_cy.json';
 import pl from './pl.json';
 import de from './de.json';
+import ua from './ua.json';
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -17,6 +18,7 @@ const resources = {
   be_cy: { translation: be_cy },
   pl: { translation: pl },
   de: { translation: de },
+  ua: { translation: ua },
 };
 
 i18n
@@ -38,11 +40,12 @@ interface Language {
   label: string;
 }
 export const languages: Language[] = [
-  { id: 'pl', label: 'Polish' },
+  { id: 'pl', label: 'Polski' },
   { id: 'en', label: 'English' },
-  { id: 'de', label: 'German' },
-  { id: 'be_la', label: 'Belarusian (Latin)' },
-  { id: 'be_cy', label: 'Belarusian (Cyrillic)' },
+  { id: 'de', label: 'Deutsch' },
+  { id: 'ua', label: 'Українська' },
+  { id: 'be_cy', label: 'Беларуская (кірыліца)' },
+  { id: 'be_la', label: 'Biełaruskaja (łacinka)' },
 ];
 
 export default i18n;

@@ -101,7 +101,7 @@ const getPreferredLanguage = (): string => {
 
   if (supportedLanguages.includes(lowerCaseLocale as string)) {
     console.log('locale', lowerCaseLocale);
-    return lowerCaseLocale === 'ru' || lowerCaseLocale === 'ua' ? 'be_cy' : lowerCaseLocale;
+    return lowerCaseLocale === 'ru' ? 'be_cy' : lowerCaseLocale;
   }
   console.log(`locale ${lowerCaseLocale} is not supported, defaulting to ${defaultLang}`);
 

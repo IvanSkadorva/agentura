@@ -53,7 +53,7 @@ interface AppState {
   locations: Location[];
   language: string;
   isSoundEnabled: boolean;
-  isFirstTime: boolean;
+  showLocationsHint: boolean;
 }
 
 interface AppActions {
@@ -72,6 +72,7 @@ interface AppActions {
   setLanguage: (language: string) => void;
   toggleSound: () => void;
   playSound: (file: SoundFile) => void;
+  hideLocationsHint: () => void;
 }
 
 const getBaseLocations = (): Location[] => {
@@ -108,6 +109,7 @@ const initialState: AppState = {
   locations: getBaseLocations(),
   language: getPreferredLanguage(),
   isSoundEnabled: false,
+  showLocationsHint: true,
 };
 
 const useAppStoreBase = create<AppState & AppActions>()(
@@ -185,6 +187,11 @@ const useAppStoreBase = create<AppState & AppActions>()(
       addLocation: (location) => {
         set((state) => {
           state.locations.push(location);
+        });
+      },
+      hideLocationsHint: () => {
+        set((state) => {
+          state.showLocationsHint = false;
         });
       },
       setLanguage: (language) => {

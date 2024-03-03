@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, FlatList, View } from 'react-native';
+import { Animated, FlatList, Pressable, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
 import { SoundFile, useAppStore } from '../store/app-store.ts';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +13,7 @@ import { RectButton, Swipeable } from 'react-native-gesture-handler';
 import { CORAL_RED, MAIN_ORANGE, MAIN_WHITE } from '../styles/colors.ts';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import LinearGradient from 'react-native-linear-gradient';
+import Close from '../assets/images/close.svg';
 
 type LocalizationsProps = NativeStackScreenProps<RootStackParamList, 'Locations'>;
 
@@ -21,6 +22,8 @@ export function Locations(): JSX.Element {
   const toggleLocation = useAppStore.use.toggleLocation();
   const deleteLocation = useAppStore.use.deleteLocation();
   const playSound = useAppStore.use.playSound();
+  const showLocationsHint = useAppStore.use.showLocationsHint();
+  const hideLocationsHint = useAppStore.use.hideLocationsHint();
 
   const { navigate } = useNavigation<LocalizationsProps['navigation']>();
   const { t } = useTranslation();
@@ -82,7 +85,20 @@ export function Locations(): JSX.Element {
         backgroundStyle={styles.background}
       >
         <View style={styles.wrapper}>
-          <BaseText style={styles.hint}>{t('configuration.swipeLeft')}</BaseText>
+          {showLocationsHint && (
+            <View style={styles.hintContainer}>
+              <BaseText style={styles.hint}>{t('configuration.swipeLeft')}</BaseText>
+              <Pressable
+                onPress={() => {
+                  playSound(SoundFile.Secondary);
+                  hideLocationsHint();
+                }}
+                android_disableSound
+              >
+                <Close width={30} height={30} />
+              </Pressable>
+            </View>
+          )}
           <FlatList
             data={locations}
             ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -160,10 +176,18 @@ const styles = ScaledSheet.create({
     width: '120%',
     height: '120%',
   },
+  hintContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    paddingBottom: '16@msr',
+  },
   hint: {
     fontSize: '14@msr',
+    lineHeight: '22@msr',
     fontWeight: 'bold',
     textAlign: 'left',
-    paddingBottom: '14@msr',
+    flexWrap: 'wrap',
+    width: '80%',
   },
 });

@@ -20,6 +20,7 @@ export function Timer(): JSX.Element {
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { navigate, addListener } = useNavigation<TimerProps['navigation']>();
   const playSound = useAppStore.use.playSound();
+  const stopSound = useAppStore.use.stopSound();
 
   const defaultTimeInSeconds = useAppStore.use.gameTimeInMinutes() * 60;
   const [time, setTime] = useState(defaultTimeInSeconds);
@@ -66,6 +67,7 @@ export function Timer(): JSX.Element {
           onPress={() => {
             toggleCountdown();
             navigate('VotingModal');
+            stopSound(SoundFile.Timer);
             playSound(SoundFile.Primary);
           }}
           android_disableSound

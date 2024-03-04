@@ -79,7 +79,8 @@ interface AppActions {
   resetLocations: () => void;
   setLanguage: (language: string) => void;
   toggleSound: () => void;
-  playSound: (file: SoundFile) => void;
+  playSound: (file: SoundFile, volume?: number) => void;
+  stopSound: (file: SoundFile) => void;
   hideLocationsHint: () => void;
 }
 
@@ -236,6 +237,16 @@ const useAppStoreBase = create<AppState & AppActions>()(
             sound.play();
           } else {
             sound.play();
+          }
+        }
+      },
+      stopSound: (file: SoundFile) => {
+        const index = Object.values(SoundFile).indexOf(file);
+        if (useAppStore.getState().isSoundEnabled) {
+          const sound = useAppStore.getInitialState().sounds[index];
+
+          if (sound.isPlaying()) {
+            sound.stop();
           }
         }
       },

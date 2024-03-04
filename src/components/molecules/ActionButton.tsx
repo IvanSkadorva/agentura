@@ -30,10 +30,12 @@ export const ActionButton = ({
   sound = SoundFile.Primary,
 }: ActionButtonProps): JSX.Element => {
   const playSound = useAppStore.use.playSound();
+
   const onPressWithSound = (): void => {
     playSound(sound);
     onPress();
   };
+
   return (
     <Pressable
       android_disableSound

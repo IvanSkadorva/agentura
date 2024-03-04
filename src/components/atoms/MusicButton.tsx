@@ -10,8 +10,8 @@ export const MusicButton = (): JSX.Element => {
   const playSound = useAppStore.use.playSound();
 
   const handlePress = (): void => {
-    playSound(SoundFile.Secondary);
     toggleSound();
+    playSound(SoundFile.Secondary);
   };
 
   return (

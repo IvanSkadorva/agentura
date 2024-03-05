@@ -12,7 +12,7 @@ import { useAppStore } from '../store/app-store.ts';
 import { FONT_FAMILY_CYGRE } from '../styles/typography.ts';
 import uuid from 'react-native-uuid';
 import LinearGradient from 'react-native-linear-gradient';
-import { MAIN_WHITE } from '../styles/colors.ts';
+import { MAIN_GRAY, MAIN_WHITE } from '../styles/colors.ts';
 
 type LocationFormProps = NativeStackScreenProps<RootStackParamList, 'LocationForm'>;
 
@@ -62,6 +62,7 @@ export function LocationForm(): JSX.Element {
             autoFocus
             numberOfLines={1}
             autoCorrect
+            placeholderTextColor={MAIN_GRAY}
             placeholder={t('locationForm.name')}
           />
           <TextInput
@@ -73,7 +74,7 @@ export function LocationForm(): JSX.Element {
             autoCapitalize="words"
             autoFocus
             numberOfLines={1}
-            autoCorrect
+            placeholderTextColor={MAIN_GRAY}
             placeholder={t('locationForm.roles')}
           />
         </View>

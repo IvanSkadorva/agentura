@@ -30,8 +30,8 @@ export function LocationSettings(): JSX.Element {
       <Pressable
         style={styles.icon}
         onPress={() => {
-          playSound(SoundFile.Secondary);
           toggleModal();
+          playSound(SoundFile.Secondary);
         }}
         android_disableSound
       >

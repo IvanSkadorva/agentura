@@ -6,3 +6,5 @@ export const GRADIENT_BLACK = 'rgba(40, 29, 49, 1)';
 export const MAIN_ORANGE = 'rgb(255, 171, 0)';
 export const MAIN_WHITE = 'rgb(255, 255, 255)';
 export const MAIN_BLACK = 'rgb(0, 0, 0)';
+
+export const MAIN_GRAY = 'rgb(128, 128, 128)';

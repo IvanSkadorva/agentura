@@ -82,8 +82,8 @@ const styles = ScaledSheet.create({
   },
   modalView: {
     flex: 1,
-    maxHeight: '250@mvs',
-    width: '80%',
+    maxHeight: '270@mvs',
+    width: '85%',
     backgroundColor: MAIN_WHITE,
     borderRadius: '30@msr',
     paddingHorizontal: '20@msr',
@@ -107,7 +107,7 @@ const styles = ScaledSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    gap: '20@msr',
+    gap: '25@msr',
     flex: 1,
   },
 });

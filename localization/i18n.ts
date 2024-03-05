@@ -44,8 +44,8 @@ export const languages: Language[] = [
   { id: 'en', label: 'English' },
   { id: 'de', label: 'Deutsch' },
   { id: 'ua', label: 'Українська' },
-  { id: 'be_cy', label: 'Беларуская (кірыліца)' },
   { id: 'be_la', label: 'Biełaruskaja (łacinka)' },
+  { id: 'be_cy', label: 'Беларуская (кірыліца)' },
 ];
 
 export default i18n;

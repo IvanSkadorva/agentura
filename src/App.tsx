@@ -19,7 +19,7 @@ import { VotingModal } from './pages/VotingModal.tsx';
 import { ChooseWinner } from './pages/ChooseWinner.tsx';
 import { useAppStore } from './store/app-store.ts';
 import i18n from 'i18next';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 export enum PlayerRole {
   CIVIL,
@@ -44,7 +44,7 @@ export type RootStackParamList = {
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
-
+const LocationSetting = memo(LocationSettings);
 function App(): React.JSX.Element {
   const language = useAppStore((state) => state.language);
 
@@ -71,7 +71,7 @@ function App(): React.JSX.Element {
             name="Locations"
             component={Locations}
             options={{
-              headerRight: () => <LocationSettings />,
+              headerRight: () => <LocationSetting />,
             }}
           />
           <Stack.Screen name="LocationForm" component={LocationForm} />

@@ -1,4 +1,4 @@
-import { Pressable } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import React from 'react';
 import Back from '../../assets/images/back.svg';
 import { useAppStore, SoundFile } from '../../store/app-store.ts';
@@ -14,8 +14,8 @@ export function BackButton({ goBack }: BackButtonProps): JSX.Element {
     goBack();
   };
   return (
-    <Pressable onPress={handlePress} android_disableSound>
+    <TouchableOpacity onPress={handlePress} touchSoundDisabled>
       <Back />
-    </Pressable>
+    </TouchableOpacity>
   );
 }

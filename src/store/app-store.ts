@@ -186,14 +186,6 @@ const useAppStoreBase = create<AppState & AppActions>()(
               });
             }
           });
-          console.log(
-            state.isRoleGame,
-            state.currentGame,
-            enabledLocations,
-            shuffledRoles,
-            playersIndexes,
-            spiesIndexes
-          );
         });
       },
       resetLocations: () => {

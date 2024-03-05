@@ -1,4 +1,4 @@
-import { Modal, Platform, Pressable, View } from 'react-native';
+import { Modal, Platform, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 import ThreeDots from '../../assets/images/three-dots.svg';
 import { ScaledSheet } from 'react-native-size-matters';
@@ -27,16 +27,16 @@ export function LocationSettings(): JSX.Element {
 
   return (
     <>
-      <Pressable
+      <TouchableOpacity
         style={styles.icon}
         onPress={() => {
           toggleModal();
           playSound(SoundFile.Secondary);
         }}
-        android_disableSound
+        touchSoundDisabled
       >
         <ThreeDots width={30} height={30} />
-      </Pressable>
+      </TouchableOpacity>
       <View style={[styles.modalWrapper, styles.modalCenteredView]}>
         <Modal
           animationType="fade"
@@ -49,19 +49,19 @@ export function LocationSettings(): JSX.Element {
         >
           <View style={styles.modalCenteredView}>
             <View style={styles.modalView}>
-              <Pressable
+              <TouchableOpacity
                 onPress={() => {
                   playSound(SoundFile.Secondary);
                   toggleModal();
                 }}
-                android_disableSound
+                touchSoundDisabled
               >
                 <Close width={40} height={40} style={styles.closeButton} />
-              </Pressable>
+              </TouchableOpacity>
               <View style={styles.settingsList}>
                 <View style={styles.textWrapper}>
-                  <Pressable
-                    android_disableSound
+                  <TouchableOpacity
+                    touchSoundDisabled
                     onPress={() => {
                       playSound(SoundFile.Primary);
                       navigate('LocationForm', {});
@@ -69,12 +69,12 @@ export function LocationSettings(): JSX.Element {
                     }}
                   >
                     <BaseText>{t('locationSettings.addNew')}</BaseText>
-                  </Pressable>
+                  </TouchableOpacity>
                 </View>
 
                 <View style={styles.textWrapper}>
-                  <Pressable
-                    android_disableSound
+                  <TouchableOpacity
+                    touchSoundDisabled
                     onPress={() => {
                       playSound(SoundFile.Primary);
                       resetLocations();
@@ -82,7 +82,7 @@ export function LocationSettings(): JSX.Element {
                     }}
                   >
                     <BaseText>{t('locationSettings.reset')}</BaseText>
-                  </Pressable>
+                  </TouchableOpacity>
                 </View>
               </View>
             </View>

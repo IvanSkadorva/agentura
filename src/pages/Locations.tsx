@@ -117,6 +117,7 @@ export function Locations(): JSX.Element {
                     onPress={() => {
                       toggleLocation(item.id);
                     }}
+                    style={styles.checkbox}
                   />
                 </Swipeable>
               );
@@ -140,7 +141,6 @@ const styles = ScaledSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    // maxWidth: '300,
     flex: 1,
   },
   separator: {
@@ -189,5 +189,8 @@ const styles = ScaledSheet.create({
     textAlign: 'left',
     flexWrap: 'wrap',
     width: '80%',
+  },
+  checkbox: {
+    marginRight: '2@msr',
   },
 });

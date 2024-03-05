@@ -1,4 +1,4 @@
-import { Pressable, type RegisteredStyle, type ViewStyle } from 'react-native';
+import { TouchableOpacity, type RegisteredStyle, type ViewStyle } from 'react-native';
 import { BaseText } from '../atoms/BaseText.tsx';
 import React from 'react';
 import { ScaledSheet } from 'react-native-size-matters';
@@ -37,8 +37,8 @@ export const ActionButton = ({
   };
 
   return (
-    <Pressable
-      android_disableSound
+    <TouchableOpacity
+      touchSoundDisabled
       style={[
         styles.button,
         type === ButtonType.Primary ? styles.primary : styles.secondary,
@@ -50,7 +50,7 @@ export const ActionButton = ({
     >
       {icon != null && icon}
       {title != null && <BaseText whiteText={type === ButtonType.Primary}>{title}</BaseText>}
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

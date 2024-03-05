@@ -1,4 +1,4 @@
-import { Modal, Pressable, View } from 'react-native';
+import { Modal, TouchableOpacity, View } from 'react-native';
 import Close from '../../assets/images/close.svg';
 import { languages } from '../../../localization/i18n.ts';
 import { BaseText } from '../atoms/BaseText.tsx';
@@ -19,15 +19,15 @@ export function LanguageSettings(): JSX.Element {
 
   return (
     <>
-      <Pressable
+      <TouchableOpacity
         onPress={() => {
           playSound(SoundFile.Secondary);
           toggleModal();
         }}
-        android_disableSound
+        touchSoundDisabled
       >
         <Settings />
-      </Pressable>
+      </TouchableOpacity>
       <View style={[styles.modalWrapper, styles.modalCenteredView]}>
         <Modal
           animationType="fade"
@@ -40,18 +40,18 @@ export function LanguageSettings(): JSX.Element {
         >
           <View style={styles.modalCenteredView}>
             <View style={styles.modalView}>
-              <Pressable
+              <TouchableOpacity
                 onPress={() => {
                   playSound(SoundFile.Secondary);
                   toggleModal();
                 }}
-                android_disableSound
+                touchSoundDisabled
               >
                 <Close width={40} height={40} style={styles.closeButton} />
-              </Pressable>
+              </TouchableOpacity>
               <View style={styles.languagesList}>
                 {languages.map(({ id, label }) => (
-                  <Pressable
+                  <TouchableOpacity
                     onPress={(): void => {
                       playSound(SoundFile.Primary);
                       setLanguage(id);
@@ -60,7 +60,7 @@ export function LanguageSettings(): JSX.Element {
                     key={id}
                   >
                     <BaseText>{label}</BaseText>
-                  </Pressable>
+                  </TouchableOpacity>
                 ))}
               </View>
             </View>

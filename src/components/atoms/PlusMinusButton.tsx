@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import PlusSvg from '../../assets/images/plus.svg';
 import MinusSvg from '../../assets/images/minus.svg';
 import { ScaledSheet } from 'react-native-size-matters';
@@ -16,24 +16,24 @@ export const PlusMinusButton = ({ onPress }: PlusMinusButtonProps): JSX.Element 
   };
   return (
     <View style={styles.wrapper}>
-      <Pressable
-        android_disableSound
+      <TouchableOpacity
+        touchSoundDisabled
         onPress={() => {
           handlePress(-1);
           playSound(SoundFile.Secondary);
         }}
       >
         <MinusSvg />
-      </Pressable>
-      <Pressable
-        android_disableSound
+      </TouchableOpacity>
+      <TouchableOpacity
+        touchSoundDisabled
         onPress={() => {
           handlePress(1);
           playSound(SoundFile.Secondary);
         }}
       >
         <PlusSvg />
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

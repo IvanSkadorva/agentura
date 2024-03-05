@@ -1,4 +1,4 @@
-import { Pressable } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import React from 'react';
 import MusicButtonSvg from '../../assets/images/music-button.svg';
 import MusicButtonMutedSvg from '../../assets/images/music-button-muted.svg';
@@ -15,8 +15,8 @@ export const MusicButton = (): JSX.Element => {
   };
 
   return (
-    <Pressable onPress={handlePress} android_disableSound>
+    <TouchableOpacity onPress={handlePress} touchSoundDisabled>
       {isSoundEnabled ? <MusicButtonSvg /> : <MusicButtonMutedSvg />}
-    </Pressable>
+    </TouchableOpacity>
   );
 };

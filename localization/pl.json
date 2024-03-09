@@ -30,7 +30,7 @@
     "civil": "Gracz",
     "spy": "Szpieg",
     "location": "Lokalizacja:",
-    "unknown": "Nieznane"
+    "unknown": "Nieznana"
   },
   "hint": {
     "timeForQuestions": "Czas na Pytania",
@@ -46,19 +46,19 @@
     "pauseHint": "Wybierz zwycięzców lub kontynuj grę"
   },
   "winner": {
-    "won": "Wygrał",
+    "won": "Wygrali",
     "newGame": "Nowa Gra",
     "spiesWere": "(1)[Szpiegiem był:];(2-inf)[Szpiedzy byli:];"
   },
   "info": {
     "aboutUs": "O Nas",
     "aboutUsText": "Projekt ten powstał, ponieważ w innych grach szpiegowskich brakowało funkcji edycji i tworzenia nowych lokacji. To trzeba było naprawić.",
-    "callToAction": "Jeśli masz jakieś sugestie, napisz na Telegramie lub Instagramie."
+    "callToAction": "Jeśli masz jakieś sugestie, pisz na Telegramie lub Instagramie."
   },
   "onboarding": {
     "slide1": {
-      "title": "Szpieg - gra, u której są pytania do Ciebie!",
-      "description": "Wszystko, czego potrzebujesz, to co najmniej trzech ludzi, telefony i przeczytanie tych zasad."
+      "title": "Szpieg - gra, u której są do Ciebie pytania !",
+      "description": "Wszystko, czego potrzebujesz, to co najmniej trzy osoby, telefony i przeczytanie tych zasad."
     },
     "slide2": {
       "title": "Ta gra ma szpiegów i miejscowych",
@@ -210,7 +210,7 @@
     },
     {
       "id": "18",
-      "key": "Farma",
+      "key": "Gospodarstwo rolne",
       "roles": ["Rolnik", "Weterynarz", "Pracownik", "Gość", "Agronom", "Zwierzę", "Ogrodnik", "Pszczelarz", "Rybak", "Producent Serów"],
       "enabled": true
     },

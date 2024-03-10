@@ -68,7 +68,7 @@ interface AppActions {
   setCivilsAmount: (players: number) => void;
   setSpiesAmount: (spies: number) => void;
   setGameTimeInMinutes: (time: number) => void;
-  setIsRoleGame: (isRoleGame: boolean) => void;
+  toggleRoleGame: () => void;
   setEnableHintsForSpies: (enableHintsForSpies: boolean) => void;
   toggleLocation: (id: string) => void;
   setLocations: (locations: Location[]) => void;
@@ -142,8 +142,10 @@ const useAppStoreBase = create<AppState & AppActions>()(
       setGameTimeInMinutes: (gameTimeInMinutes) => {
         set((state) => ({ ...state, gameTimeInMinutes }));
       },
-      setIsRoleGame: (isRoleGame: boolean) => {
-        set((state) => ({ ...state, isRoleGame }));
+      toggleRoleGame: () => {
+        set((state) => {
+          state.isRoleGame = !state.isRoleGame;
+        });
       },
       setEnableHintsForSpies: (enableHintsForSpies) => {
         set((state) => ({ ...state, enableHintsForSpies }));

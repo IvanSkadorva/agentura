@@ -23,7 +23,7 @@ export const Configuration = (): JSX.Element => {
   const navigation = useNavigation<ConfigurationProps['navigation']>();
   const locations = useAppStore.use.locations();
   const isRoleGame = useAppStore.use.isRoleGame();
-  const setIsRoleGame = useAppStore.use.setIsRoleGame();
+  const toggleRoleGame = useAppStore.use.toggleRoleGame();
   // const enableHintsForSpies = useAppStore.use.enableHintsForSpies();
   // const setEnableHintsForSpies = useAppStore.use.setEnableHintsForSpies();
   const startGame = useAppStore.use.startGame();
@@ -55,7 +55,7 @@ export const Configuration = (): JSX.Element => {
             <TimeStepper />
             <CheckboxWithLabel
               label={t('configuration.enableRoles')}
-              onPress={setIsRoleGame}
+              onPress={toggleRoleGame}
               value={isRoleGame}
             />
             {/* <CheckboxWithLabel */}

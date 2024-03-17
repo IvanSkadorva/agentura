@@ -89,8 +89,8 @@ const getBaseLocations = (): Location[] => {
 };
 
 const getPreferredLanguage = (): string => {
-  const defaultLang = 'en';
-  const supportedLanguages = ['en', 'pl', 'ru', 'ua', 'be', 'by', 'de'];
+  const defaultLanguage = 'en';
+  const supportedLanguages = ['en', 'pl', 'ru', 'uk', 'be', 'by', 'de'];
   const locale =
     Platform.OS === 'ios'
       ? NativeModules.SettingsManager?.settings?.AppleLocale ||
@@ -102,11 +102,13 @@ const getPreferredLanguage = (): string => {
 
   if (supportedLanguages.includes(lowerCaseLocale as string)) {
     console.log('locale', lowerCaseLocale);
-    return lowerCaseLocale === 'ru' ? 'be_cy' : lowerCaseLocale;
+    return lowerCaseLocale === 'ru' || lowerCaseLocale === 'be' || lowerCaseLocale === 'by'
+      ? 'be_cy'
+      : lowerCaseLocale;
   }
-  console.log(`locale ${lowerCaseLocale} is not supported, defaulting to ${defaultLang}`);
+  console.log(`locale ${lowerCaseLocale} is not supported, defaulting to ${defaultLanguage}`);
 
-  return defaultLang;
+  return defaultLanguage;
 };
 const initialState: AppState = {
   civils: 4,

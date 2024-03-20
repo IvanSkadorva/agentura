@@ -10,7 +10,11 @@ interface HeaderProps {
   whiteText?: boolean;
 }
 export function Header({ children, style, whiteText = false }: HeaderProps): JSX.Element {
-  return <Text style={[styles.header, style, whiteText && styles.whiteText]}>{children}</Text>;
+  return (
+    <Text allowFontScaling={false} style={[styles.header, style, whiteText && styles.whiteText]}>
+      {children}
+    </Text>
+  );
 }
 
 const styles = ScaledSheet.create({

@@ -55,6 +55,7 @@ export function LocationForm(): JSX.Element {
             {location?.id != null ? t('locationForm.editLocation') : t('locationForm.addLocation')}
           </BaseText>
           <TextInput
+            allowFontScaling={false}
             style={styles.input}
             onChangeText={setName}
             value={name}
@@ -66,6 +67,7 @@ export function LocationForm(): JSX.Element {
             placeholder={t('locationForm.name')}
           />
           <TextInput
+            allowFontScaling={false}
             style={styles.input}
             onChangeText={setRoles}
             value={roles}

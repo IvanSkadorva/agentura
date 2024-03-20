@@ -38,6 +38,7 @@ export enum SoundFile {
   RoleReveal = 'role_reveal.mp3',
 }
 
+Sound.setCategory('Playback');
 const buttonPrimarySound = new Sound(SoundFile.Primary, Sound.MAIN_BUNDLE);
 const buttonSecondarySound = new Sound(SoundFile.Secondary, Sound.MAIN_BUNDLE);
 const winnerSound = new Sound(SoundFile.Winner, Sound.MAIN_BUNDLE);

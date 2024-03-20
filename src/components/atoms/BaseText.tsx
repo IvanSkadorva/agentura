@@ -10,7 +10,11 @@ interface BaseTextProps {
 }
 
 export const BaseText = ({ whiteText = false, style, children }: BaseTextProps): JSX.Element => {
-  return <Text style={[styles.text, whiteText && styles.whiteText, style]}>{children}</Text>;
+  return (
+    <Text style={[styles.text, whiteText && styles.whiteText, style]} allowFontScaling={false}>
+      {children}
+    </Text>
+  );
 };
 const styles = ScaledSheet.create({
   text: {

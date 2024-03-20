@@ -28,7 +28,9 @@ export function Home(): JSX.Element {
     >
       <View style={styles.wrapper}>
         <MainSvg width={s(300)} height={vs(254)} />
-        <Text style={styles.title}>{t('gameTitle')}</Text>
+        <Text allowFontScaling={false} style={styles.title}>
+          {t('gameTitle')}
+        </Text>
         <ActionButton
           title={t('buttons.play')}
           onPress={() => {

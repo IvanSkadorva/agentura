@@ -38,13 +38,14 @@ export enum SoundFile {
   RoleReveal = 'role_reveal.mp3',
 }
 
-Sound.setCategory('Playback');
 const buttonPrimarySound = new Sound(SoundFile.Primary, Sound.MAIN_BUNDLE);
 const buttonSecondarySound = new Sound(SoundFile.Secondary, Sound.MAIN_BUNDLE);
 const winnerSound = new Sound(SoundFile.Winner, Sound.MAIN_BUNDLE);
 const timerSound = new Sound(SoundFile.Timer, Sound.MAIN_BUNDLE);
 const backgroundSound = new Sound(SoundFile.Background, Sound.MAIN_BUNDLE);
 const roleRevealSound = new Sound(SoundFile.RoleReveal, Sound.MAIN_BUNDLE);
+
+Sound.setCategory('Playback');
 
 interface CurrentGame {
   players: Array<{ id: number; role: string }>;
@@ -85,8 +86,8 @@ interface AppActions {
   hideLocationsHint: () => void;
 }
 
-const getBaseLocations = (): Location[] => {
-  return i18n.t('locations', { returnObjects: true }) as unknown as Location[];
+const getBaseLocations = (lng?: string): Location[] => {
+  return i18n.t('locations', { returnObjects: true, lng }) as unknown as Location[];
 };
 
 const getPreferredLanguage = (): string => {
@@ -118,7 +119,7 @@ const initialState: AppState = {
   isRoleGame: false,
   currentGame: { players: [], location: { id: '0', key: '', enabled: false, roles: [] } },
   enableHintsForSpies: false,
-  locations: getBaseLocations(),
+  locations: getBaseLocations(getPreferredLanguage()),
   language: getPreferredLanguage(),
   isSoundEnabled: false,
   showLocationsHint: true,
@@ -213,7 +214,7 @@ const useAppStoreBase = create<AppState & AppActions>()(
           void i18n.changeLanguage(language);
           state.language = language;
 
-          const defaultLocations = getBaseLocations();
+          const defaultLocations = getBaseLocations(language);
           const customLocations = state.locations.filter((location) => location.id.length > 3);
           state.locations = [...defaultLocations, ...customLocations];
         });

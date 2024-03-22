@@ -24,12 +24,12 @@
 		7530EC2DA1D74AFFB6CCC340 /* Cygre-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37ABC67FA371467CBCE9696D /* Cygre-SemiBold.ttf */; };
 		766363D35317429291C28D5C /* Cygre-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC9A518294AFBB4051048 /* Cygre-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Agentura-AgenturaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Agentura-AgenturaTests.a */; };
-		77A778222B94F34100E43839 /* winner.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77A7781C2B94F34100E43839 /* winner.mp3 */; };
-		77A778232B94F34100E43839 /* button_primary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77A7781D2B94F34100E43839 /* button_primary.mp3 */; };
-		77A778242B94F34100E43839 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77A7781E2B94F34100E43839 /* background.mp3 */; };
-		77A778252B94F34100E43839 /* button_secondary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77A7781F2B94F34100E43839 /* button_secondary.mp3 */; };
-		77A778262B94F34100E43839 /* role_reveal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77A778202B94F34100E43839 /* role_reveal.mp3 */; };
-		77A778272B94F34100E43839 /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77A778212B94F34100E43839 /* timer.mp3 */; };
+		77996CA62BADE85E002880A6 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77996CA02BADE85D002880A6 /* background.mp3 */; };
+		77996CA72BADE85E002880A6 /* button_primary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77996CA12BADE85D002880A6 /* button_primary.mp3 */; };
+		77996CA82BADE85E002880A6 /* button_secondary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77996CA22BADE85E002880A6 /* button_secondary.mp3 */; };
+		77996CA92BADE85E002880A6 /* role_reveal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77996CA32BADE85E002880A6 /* role_reveal.mp3 */; };
+		77996CAA2BADE85E002880A6 /* timer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77996CA42BADE85E002880A6 /* timer.mp3 */; };
+		77996CAB2BADE85E002880A6 /* winner.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 77996CA52BADE85E002880A6 /* winner.mp3 */; };
 		7FC08202250B4011954F02E3 /* Cygre-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A49E6415501402284D2FA73 /* Cygre-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C56E264979A48BF8B3C79DE /* Cygre-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA41DBE3B4A645D9A1637D6A /* Cygre-Light.ttf */; };
@@ -77,12 +77,12 @@
 		677BDF0F377A41E18319DF82 /* Cygre-MediumIt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-MediumIt.ttf"; path = "../src/assets/fonts/Cygre-MediumIt.ttf"; sourceTree = "<group>"; };
 		6F23CF00D5B14060B90D8DB5 /* Cygre-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Book.ttf"; path = "../src/assets/fonts/Cygre-Book.ttf"; sourceTree = "<group>"; };
 		749F39F3B1EC4D7F92BB15C6 /* Cygre-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Black.ttf"; path = "../src/assets/fonts/Cygre-Black.ttf"; sourceTree = "<group>"; };
-		77A7781C2B94F34100E43839 /* winner.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winner.mp3; sourceTree = "<group>"; };
-		77A7781D2B94F34100E43839 /* button_primary.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_primary.mp3; sourceTree = "<group>"; };
-		77A7781E2B94F34100E43839 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
-		77A7781F2B94F34100E43839 /* button_secondary.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_secondary.mp3; sourceTree = "<group>"; };
-		77A778202B94F34100E43839 /* role_reveal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = role_reveal.mp3; sourceTree = "<group>"; };
-		77A778212B94F34100E43839 /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timer.mp3; sourceTree = "<group>"; };
+		77996CA02BADE85D002880A6 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
+		77996CA12BADE85D002880A6 /* button_primary.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_primary.mp3; sourceTree = "<group>"; };
+		77996CA22BADE85E002880A6 /* button_secondary.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_secondary.mp3; sourceTree = "<group>"; };
+		77996CA32BADE85E002880A6 /* role_reveal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = role_reveal.mp3; sourceTree = "<group>"; };
+		77996CA42BADE85E002880A6 /* timer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timer.mp3; sourceTree = "<group>"; };
+		77996CA52BADE85E002880A6 /* winner.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winner.mp3; sourceTree = "<group>"; };
 		7A49E6415501402284D2FA73 /* Cygre-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cygre-Thin.ttf"; path = "../src/assets/fonts/Cygre-Thin.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Agentura/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Agentura-AgenturaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agentura-AgenturaTests.release.xcconfig"; path = "Target Support Files/Pods-Agentura-AgenturaTests/Pods-Agentura-AgenturaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +159,12 @@
 		47B9A77BCB7443E09F41E892 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				77996CA02BADE85D002880A6 /* background.mp3 */,
+				77996CA12BADE85D002880A6 /* button_primary.mp3 */,
+				77996CA22BADE85E002880A6 /* button_secondary.mp3 */,
+				77996CA32BADE85E002880A6 /* role_reveal.mp3 */,
+				77996CA42BADE85E002880A6 /* timer.mp3 */,
+				77996CA52BADE85E002880A6 /* winner.mp3 */,
 				749F39F3B1EC4D7F92BB15C6 /* Cygre-Black.ttf */,
 				19266CCBCA6B40DFBAE86E08 /* Cygre-BlackIt.ttf */,
 				1AAE9FA42B234FD58857F467 /* Cygre-Bold.ttf */,
@@ -192,12 +198,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				77A7781E2B94F34100E43839 /* background.mp3 */,
-				77A7781D2B94F34100E43839 /* button_primary.mp3 */,
-				77A7781F2B94F34100E43839 /* button_secondary.mp3 */,
-				77A778202B94F34100E43839 /* role_reveal.mp3 */,
-				77A778212B94F34100E43839 /* timer.mp3 */,
-				77A7781C2B94F34100E43839 /* winner.mp3 */,
 				13B07FAE1A68108700A75B9A /* Agentura */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AgenturaTests */,
@@ -324,30 +324,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77A778252B94F34100E43839 /* button_secondary.mp3 in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				22AA5673AEE2446DAB57DFFD /* Cygre-Black.ttf in Resources */,
 				6CD02DF90DB849878A00DCA9 /* Cygre-BlackIt.ttf in Resources */,
-				77A778242B94F34100E43839 /* background.mp3 in Resources */,
 				0497DDCE14D04CF7A314BA0E /* Cygre-Bold.ttf in Resources */,
 				208EC5AA45314BFE93763C7C /* Cygre-BoldIt.ttf in Resources */,
-				77A778272B94F34100E43839 /* timer.mp3 in Resources */,
+				77996CA92BADE85E002880A6 /* role_reveal.mp3 in Resources */,
 				C0F0B74A92D940B690F7DBBC /* Cygre-Book.ttf in Resources */,
-				77A778262B94F34100E43839 /* role_reveal.mp3 in Resources */,
 				6D317535D7714E2297ED6669 /* Cygre-BookIt.ttf in Resources */,
 				0231CF57A2C3461792C2F6DD /* Cygre-ExtraBold.ttf in Resources */,
-				77A778222B94F34100E43839 /* winner.mp3 in Resources */,
 				BC04A6B72B5149918EF9759B /* Cygre-ExtraBoldIt.ttf in Resources */,
 				8C56E264979A48BF8B3C79DE /* Cygre-Light.ttf in Resources */,
-				77A778232B94F34100E43839 /* button_primary.mp3 in Resources */,
 				F1BBB034A9D348C1B586B2D0 /* Cygre-LightIt.ttf in Resources */,
+				77996CA72BADE85E002880A6 /* button_primary.mp3 in Resources */,
+				77996CA82BADE85E002880A6 /* button_secondary.mp3 in Resources */,
 				766363D35317429291C28D5C /* Cygre-Medium.ttf in Resources */,
+				77996CAA2BADE85E002880A6 /* timer.mp3 in Resources */,
 				109FAA3CBE68432BA85D75FF /* Cygre-MediumIt.ttf in Resources */,
 				25FB820B666D4C68B541D596 /* Cygre-Regular.ttf in Resources */,
+				77996CAB2BADE85E002880A6 /* winner.mp3 in Resources */,
 				B145839FD59B4262BACC88C9 /* Cygre-RegularIt.ttf in Resources */,
 				7530EC2DA1D74AFFB6CCC340 /* Cygre-SemiBold.ttf in Resources */,
 				099F737CC5EF414D8B9A4E0B /* Cygre-SemiBoldIt.ttf in Resources */,
+				77996CA62BADE85E002880A6 /* background.mp3 in Resources */,
 				7FC08202250B4011954F02E3 /* Cygre-Thin.ttf in Resources */,
 				E49771CA86F24123909E6984 /* Cygre-ThinIt.ttf in Resources */,
 				94E807E3A74C4EEF88E10DE1 /* Kino-Regular.ttf in Resources */,
@@ -573,21 +573,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = 347F3CHNZ7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Agentura/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Agentura;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skivander.agentura;
 				PRODUCT_NAME = Agentura;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -601,20 +602,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = 347F3CHNZ7;
 				INFOPLIST_FILE = Agentura/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Agentura;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skivander.agentura;
 				PRODUCT_NAME = Agentura;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

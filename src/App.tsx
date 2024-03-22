@@ -46,7 +46,7 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const LocationSetting = memo(LocationSettings);
 function App(): React.JSX.Element {
-  const language = useAppStore((state) => state.language);
+  const language = useAppStore.use.language();
 
   useEffect(() => {
     void i18n.changeLanguage(language);

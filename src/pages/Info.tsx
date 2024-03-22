@@ -6,7 +6,7 @@ import { Container } from '../components/atoms/Container.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import Instagram from '../assets/images/inst.svg';
 import Telegram from '../assets/images/telegram.svg';
-import { Linking, TouchableOpacity, View } from 'react-native';
+import { Linking, ScrollView, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { MAIN_WHITE } from '../styles/colors.ts';
 
@@ -35,20 +35,22 @@ export function Info(): JSX.Element {
         background={require('../assets/images/backgrounds/bg-info.png')}
         backgroundStyle={styles.background}
       >
-        <BaseText style={styles.header}>{t('info.aboutUs')}</BaseText>
-        <BaseText style={styles.text}>{t('info.aboutUsText')}</BaseText>
-        <BaseText style={styles.text}>{t('info.callToAction')}</BaseText>
+        <ScrollView>
+          <BaseText style={styles.header}>{t('info.aboutUs')}</BaseText>
+          <BaseText style={styles.text}>{t('info.aboutUsText')}</BaseText>
+          <BaseText style={styles.text}>{t('info.callToAction')}</BaseText>
 
-        <View style={styles.socialMediaContainer}>
-          <TouchableOpacity style={styles.socialMediaRow} onPress={openInstagram}>
-            <Instagram width={50} height={50} />
-            <BaseText>Instagram</BaseText>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.socialMediaRow} onPress={openTelegram}>
-            <Telegram width={50} height={50} />
-            <BaseText>Telegram</BaseText>
-          </TouchableOpacity>
-        </View>
+          <View style={styles.socialMediaContainer}>
+            <TouchableOpacity style={styles.socialMediaRow} onPress={openInstagram}>
+              <Instagram width={50} height={50} />
+              <BaseText>Instagram</BaseText>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.socialMediaRow} onPress={openTelegram}>
+              <Telegram width={50} height={50} />
+              <BaseText>Telegram</BaseText>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </Container>
     </>
   );

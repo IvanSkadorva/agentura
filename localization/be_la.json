@@ -18,7 +18,7 @@
 "minutes":"(1-4)[chviliny];(5-inf)[chvilin];",
 "enableRoles": "Hulnia pa rolach",
 "localizationsChosen": "Miescaŭ abrana",
-"swipeLeft": "*Svajp uleva kab redahavać albo vydalić lakacyju"
+"swipeLeft": "*Svajp uleva kab redahavać albo vydalić liakacyju"
 },
 "playerDistribution": {
 "player": "Hulec",
@@ -28,7 +28,7 @@
 "you": "Ty",
 "civil": "Tutejšy",
 "spy": "Agentura",
-"location": "Lakacyja:",
+"location": "Liakacyja:",
 "unknown": "Nieviadoma"
 },
 "hint": {
@@ -65,22 +65,22 @@
 },
 "slide3": {
 "title": "Hałoŭnaja meta tutejšych - znajści agenturu ’Kramla’",
-"description": "Hulnia sama vypadkovym čynam vyznačyć roli j painfarmuje tutejšych(nie Agenturu) ab ich liakacyi. Tutejšyja pavinny, nie vydajučy svajoj lakacyi, zrazumieć chto Agentura za čas hulni"
+"description": "Hulnia sama vypadkovym čynam vyznačyć roli j painfarmuje tutejšych(nie Agenturu) ab ich liakacyi. Tutejšyja pavinny, nie vydajučy svajoj liakacyi, zrazumieć chto Agentura za čas hulni"
 },
 "slide4": {
-"title": "Hałoŭnaje meta Agentury - daviedacca ab lakacyi",
-"description": "Nie vydavaj siabie! Tolki kali budzieš upeŭnieny, raskryjsia j skažy svaju zdahadku. Albo zrabi vyhlad, što viedaješ lakacyju j pierakiń padazreńni na kahości inšaha"
+"title": "Hałoŭnaje meta Agentury - daviedacca ab liakacyi",
+"description": "Nie vydavaj siabie! Tolki kali budzieš upeŭnieny, raskryjsia j skažy svaju zdahadku. Albo zrabi vyhlad, što viedaješ liakacyju j pierakiń padazreńni na kahości inšaha"
 },
 "slide5": {
 "title": "Vybiarycie čałavieka, jaki zadaje pieršaje pytańnie",
-"description": "Toj, chto adkazaŭ, zadaje lubomu hulcu nastupnaje pytańnie, akramia asoby, jakaja pierad hetym zadavała pytańnie. Pa pytańniach i adkazach sprabuj zrazumieć chto sapraŭdy viedaje lakacyju, a chto tolki prykidvajecca."
+"description": "Toj, chto adkazaŭ, zadaje lubomu hulcu nastupnaje pytańnie, akramia asoby, jakaja pierad hetym zadavała pytańnie. Pa pytańniach i adkazach sprabuj zrazumieć chto sapraŭdy viedaje liakacyju, a chto tolki prykidvajecca."
 },
 "slide6": {
-"title": "Pytajciesia adzin adnaho ab lakacyi",
-"description": "Naprykład, lakacyja ’Arbitalnaja stancyja’ i chtości moža zapytacca: ’Ci adčyniš akno kab pravietryć pakoj?’. Tutejšyja, kaniečnie ž, admoviacca, a Agentura moža siabie na hetym vydać."
+"title": "Pytajciesia adzin adnaho ab liakacyi",
+"description": "Naprykład, liakacyja ’Arbitalnaja stancyja’ i chtości moža zapytacca: ’Ci adčyniš akno kab pravietryć pakoj?’. Tutejšyja, kaniečnie ž, admoviacca, a Agentura moža siabie na hetym vydać."
 },
 "slide7": {
-"title": "Ty Agentura j dumaješ, što zrazumieŭ lakacyju?",
+"title": "Ty Agentura j dumaješ, što zrazumieŭ liakacyju?",
 "description": "Naciśni na paŭzu j ahuč miesca. Kali ty adhadaŭ, to vyjhraŭ! Kali nie, to tutejšyja pieramahli"
 },
 "slide8": {
@@ -89,7 +89,7 @@
 },
 "slide9": {
 "title": "Kali taja asoba - Agentura",
-"description": "Tady tutejšyja pieramahli (albo hulnia idzie dalej pry niekalkich Agenturach, da astatniaj). Potym na ekranie pieramožcaŭ možna budzie pabačyć lakacyju j chto byŭ Agenturaj"
+"description": "Tady tutejšyja pieramahli (albo hulnia idzie dalej pry niekalkich Agenturach, da astatniaj). Potym na ekranie pieramožcaŭ možna budzie pabačyć liakacyju j chto byŭ Agenturaj"
 },
 "slide10": {
 "title": "Kali taja asoba - tutejšy/aja",
@@ -101,7 +101,7 @@
 },
 "slide12": {
 "title": "Pryjemnaj hulni!",
-"description": "Nie zabyvajcie mianiać nałady j lakacyi kab mieć bolš cikavyja hulni j haračyja dyskusyi! Redahavać lakacyi možna nacisnuŭšy na ikonku mapy, a potym svajpam uleva adčynić nałady lakacyi"
+"description": "Nie zabyvajcie mianiać nałady j liakacyi kab mieć bolš cikavyja hulni j haračyja dyskusyi! Redahavać liakacyi možna nacisnuŭšy na ikonku mapy, a potym svajpam uleva adčynić nałady liakacyi"
 }
 },
   "locations": [
@@ -347,12 +347,12 @@
   ],
   "locationSettings": {
   "reset": "Skinuć da pačatkovych naładaŭ",
-"addNew": "Dadać novuju lakacyju"
+"addNew": "Dadać novuju liakacyju"
 },
 "locationForm": {
-"name": "Nazva lakacyi",
+"name": "Nazva liakacyi",
 "roles": "1-10 rolaŭ tutejšych praz kosku (Tankist, Medyk, Snajpier...). Kali budzie mieńš 10, to niekatoryja roli mohuć paŭtaracca padčas hulni",
-"editLocation": "Redahavać lakacyju",
-"addLocation": "Dadać lakacyju"
+"editLocation": "Redahavać liakacyju",
+"addLocation": "Dadać liakacyju"
 }
 }

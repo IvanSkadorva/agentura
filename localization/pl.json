@@ -46,7 +46,7 @@
     "pauseHint": "Wybierz zwycięzców lub kontynuj grę"
   },
   "winner": {
-    "won": "Wygrali",
+    "won": "(1)[Wygrali];(2-inf)[Wygrali];",
     "newGame": "Nowa Gra",
     "spiesWere": "(1)[Szpiegiem był:];(2-inf)[Szpiedzy byli:];"
   },

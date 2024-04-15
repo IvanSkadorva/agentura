@@ -1,219 +1,218 @@
 {
   "buttons": {
-    "play": "Hulać",
-    "howToPlay": "Jak hulać?",
-    "forward": "Dalej",
-    "showRole": "Daviedacca",
-    "ok": "Zrazumieła",
-    "delete": "Vydalić",
-    "edit": "Redahavać",
-    "save": "Zachavać",
-    "continue": "Praciahnuć"
-  },
-  "gameTitle": "Agentura",
-  "configuration": {
-    "civil": "Hulcy",
-    "spy": "Špijony",
-    "time": "Čas",
-    "minutes":"(1-4)[chviliny];(5-inf)[chvilin];",
-    "enableRoles": "Hulnia pa rolach",
-    "hintsForSpy": "Padkazki dla špijona",
-    "localizationsChosen": "Miescaŭ abrana",
-    "swipeLeft": "*Svajp uleva kab redahavać albo vydalić lakacyju"
-  },
-  "playerDistribution": {
-    "player": "Hulec",
-    "showRoleExplanation": "Naciśnicie, kab pakazać rolu"
-  },
-  "role": {
-    "you": "Ty",
-    "civil": "Hulec",
-    "spy": "Špijon",
-    "location": "Lakacyja:",
-    "unknown": "Nieviadoma"
-  },
-  "hint": {
-    "timeForQuestions": "Čas na pytańni",
-    "explanation": "Kali budziecie hatovyja, naciśnicie na ekran kab zapuścić tajmier",
-    "chooseThePerson": "Abiarycie čałavieka, jaki zadaje pieršym pytańnie (albo špijon ź minułaj hulni)"
-  },
-  "timer": {
-    "chooseThePerson": "Ciśni na paŭzu, kab zładzić hałasavańnie",
-    "hint": "Čas ładzić astatniaje hałasavańnie albo špijonu skazać svaju zdahadku.",
-    "whoWon": "Chto pieramoh?",
-    "spies": "Špijony",
-    "civils": "Hulcy",
-    "pauseHint": "Vybiarycie pieramožcaŭ albo hulajcie dalej"
-  },
-  "winner": {
-    "won": "Pieramahli",
-    "newGame": "Novaja hulnia",
-    "spiesWere": "(1)[Špijonam byŭ:];(2-inf)[Špijonami byli:];"
-  },
-  "info": {
-    "aboutUs": "Ab nas",
-    "aboutUsText": "Heta prajekt paŭstaŭ tamu, što ŭ inšych špijonach niama lakalnych biełaruskich miescaŭ, a taksama biełaruskaj movy. Treba było heta vypravić",
-    "callToAction": "Kali ŭ vas jość niejkija prapanovy, pišycie ŭ Telegram albo Instagram"
-  },
+"play": "Hulać",
+"howToPlay": "Jak hulać?",
+"forward": "Dalej",
+"showRole": "Daviedacca",
+"ok": "Zrazumieła",
+"delete": "Vydalić",
+"edit": "Redahavać",
+"save": "Zachavać",
+"continue": "Praciahnuć"
+},
+"gameTitle": "Agentura",
+"configuration": {
+"civil": "Tutejšyja",
+"spy": "Agentura",
+"time": "Čas",
+"minutes":"(1-4)[chviliny];(5-inf)[chvilin];",
+"enableRoles": "Hulnia pa rolach",
+"localizationsChosen": "Miescaŭ abrana",
+"swipeLeft": "*Svajp uleva kab redahavać albo vydalić lakacyju"
+},
+"playerDistribution": {
+"player": "Hulec",
+"showRoleExplanation": "Naciśnicie, kab pakazać rolu"
+},
+"role": {
+"you": "Ty",
+"civil": "Tutejšy",
+"spy": "Agentura",
+"location": "Lakacyja:",
+"unknown": "Nieviadoma"
+},
+"hint": {
+"timeForQuestions": "Čas na pytańni",
+"explanation": "Kali budziecie hatovyja, naciśnicie na ekran kab zapuścić tajmier",
+"chooseThePerson": "Abiarycie čałavieka, jaki zadaje pieršym pytańnie (albo agentura ź minułaj hulni)"
+},
+"timer": {
+"chooseThePerson": "Ciśni na paŭzu, kab zładzić hałasavańnie",
+"hint": "Čas ładzić astatniaje hałasavańnie albo agentury skazać svaju zdahadku.",
+"whoWon": "Chto pieramoh?",
+"spies": "Agentura",
+"civils": "Tutejšyja",
+"pauseHint": "Abiarycie pieramožcaŭ albo hulajcie dalej"
+},
+"winner": {
+  "won": "(1)[Pieramahła];(2-inf)[Pieramahli];",
+  "newGame": "Novaja hulnia",
+  "spiesWere": "(1)[Agenturaj byŭ:];(2-inf)[Agenturami byli:];"
+},
+"info": {
+  "aboutUs": "Ab prajekcie",
+  "aboutUsText": "Hetaja hulnia paŭstała tamu, što ŭ inšych špijonach niama lakalnych biełaruskich miescaŭ, a taksama biełaruskaj movy. Treba było heta vypravić",
+  "callToAction": "Kali ŭ vas jość niejkija prapanovy/zaŭvahi, pišycie ŭ telegram albo instagram"
+},
   "onboarding": {
-    "slide1": {
-      "title": "Ahientura - hulnia, u jakoj jość pytańni da ciabie",
-      "description": "Usio, što treba - heta prynamsi try čałavieka, telefon i pračytać hetaja praviły"
-    },
-    "slide2": {
-    "title": "U hetaj hulnie jość ahientura j tutejšyja",
-    "description": "Hulnia sama vyznačyć roli j painfarmuje tutejšych(nie Ahienturu) ab ich lakacyi"
-    },
-    "slide3": {
-    "title": "Hałoŭnaje meta tutejšych - znajści ahienturu ’Kramla’",
-    "description": "Tutejšyja pabačać lakacyju j pavinny, nie vydavaja jaje, zrazumieć chto Ahientura za čas hulni"
-    },
-    "slide4": {
-    "title": "Hałoŭnaje meta Ahientury - daviedacca ab lakacyi",
-    "description": "Nie vydavaj siabie! Tolki kali budzieš upeŭnieny, raskryjsia j skažy svaju zdahadku"
-    },
-    "slide5": {
-    "title": "Vybiarycie čałavieka, jaki zadaje pieršaje pytańnie",
-    "description": "Adkazaŭšy zadaje lubomu hulcu nastupnaje pytańnie, akramia asoby, jakaja pierad hetym zadavała pytańnie"
-    },
-    "slide6": {
-    "title": "Pytajciesia adzin adnaho ab lakacyi",
-    "description": "Pa pytańniach i adkazach sprabuj zrazumieć chto sapraŭdy viedaje lakacyju, a chto tolki pretenduje. Budź uvažlivym i nie raskryvajsia!"
-    },
-    "slide7": {
-    "title": "Ty Ahientura j dumaješ, što zrazumieŭ lakacyju?",
-    "description": "Naciśni na paŭzu j ahuč miesca. Kali ty adhadaŭ, to vyjhraŭ! Kali nie, to tutejšyja pieramahli"
-    },
-    "slide8": {
-    "title": "Kožny hulec moža pačać hałasavańnie",
-    "description": "Naciśni na paŭzu j padzialisia svaimi dumkami nakont Ahientury. Kali bolšaść taksama prahałasuje za prapanavanuju asobu, to hetaja asoba havoryć svaju rolu"
-    },
-    "slide9": {
-    "title": "Kali taja asoba - Ahientura",
-    "description": "Tady tutejšyja pieramahli (albo hulnia idzie dalej pry niekalkich Ahienturach). Na ekranie pieramožcaŭ možna budzie pabačyć lakacyju j chto byŭ Ahienturaj"
-    },
-    "slide10": {
-    "title": "Kali taja asoba - tutejšy/aja",
-    "description": "Tady Ahientura pieramahła. Kali čas skončyŭsia j Ahientura nie była znojdziena navat padčas astatniaha hałasavańnia (paśla kanca času), to Ahientura pieramahła"
-    },
-    "slide11": {
-    "title": "Hulnia pa rolach",
-    "description": "Kali hetaja opcyja uklučana, to tutejšyja atrymajuć roli. Adkazvajcie j pytajcie inšych, bieručy pad ŭvahu svaju rolu"
-    },
-    "slide12": {
-    "title": "Pryjemnaj hulni!",
-    "description": "Nie zabyvajcie mianiać nałady j lakacyi kab mieć bolš cikavyja hulni j haračyja dyskusyi! Redahavać lakacyi možna nacisnuŭšy na ikonku mapy, a potym svajpam uleva adčynić nałady lakacyi"
-    }
+  "slide1": {
+"title": "Agentura - hulnia, u jakoj jość pytańni da ciabie",
+"description": "Usio, što treba - heta prynamsi try čałavieki, telefon i pračytać hetyja praviły."
+},
+"slide2": {
+"title": "U hetaj hulni jość agentura j tutejšyja",
+"description": "Spačatku vyznačcie kanfihuracyju (naprykład, na 5 čałaviek – 4 tutejšych i 1 agentura). Dalej naciśnicie na ’Hulać’. Pieršy hulec pavinien pahladzieć svaju rolu, potym pieradać telefon nastupnamu hulcu j tak pa kołu kab nichto nie pabačyŭ roli inšych."
+},
+"slide3": {
+"title": "Hałoŭnaja meta tutejšych - znajści agenturu ’Kramla’",
+"description": "Hulnia sama vypadkovym čynam vyznačyć roli j painfarmuje tutejšych(nie Agenturu) ab ich liakacyi. Tutejšyja pavinny, nie vydajučy svajoj lakacyi, zrazumieć chto Agentura za čas hulni"
+},
+"slide4": {
+"title": "Hałoŭnaje meta Agentury - daviedacca ab lakacyi",
+"description": "Nie vydavaj siabie! Tolki kali budzieš upeŭnieny, raskryjsia j skažy svaju zdahadku. Albo zrabi vyhlad, što viedaješ lakacyju j pierakiń padazreńni na kahości inšaha"
+},
+"slide5": {
+"title": "Vybiarycie čałavieka, jaki zadaje pieršaje pytańnie",
+"description": "Toj, chto adkazaŭ, zadaje lubomu hulcu nastupnaje pytańnie, akramia asoby, jakaja pierad hetym zadavała pytańnie. Pa pytańniach i adkazach sprabuj zrazumieć chto sapraŭdy viedaje lakacyju, a chto tolki prykidvajecca."
+},
+"slide6": {
+"title": "Pytajciesia adzin adnaho ab lakacyi",
+"description": "Naprykład, lakacyja ’Arbitalnaja stancyja’ i chtości moža zapytacca: ’Ci adčyniš akno kab pravietryć pakoj?’. Tutejšyja, kaniečnie ž, admoviacca, a Agentura moža siabie na hetym vydać."
+},
+"slide7": {
+"title": "Ty Agentura j dumaješ, što zrazumieŭ lakacyju?",
+"description": "Naciśni na paŭzu j ahuč miesca. Kali ty adhadaŭ, to vyjhraŭ! Kali nie, to tutejšyja pieramahli"
+},
+"slide8": {
+"title": "Kožny hulec moža pačać hałasavańnie",
+"description": "Naciśni na paŭzu j padzialisia svaimi dumkami nakont Agentury. Kali bolšaść taksama prahałasuje za prapanavanuju asobu, to hetaja asoba havoryć svaju rolu"
+},
+"slide9": {
+"title": "Kali taja asoba - Agentura",
+"description": "Tady tutejšyja pieramahli (albo hulnia idzie dalej pry niekalkich Agenturach, da astatniaj). Potym na ekranie pieramožcaŭ možna budzie pabačyć lakacyju j chto byŭ Agenturaj"
+},
+"slide10": {
+"title": "Kali taja asoba - tutejšy/aja",
+"description": "Tady Agentura pieramahła. Kali čas skončyŭsia j Agentura nie była znojdziena navat padčas astatniaha hałasavańnia (paśla kanca času), to Agentura pieramahła"
+},
+"slide11": {
+"title": "Hulnia pa rolach",
+"description": "Kali hetaja opcyja uklučana, to tutejšyja atrymajuć roli. Adkazvajcie j pytajcie inšych, bieručy pad ŭvahu svaju rolu"
+},
+"slide12": {
+"title": "Pryjemnaj hulni!",
+"description": "Nie zabyvajcie mianiać nałady j lakacyi kab mieć bolš cikavyja hulni j haračyja dyskusyi! Redahavać lakacyi možna nacisnuŭšy na ikonku mapy, a potym svajpam uleva adčynić nałady lakacyi"
+}
 },
   "locations": [
-    {
-      "id": "1",
-    "key": "Krama ’Rodny kut’",
-    "roles": ["Kasir/ka", "Klijent/ka", "Uładalnik/ca", "Hruzčyk/ca", "Miascovy/aja biazdomny/aja", "Babula", "Chłopčyk, jakoha baćka pasłaŭ za pivam", "Klijent/ka", "Klijent/ka", "Načalnik/ca kałhasa"],
-    "enabled": true
-    },
-    {
-      "id": "2",
-    "key": "Rajvykankam",
-    "roles": ["Babula ŭ čarzie", "Dziadula ŭ čarzie", "Idzieš ’tolki zapytać’", "Čynoŭnik/ca", "Prybiralnik/ca", "Achoŭnik/ca", "Načalnik/ca", "Naviedvalnik/ca", "Naviedvalnik/ca", "Raźjušany naviedalnik/ca"],
-    "enabled": true
-    },
-    {
-      "id": "3",
-    "key": "Sielski klub",
-    "roles": ["Dzidžej", "Traktaryst Tolik", "Stały/aja naviedvalnik/ca", "Samy stylovy chłopiec", "Samaja stylovaja dziaŭčyna", "Amatar/ka repu", "Amatar/ka šansonu", "Tancor/ka", "Tancor/ka", "Pjany adnaviaskoviec"],
-    "enabled": true
-    },
-    {
-      "id": "4",
-    "key": "Safijski sabor u Połacku",
-    "roles": ["Hid", "Historyk", "Archieołah", "Achoŭnik/ca", "Dyrektar/ka sabora", "Naviedvalnik/ca", "Fatohraf", "Miascovy/aja žychar/ka", "Naviedvalnik/ca", "Naviedvalnik/ca"],
-    "enabled": true
-    },
-    {
-      "id": "5",
-    "key": "Dziaržaŭny cyrk",
-    "roles": ["Artyst/ka", "Hladač/ka", "Dyrektar/ka cyrka", "Kłoŭn", "Achoŭnik/ca", "Trener", "Fatohraf", "Dresieroŭščyk/ca žyvioł", "Naviedvalnik/ca", "Naviedvalnik/ca"],
-    "enabled": true
-    },
-    {
-      "id": "6",
-    "key": "Rahačoŭski małočnakanservavy kambinat",
-    "roles": ["Rabočy/aja", "Inžynier/ka", "Dyrektar/ka kambinata", "Technik", "Achoŭnik/ca", "Fasoŭščyk/ca", "Ahient/ka z ’Hłybockaj fabryki’", "Ahient/ka z ’Hłybockaj fabryki’", "Fasoŭščyk/ca", "Dehustatar/ka"],
-    "enabled": true
-    },
-    {
-      "id": "7",
-    "key": "Hrunvaldzkaja bitva",
-    "roles": ["Vitaŭt", "Žaŭnier", "Žaŭnier", "Vieršnik", "Kryžak", "Kryžak", "Vialiki mahistar Ulrych fon Junhinhien", "Artyrelist", "Tatar na baku VKŁ", "Vieršnik"],
-    "enabled": true
-    },
-    {
-      "id": "8",
-    "key": "Słavianski bazar",
-    "roles": ["Śpiavak", "Hladač/ka", "Viadučy/aja", "Saładucha", "Narodny ansambal", "Hladač/ka", "Hukaaperatar/ka", "Žurnalist/ka", "Dyrektar/ka", "Pryjšoŭ z baćkami"],
-    "enabled": true
-    },
-    {
-      "id": "9",
-    "key": "Na biełaruska-polskaj miažy",
-    "roles": ["Kiroŭca aŭtobusu", "Pasažyr/ka", "Pasažyr/ka", "Mytnik/ca", "Pamiežnik/ca", "Rovaryst/ka", "Jedzieš u Biełastok na zakupy", "Pasažyr/ka, užo 12 hadzin na miažy", "Błohier/ka", "Kiroŭca busiku"],
-    "enabled": true
-    },
-    {
-      "id": "10",
-    "key": "Mirski zamak",
-    "roles": ["Kiroŭca aŭtobusu", "Hid", "Naviedvalnik/ca", "Naviedvalnik/ca", "Achoŭnik/ca", "Historyk", "Archieołah", "Naviedvalnik/ca", "Błohier/ka", "Hid"],
-    "enabled": true
-    },
-    {
-      "id": "11",
-    "key": "Biełavieskaja pušča",
-    "roles": ["Zubr", "Hid", "Naviedvalnik/ca", "Naviedvalnik/ca", "Lis", "Dzik", "Miascovaja vaviorka", "Kačka", "Vierabiej", "Fatohraf/ka"],
-    "enabled": true
-    },
-    {
-      "id": "12",
-    "key": "Na Paleśsi",
-    "roles": ["Palašuk/čka", "Palašuk/čka", "Palašuk/čka", "Rybak", "Traktaryst/ka", "Rovaryst/ka", "Turyst/ka", "Palaŭničy/aja", "Hančar", "Dryvasiek"],
-    "enabled": true
-    },
-    {
-      "id": "13",
-    "key": "Na Marsie",
-    "roles": ["Pierasialeniec/ka", "Pierasialeniec/ka", "Navukoviec", "Inžynier/ka", "Chimik", "Fermier", "Piśmieńnik", "Inžynier/ka", "Kamandujučy/aja", "Vajskoviec"],
-    "enabled": true
-    },
-    {
-      "id": "14",
-    "key": "Psychijatryčny špital «Navinki»",
-    "roles": ["Lekar/ka", "Lekar/ka", "Pacyjent/ka", "Pacyjent/ka", "Prybiralnik/ščyca", "Źje’chaŭšy/aja z hłuzdu", "Kosiš ad vojska", "Kosiš ad vojska", "Kuchar/ka", "Sanitar/ka"],
-    "enabled": true
-    },
-    {
-      "id": "15",
-    "key": "U Hruzyi",
-    "roles": ["Hruzin/ka", "Hruzin/ka", "Hid", "Adpačyvaješ na mory", "Amatar chinkali", "Amatar chačapury", "Parbuješ miačcovaje vino", "Jedzieš u hory na eksukrsiju", "Turyst/ka", "Damaŭlajeśsia pra košt z taksoŭščykam"],
-    "enabled": true
-    },
-    {
-      "id": "16",
-    "key": "Dziaržynskaja hara",
-    "roles": ["Alpinist/ka", "Turyst/ka", "Miascovy/aja žychar/ka", "Hieohraf", "Vučań", "Naviedvalnik/ca", "Alpinist/ka", "Nastaŭnica z hrupaj", "Vučań", "Hieohraf"],
-    "enabled": true
-    },
-    {
-      "id": "17",
-    "key": "Škoła №1",
-    "roles": ["Nastaŭnik/ca fizyki", "Nastaŭnik/ca biełaruskaj movy", "Nastaŭnik/ca matematyki", "Vučań staršych klas", "Vučań pieršaj klasy", "Baćki na schodzie", "Kuchar/ka", "Achoŭnik/ca", "Nastaŭnik/ca historyi", "Fizruk"],
-    "enabled": true
-    },
-    {
-      "id": "18",
-    "key": "Pachod kryžakoŭ na Horadniu",
-    "roles": ["Kryžak", "Kryžak", "Mahistr", "Koń", "Prus", "Haradzieniec/ka", "Vajar VKŁ", "Haradzieniec/ka", "Vajar VKŁ", "Vajavoda"],
-    "enabled": true
-    },
+{
+"id": "1",
+"key": "Krama ’Rodny kut’",
+"roles": ["Kasir/ka", "Klijent/ka", "Uładalnik/ca", "Hruzčyk/ca", "Miascovy/aja biazdomny/aja", "Babula", "Chłopčyk, jakoha baćka pasłaŭ za pivam", "Klijent/ka", "Klijent/ka", "Načalnik/ca kałhasa"],
+"enabled": true
+},
+{
+"id": "2",
+"key": "Rajvykankam",
+"roles": ["Babula ŭ čarzie", "Dziadula ŭ čarzie", "Idzieš ’tolki zapytać’", "Čynoŭnik/ca", "Prybiralščyk/ca", "Achoŭnik/ca", "Načalnik/ca", "Naviedvalnik/ca", "Naviedvalnik/ca", "Raźjušany naviedalnik/ca"],
+"enabled": true
+},
+{
+"id": "3",
+"key": "Sielski klub",
+"roles": ["Dzidžej", "Traktaryst Tolik", "Stały/aja naviedvalnik/ca", "Samy stylovy chłopiec", "Samaja stylovaja dziaŭčyna", "Amatar/ka repu", "Amatar/ka šansonu", "Tancor/ka", "Tancor/ka", "Pjany adnaviaskoviec"],
+"enabled": true
+},
+{
+"id": "4",
+"key": "Safijski sabor u Połacku",
+"roles": ["Hid", "Historyk", "Archieołah", "Achoŭnik/ca", "Dyrektar/ka sabora", "Naviedvalnik/ca", "Fatohraf", "Miascovy/aja žychar/ka", "Naviedvalnik/ca", "Naviedvalnik/ca"],
+"enabled": true
+},
+{
+"id": "5",
+"key": "Dziaržaŭny cyrk",
+"roles": ["Artyst/ka", "Hladač/ka", "Dyrektar/ka cyrka", "Kłoŭn", "Achoŭnik/ca", "Trener", "Fatohraf", "Dresieroŭščyk/ca žyvioł", "Naviedvalnik/ca", "Naviedvalnik/ca"],
+"enabled": true
+},
+{
+"id": "6",
+"key": "Rahačoŭski małočnakanservavy kambinat",
+"roles": ["Rabočy/aja", "Inžynier/ka", "Dyrektar/ka kambinata", "Technik", "Achoŭnik/ca", "Fasoŭščyk/ca", "Agent/ka z ’Hłybockaj fabryki’", "Agent/ka z ’Hłybockaj fabryki’", "Fasoŭščyk/ca", "Dehustatar/ka"],
+"enabled": true
+},
+{
+"id": "7",
+"key": "Hrunvaldzkaja bitva",
+"roles": ["Vitaŭt", "Žaŭnier", "Žaŭnier", "Vieršnik", "Kryžak", "Kryžak", "Vialiki mahistar Ulrych fon Junhinhien", "Artyrelist", "Tatar na baku VKŁ", "Vieršnik"],
+"enabled": true
+},
+{
+"id": "8",
+"key": "Słavianski bazar",
+"roles": ["Śpiavak", "Hladač/ka", "Viadučy/aja", "Saładucha", "Narodny ansambal", "Hladač/ka", "Hukaaperatar/ka", "Žurnalist/ka", "Dyrektar/ka", "Pryjšoŭ z baćkami"],
+"enabled": true
+},
+{
+"id": "9",
+"key": "Na biełaruska-polskaj miažy",
+"roles": ["Kiroŭca aŭtobusu", "Pasažyr/ka", "Pasažyr/ka", "Mytnik/ca", "Pamiežnik/ca", "Rovaryst/ka", "Jedzieš u Biełastok na zakupy", "Pasažyr/ka, užo 12 hadzin na miažy", "Błohier/ka", "Kiroŭca busiku"],
+"enabled": true
+},
+{
+"id": "10",
+"key": "Mirski zamak",
+"roles": ["Kiroŭca aŭtobusu", "Hid", "Naviedvalnik/ca", "Naviedvalnik/ca", "Achoŭnik/ca", "Historyk", "Archieołah", "Pryvid", "Błohier/ka", "Hid"],
+"enabled": true
+},
+{
+"id": "11",
+"key": "Biełavieskaja pušča",
+"roles": ["Zubr", "Hid", "Naviedvalnik/ca", "Naviedvalnik/ca", "Lis", "Dzik", "Miascovaja vaviorka", "Kačka", "Vierabiej", "Fatohraf/ka"],
+"enabled": true
+},
+{
+"id": "12",
+"key": "Na Paleśsi",
+"roles": ["Palašuk/čka", "Palašuk/čka", "Palašuk/čka", "Rybak", "Traktaryst/ka", "Rovaryst/ka", "Turyst/ka", "Palaŭničy/aja", "Hančar", "Dryvasiek"],
+"enabled": true
+},
+{
+"id": "13",
+"key": "Na Marsie",
+"roles": ["Pierasialeniec/ka", "Pierasialeniec/ka", "Navukoviec", "Inžynier/ka", "Chimik", "Fermier", "Piśmieńnik", "Inžynier/ka", "Kamandujučy/aja", "Vajskoviec"],
+"enabled": true
+},
+{
+"id": "14",
+"key": "Psychijatryčny špital «Navinki»",
+"roles": ["Lekar/ka", "Lekar/ka", "Pacyjent/ka", "Pacyjent/ka", "Prybiralščyk/ca", "Źje’chaŭšy/aja z hłuzdu", "Kosiš ad vojska", "Kosiš ad vojska", "Kuchar/ka", "Sanitar/ka"],
+"enabled": true
+},
+{
+"id": "15",
+"key": "U Hruzyi",
+"roles": ["Hruzin/ka", "Hruzin/ka", "Hid", "Adpačyvaješ na mory", "Amatar chinkali", "Amatar chačapury", "Parbuješ miascovaje vino", "Jedzieš u hory na eksukrsiju", "Turyst/ka", "Damaŭlajeśsia pra košt z taksoŭščykam"],
+"enabled": true
+},
+{
+"id": "16",
+"key": "Dziaržynskaja hara",
+"roles": ["Alpinist/ka", "Turyst/ka", "Miascovy/aja žychar/ka", "Hieohraf", "Vučań", "Naviedvalnik/ca", "Alpinist/ka", "Nastaŭnica z hrupaj", "Vučań", "Hieohraf"],
+"enabled": true
+},
+{
+"id": "17",
+"key": "Škoła №1",
+"roles": ["Nastaŭnik/ca fizyki", "Nastaŭnik/ca biełaruskaj movy", "Nastaŭnik/ca matematyki", "Vučań staršych klas", "Vučań pieršaj klasy", "Baćki na schodzie", "Kuchar/ka", "Achoŭnik/ca", "Nastaŭnik/ca historyi", "Fizruk"],
+"enabled": true
+},
+{
+"id": "18",
+"key": "Pachod kryžakoŭ na Horadniu",
+"roles": ["Kryžak", "Kryžak", "Mahistr", "Koń", "Prus", "Haradzieniec/ka", "Vajar VKŁ", "Haradzieniec/ka", "Vajar VKŁ", "Vajavoda"],
+"enabled": true
+},
     {
       "id": "19",
     "key": "Padvodnaja łodka",
@@ -223,13 +222,13 @@
     {
       "id": "20",
     "key": "Karparatyŭ",
-    "roles": ["Šef firmy", "Pracaŭnik/ca", "Pracaŭnik/ca", "Viadučy/aja", "Niapjučy/aja", "Muzyka", "Muzyka", "Ničoha nie pamiataješ", "Prajšoŭ/ła za darma pajeści", "Prybiralnik/ščyca"],
+    "roles": ["Šef firmy", "Pracaŭnik/ca", "Pracaŭnik/ca", "Viadučy/aja", "Niapjučy/aja", "Muzyka", "Muzyka", "Ničoha nie pamiataješ", "Prajšoŭ/ła za darma pajeści", "Prybiralščyk/ca"],
     "enabled": true
     },
     {
       "id": "21",
     "key": "Mienskaje metro",
-    "roles": ["Kiroŭca vahonaŭ", "Pasažyr/ka", "Pasažyr/ka", "Pasažyr/ka", "Achoŭnik", "Mechanik", "Milicyjant/ka", "Kiroŭca vahonaŭ", "Kasir/ka", "Prybiralnik/ščyca"],
+    "roles": ["Kiroŭca vahonaŭ", "Pasažyr/ka", "Pasažyr/ka", "Pasažyr/ka", "Achoŭnik", "Mechanik", "Milicyjant/ka", "Kiroŭca vahonaŭ", "Kasir/ka", "Prybiralščyk/ca"],
     "enabled": true
     },
     {
@@ -240,122 +239,120 @@
     },
     {
       "id": "23",
-      "key": "Barysaŭ-Arena",
-      "roles": ["Futbalist/ka", "Futbalist/ka", "Futbalist/ka", "Sudździa", "Zaŭziatar/ka", "Zaŭziatar/ka", "Zaŭziatar/ka", "Reparter/ka", "Bufetčyk/ca", "Žurnalist/ka"],
-      "enabled": true
+    "key": "Barysaŭ-Arena",
+    "roles": ["Futbalist/ka", "Futbalist/ka", "Futbalist/ka", "Sudździa", "Zaŭziatar/ka", "Zaŭziatar/ka", "Zaŭziatar/ka", "Reparter/ka", "Bufetčyk/ca", "Žurnalist/ka"],
+    "enabled": true
     },
     {
       "id": "24",
-      "key": "Škoła N1",
-      "roles": ["Nastaŭnik/ca", "Student/ka", "Dyrektar/ka", "Dvornik", "Biblijatekar/ka", "Nastaŭnik/ca", "Achoŭnik/ca", "Baćka", "Kuchar/ka", "Lekar/ka"],
-      "enabled": true
+    "key": "Školny letni lahier",
+    "roles": ["Nastaŭnik/ca", "Vučań", "Dyrektar/ka", "Vučań", "Vučań", "Nastaŭnik/ca", "Achoŭnik/ca", "Baćka", "Kuchar/ka", "Lekar/ka"],
+    "enabled": true
     },
     {
       "id": "25",
-      "key": "Bank",
-      "roles": ["Kasir/ka", "Achoŭnik/ca", "Klijent/ka", "Kiraŭnik/ca banka", "Kredytny/aja inspektar/ka", "Finansavy/aja kansultant/ka", "Buchhaltar/ka", "Aŭdytar/ka", "Investycyjny/aja bankir/ka", "Klijent/ka"],
-      "enabled": true
+    "key": "Bank",
+    "roles": ["Kasir/ka", "Achoŭnik/ca", "Klijent/ka", "Kiraŭnik/ca banka", "Kredytny/aja inspektar/ka", "Finansavy/aja kansultant/ka", "Buchhaltar/ka", "Aŭdytar/ka", "Investycyjny/aja bankir/ka", "Klijent/ka"],
+    "enabled": true
     },
     {
       "id": "26",
-      "key": "Universytet",
-      "roles": ["Prafesar/ka", "Student/ka", "Dekan", "Biblijatekar/ka", "Daśledčyk/ca", "Student/ka", "Achoŭnik/ca", "Dvornik", "Administratar/ka", "Naviedvalnik/ca"],
-      "enabled": true
+    "key": "Universytet",
+    "roles": ["Prafesar/ka", "Student/ka", "Dekan", "Biblijatekar/ka", "Daśledčyk/ca", "Student/ka", "Achoŭnik/ca", "Dvornik", "Administratar/ka", "Naviedvalnik/ca"],
+    "enabled": true
     },
     {
       "id": "27",
-      "key": "Płavalny basejn",
-      "roles": ["Rataŭničy/aja", "Płaviec", "Trener/ka", "Prybiralščyk/ca", "Babula", "Dzicia", "Padletak", "Naviedvalnik/ca", "Kiraŭnik/ca basejna", "Instruktar/ka pa płavańni"],
-      "enabled": true
+    "key": "Płavalny basejn",
+    "roles": ["Rataŭničy/aja", "Płaviec", "Trener/ka", "Prybiralščyk/ca", "Babula", "Dzicia", "Padletak", "Naviedvalnik/ca", "Kiraŭnik/ca basejna", "Instruktar/ka pa płavańni"],
+    "enabled": true
     },
     {
       "id": "28",
-      "key": "Arbitalnaja stancyja",
-      "roles": ["Astranaŭt/ka", "Inžynier/ka", "Navukoviec", "Kamandzir/ka", "Pilot/ka", "Lekar/ka", "Aficer/ka pa suviazi", "Robat", "Inšaplaniecianin/ka", "Astarnaŭt/ka"],
-      "enabled": true
+    "key": "Arbitalnaja stancyja",
+    "roles": ["Astranaŭt/ka", "Inžynier/ka", "Navukoviec", "Kamandzir/ka", "Pilot/ka", "Lekar/ka", "Aficer/ka pa suviazi", "Robat", "Inšaplaniecianin/ka", "Astarnaŭt/ka"],
+    "enabled": true
     },
     {
       "id": "29",
-      "key": "Partyzanski lahier",
-      "roles": ["Vajskoviec", "Kamandzir/ka", "Medyk", "Kuchar/ka", "Artyrelist/ka", "Mechanik", "Aficer/ka", "Ksiondz", "Šerahoviec", "Vajskoviec"],
-      "enabled": true
+    "key": "Partyzanski lahier",
+    "roles": ["Vajskoviec", "Kamandzir/ka", "Medyk", "Kuchar/ka", "Artyrelist/ka", "Mechanik", "Aficer/ka", "Ksiondz", "Šerahoviec", "Vajskoviec"],
+    "enabled": true
     },
     {
       "id": "30",
-      "key": "Špital",
-      "roles": ["Lekar/ka", "Miedsiastra", "Pacyjent/ka", "Chirurh", "Farmaceŭt", "Administratar/ka", "Naviedvalnik/ca", "Prybiralnik/ca", "Achoŭnik/ca", "Kardyjołah"],
-      "enabled": true
+    "key": "Špital",
+    "roles": ["Lekar/ka", "Miedsiastra", "Pacyjent/ka", "Chirurh", "Terapeŭt/ka", "Venerołah", "Naviedvalnik/ca", "Prybiralščyk/ca", "Achoŭnik/ca", "Kardyjołah"],
+    "enabled": true
     },
     {
       "id": "31",
-      "key": "Restaran",
-      "roles": ["Kielner/ka", "Kuchar/ka", "Klijent/ka", "Uładalnik/ca", "Barmien/ka", "Prybiralščyk/ca", "Kiraŭnik/ca", "Klijent/ka", "Krytyk", "Hruzčyk"],
-      "enabled": true
+    "key": "Restaran «Vasilki»",
+    "roles": ["Kielner/ka", "Kuchar/ka", "Klijent/ka", "Uładalnik/ca", "Barmien/ka", "Prybiralščyk/ca", "Kiraŭnik/ca", "Klijent/ka", "Krytyk", "Hruzčyk"],
+    "enabled": true
     },
     {
       "id": "32",
-      "key": "Supermarkiet",
-      "roles": ["Kasir/ka", "Klijent/ka", "Hruzčyk", "Kiraŭnik/ca", "Achoŭnik/ca", "Piakar", "Miaśnik", "Kuchar/ka", "Prybiralščyk/ca", "Dastaŭščyk/ca"],
-      "enabled": true
+    "key": "Eŭraopt",
+    "roles": ["Kasir/ka", "Klijent/ka", "Hruzčyk", "Kiraŭnik/ca", "Achoŭnik/ca", "Piekar", "Miaśnik", "Kuchar/ka", "Prybiralščyk/ca", "Dastaŭščyk/ca"],
+    "enabled": true
     },
     {
       "id": "33",
-      "key": "Aeraport",
-      "roles": ["Pilot/ka", "Ściuardesa", "Pasažyr/ka", "Aficer/ka biaśpieki", "Dyśpietčar/ka pavietranaha ruchu", "Ahient/ka pa biletach", "Rabočy/aja pa bahažu", "Mytnik/ca", "Mechanik", "Prybiralščyk/ca"],
-      "enabled": true
+    "key": "Nacyjanalny Aeraport Miensk",
+    "roles": ["Pilot/ka", "Ściuardesa", "Pasažyr/ka", "Aficer/ka biaśpieki", "Dyśpietčar/ka pavietranaha ruchu", "Ahient/ka pa biletach", "Hruzčyk/ca valizak", "Mytnik/ca", "Mechanik", "Prybiralščyk/ca"],
+    "enabled": true
     },
     {
       "id": "34",
-      "key": "Biblijateka",
-      "roles": ["Biblijatekar/ka", "Čytač/ka", "Student/ka", "Aŭtar/ka", "Čytač/ka", "Daśledčyk/ca", "Archivaryjus", "Repietytar/ka", "Naviedvalnik/ca", "Achoŭnik/ca"],
-      "enabled": true
+    "key": "Nacyjanalnaja biblijateka",
+    "roles": ["Biblijatekar/ka", "Čytač/ka", "Student/ka", "Piśmieńnik/ca", "Čytač/ka", "Daśledčyk/ca", "Daśledčyk/ca", "Repietytar/ka", "Naviedvalnik/ca", "Achoŭnik/ca"],
+    "enabled": true
     },
     {
       "id": "35",
-      "key": "Paliciejskaje adździaleńnie",
-      "roles": ["Paliciejski/aja", "Detektyŭ/ka", "Złačynca", "Načalnik/ca palicyi", "Sakratar/ka", "Sudmiedekspert/ka", "Praŭnik", "Žurnalist/ka", "Prybiralščyk/ca", "Naviedvalnik/ca"],
-      "enabled": true
+    "key": "Adzieł milicyi",
+    "roles": ["Milicyjant/ka", "Detektyŭ/ka", "Złačynca", "Načalnik/ca milicyi", "Sakratar/ka", "Sudmiedekspert/ka", "Praŭnik", "Žurnalist/ka", "Prybiralščyk/ca", "Ekstremist/ka"],
+    "enabled": true
     },
     {
       "id": "36",
-      "key": "Zaapark",
-      "roles": ["Leŭ", "Naviedvalnik/ca", "Vieterynar/ka", "Hid", "Dresiroŭščyk/ca", "Pinhvin", "Zubr", "Fatohraf/ka", "Student/ka", "Vaviorka"],
-      "enabled": true
-    },
-    {
+    "key": "Zaapark",
+    "roles": ["Leŭ", "Naviedvalnik/ca", "Vieterynar/ka", "Hid", "Dresiroŭščyk/ca", "Pinhvin", "Zubr", "Fatohraf/ka", "Student/ka", "Vaviorka"],
+    "enabled": true
+    },{
       "id": "37",
-      "key": "Kinateatr",
-      "roles": ["Hladač/ka", "Hladač/ka", "Kasir/ka", "Kiraŭnik/ca", "Inžynier/ka", "Achoŭnik/ca", "Kinakrytyk", "Hladač/ka", "Režyser/ka", "Pradaviec papkornu"],
-      "enabled": true
+    "key": "Kinateatr",
+    "roles": ["Hladač/ka", "Hladač/ka", "Kasir/ka", "Kiraŭnik/ca", "Inžynier/ka", "Achoŭnik/ca", "Kinakrytyk", "Hladač/ka", "Režyser/ka", "Pradaviec papkornu"],
+    "enabled": true
     },
     {
       "id": "38",
-      "key": "Muzej imia Janki Kupały",
-      "roles": ["Naviedvalnik/ca", "Kuratar/ka", "Achoŭnik/ca", "Hid", "Historyk", "Student/ka", "Mastak/čka", "Fatohraf/ka", "Naviedvalnik/ca", "Archivar/ka"],
-      "enabled": true
+    "key": "Muzej",
+    "roles": ["Naviedvalnik/ca", "Kuratar/ka", "Achoŭnik/ca", "Hid", "Historyk", "Student/ka", "Mastak/čka", "Fatohraf/ka", "Naviedvalnik/ca", "Naviedvalnik/ca"],
+    "enabled": true
     },
     {
       "id": "39",
-      "key": "Spartzał",
-      "roles": ["Trener/ka", "Naviedvalnik/ca", "Naviedvalnik/ca", "Nutrycyjanist", "Menedžar/ka", "Instruktar/ka pa jozie", "Bodzibiłdzier/ka", "Fizyjaterapeŭt/ka", "Trener/ka pa boksie", "Trener/ka pa płavańni"],
-      "enabled": true
+    "key": "Spartzał",
+    "roles": ["Trener/ka", "Naviedvalnik/ca", "Naviedvalnik/ca", "Dyjetołah", "Menedžar/ka", "Instruktar/ka pa jozie", "Bodzibiłdzier/ka", "Fizyjaterapeŭt/ka", "Trener/ka pa boksie", "Trener/ka pa płavańni"],
+    "enabled": true
     },
     {
       "id": "40",
-      "key": "Hatel",
-      "roles": ["Hość", "Recepcyjanist/ka", "Menedžar/ka", "Hość", "Achoŭnik/ca", "Barmien/ka", "Kanśjerž", "Prybiralščyk/ca", "Recepcyjanist/ka", "Hość"],
-      "enabled": true
+    "key": "Hatel",
+    "roles": ["Hość", "Recepcyjanist/ka", "Menedžar/ka", "Hość", "Achoŭnik/ca", "Barmien/ka", "Kanśjerž", "Prybiralščyk/ca", "Recepcyjanist/ka", "Hość"],
+    "enabled": true
     }
   ],
   "locationSettings": {
-    "reset": "Skinuć da pačatkovych naładaŭ",
-    "addNew": "Dadać novuju lakacyju",
-    "info": "Daviedka"
-  },
-  "locationForm": {
-    "name": "Nazva lakacyi",
-    "roles": "1-10 rolaŭ tutejšych praz kosku (Tankist, Medyk, Snajpier...). Kali budzie mieńš 10, to niekatoryja roli mohuć paŭtaracca padčas hulni",
-    "editLocation": "Redahavać lakacyju",
-    "addLocation": "Dadać lakacyju"
-  }
+  "reset": "Skinuć da pačatkovych naładaŭ",
+"addNew": "Dadać novuju lakacyju"
+},
+"locationForm": {
+"name": "Nazva lakacyi",
+"roles": "1-10 rolaŭ tutejšych praz kosku (Tankist, Medyk, Snajpier...). Kali budzie mieńš 10, to niekatoryja roli mohuć paŭtaracca padčas hulni",
+"editLocation": "Redahavać lakacyju",
+"addLocation": "Dadać lakacyju"
+}
 }

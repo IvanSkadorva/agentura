@@ -101,11 +101,12 @@ export function Locations(): JSX.Element {
           )}
           <FlatList
             data={locations}
+            focusable
             ItemSeparatorComponent={() => <View style={styles.separator} />}
             renderItem={({ item }) => {
               return (
                 <Swipeable
-                  key={item.key}
+                  key={`${item.key}-${Math.random()}`}
                   renderRightActions={(progressAnimatedValue) =>
                     renderRightActions(progressAnimatedValue, item.id)
                   }

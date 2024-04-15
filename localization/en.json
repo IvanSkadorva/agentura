@@ -46,7 +46,7 @@
     "pauseHint": "Choose the winners or continue playing"
   },
   "winner": {
-    "won": "Won",
+    "won": "(1)[Won];(2-inf)[Won];",
     "newGame": "New Game",
     "spiesWere": "(1)[Spy was:];(2-inf)[Spies were:];"
   },

@@ -3,7 +3,7 @@ import Close from '../../assets/images/close.svg';
 import { languages } from '../../../localization/i18n.ts';
 import { BaseText } from '../atoms/BaseText.tsx';
 import React, { useState } from 'react';
-import Settings from '../../assets/images/settings.svg';
+import Globe from '../../assets/images/globe.svg';
 import { ScaledSheet } from 'react-native-size-matters';
 import { MAIN_WHITE } from '../../styles/colors.ts';
 import { useAppStore, SoundFile } from '../../store/app-store.ts';
@@ -26,7 +26,7 @@ export function LanguageSettings(): JSX.Element {
         }}
         touchSoundDisabled
       >
-        <Settings />
+        <Globe />
       </TouchableOpacity>
       <View style={[styles.modalWrapper, styles.modalCenteredView]}>
         <Modal

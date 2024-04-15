@@ -107,7 +107,7 @@ const styles = ScaledSheet.create({
   },
   overlayText: {
     position: 'absolute',
-    paddingTop: '80@mvs',
+    paddingTop: '65@mvs',
   },
   iconsContainer: {
     flexDirection: 'row',

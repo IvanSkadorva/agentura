@@ -20,6 +20,7 @@ import { ChooseWinner } from './pages/ChooseWinner.tsx';
 import { useAppStore } from './store/app-store.ts';
 import i18n from 'i18next';
 import { memo, useEffect } from 'react';
+import { Appearance } from 'react-native';
 
 export enum PlayerRole {
   CIVIL,
@@ -50,6 +51,7 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     void i18n.changeLanguage(language);
+    Appearance.setColorScheme('light');
   }, [language]);
 
   return (

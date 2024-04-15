@@ -41,7 +41,12 @@ export function Winner(): JSX.Element {
         background={spiesWon ? undefined : require('../assets/images/backgrounds/bg-winner.png')}
         backgroundStyle={styles.background}
       >
-        <BaseText whiteText={spiesWon}>{t('winner.won').toUpperCase()}</BaseText>
+        <BaseText whiteText={spiesWon}>
+          {t('winner.won', {
+            count: spiesWon ? 1 : 2,
+            postProcess: 'interval',
+          }).toUpperCase()}
+        </BaseText>
         <View>
           {spiesWon ? (
             <SpyIcon height={mvs(275)} />

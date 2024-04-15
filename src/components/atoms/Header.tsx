@@ -21,8 +21,8 @@ const styles = ScaledSheet.create({
   header: {
     fontFamily: FONT_FAMILY_CYGRE,
     fontWeight: 'bold',
-    fontSize: '24@ms',
-    lineHeight: '30@ms',
+    fontSize: '22@ms',
+    lineHeight: '26@ms',
     color: MAIN_BLACK,
     textAlign: 'center',
     textTransform: 'uppercase',

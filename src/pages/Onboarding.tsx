@@ -97,18 +97,18 @@ const styles = ScaledSheet.create({
     marginBottom: '20@vs',
   },
   slideFooter: {
-    paddingHorizontal: '20@msr',
-    paddingTop: '14@vs',
-    gap: '12@vs',
+    paddingHorizontal: '14@msr',
+    paddingTop: '12@vs',
+    gap: '10@vs',
     alignItems: 'center',
   },
   text: {
     fontSize: '20@msr',
-    lineHeight: '20@msr',
+    lineHeight: '22@msr',
   },
   button: {
     position: 'absolute',
-    bottom: Platform.OS === 'ios' ? '30@vs' : '10@vs',
+    bottom: Platform.OS === 'ios' ? '30@vs' : '0@vs',
   },
   gradient: {
     position: 'absolute',

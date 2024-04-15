@@ -46,7 +46,7 @@
     "pauseHint": "Wählen Sie die Gewinner oder setzen Sie das Spiel fort"
   },
   "winner": {
-    "won": "Gewonnen",
+    "won": "(1)[Gewonnen];(2-inf)[Gewonnen];",
     "newGame": "Neues Spiel",
     "spiesWere": "(1)[Der Spion war:];(2-inf)[Die Spione waren:];"
   },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BaseText } from '../atoms/BaseText.tsx';
-import { type RegisteredStyle, View, type ViewStyle } from 'react-native';
+import { Platform, type RegisteredStyle, View, type ViewStyle } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { ScaledSheet } from 'react-native-size-matters';
 import { CORAL_RED, MAIN_BLACK } from '../../styles/colors.ts';
@@ -25,9 +25,12 @@ export function CheckboxWithLabel({
   const handlePress = (newValue: boolean): void => {
     playSound(SoundFile.Secondary);
     setChecked(newValue);
-    setTimeout(() => {
-      onPress();
-    }, 0);
+    setTimeout(
+      () => {
+        onPress();
+      },
+      Platform.OS === 'ios' ? 500 : 0
+    );
   };
 
   return (

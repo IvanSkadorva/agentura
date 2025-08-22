@@ -1,26 +1,29 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Home } from './pages/Home.tsx';
-import { Configuration } from './pages/Configuration.tsx';
-import { Locations } from './pages/Locations.tsx';
-import { PlayerDistribution } from './pages/PlayerDistribution.tsx';
-import { Role } from './pages/Role.tsx';
-import { Hint } from './pages/Hint.tsx';
-import { Timer } from './pages/Timer.tsx';
-import { Winner } from './pages/Winner.tsx';
-import { Info } from './pages/Info.tsx';
-import { Onboarding } from './pages/Onboarding.tsx';
-import { MAIN_BLACK, MAIN_WHITE } from './styles/colors.ts';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { LocationSettings } from './components/organisms/LocationSettings.tsx';
-import { LocationForm } from './pages/LocationForm.tsx';
-import { VotingModal } from './pages/VotingModal.tsx';
-import { ChooseWinner } from './pages/ChooseWinner.tsx';
-import { useAppStore } from './store/app-store.ts';
-import i18n from 'i18next';
 import { memo, useEffect } from 'react';
 import { Appearance } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+import { Home } from './pages/Home';
+import { Configuration } from './pages/Configuration';
+import { Locations } from './pages/Locations';
+import { PlayerDistribution } from './pages/PlayerDistribution';
+import { Role } from './pages/Role';
+import { Hint } from './pages/Hint';
+import { Timer } from './pages/Timer';
+import { Winner } from './pages/Winner';
+import { Info } from './pages/Info';
+import { Onboarding } from './pages/Onboarding';
+import { LocationForm } from './pages/LocationForm';
+import { VotingModal } from './pages/VotingModal';
+import { ChooseWinner } from './pages/ChooseWinner';
+
+import { LocationSettings } from './components/organisms/LocationSettings';
+import { useAppStore } from './store/app-store';
+import i18n from 'i18next';
+import { MAIN_BLACK, MAIN_WHITE } from './styles/colors';
 
 export enum PlayerRole {
   CIVIL,
@@ -46,12 +49,13 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const LocationSetting = memo(LocationSettings);
+
 function App(): React.JSX.Element {
   const language = useAppStore.use.language();
 
   useEffect(() => {
     void i18n.changeLanguage(language);
-    Appearance.setColorScheme('light');
+    Appearance.setColorScheme('light'); // RN 0.81 allows this
   }, [language]);
 
   return (
@@ -59,13 +63,13 @@ function App(): React.JSX.Element {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Home"
-          screenOptions={() => ({
+          screenOptions={{
             headerTitle: '',
             headerTintColor: MAIN_BLACK,
             headerStyle: {
               backgroundColor: MAIN_WHITE,
             },
-          })}
+          }}
         >
           <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
           <Stack.Screen name="Configuration" component={Configuration} />
@@ -77,11 +81,10 @@ function App(): React.JSX.Element {
             }}
           />
           <Stack.Screen name="LocationForm" component={LocationForm} />
-
           <Stack.Screen
             name="PlayerDistribution"
-            options={{ headerShown: false }}
             component={PlayerDistribution}
+            options={{ headerShown: false }}
           />
           <Stack.Screen name="Role" component={Role} options={{ headerShown: false }} />
           <Stack.Screen name="Hint" component={Hint} options={{ headerShown: false }} />
@@ -89,10 +92,7 @@ function App(): React.JSX.Element {
           <Stack.Screen
             name="VotingModal"
             component={VotingModal}
-            options={{
-              headerShown: false,
-              presentation: 'containedModal',
-            }}
+            options={{ headerShown: false, presentation: 'containedModal' }}
           />
           <Stack.Screen
             name="ChooseWinner"

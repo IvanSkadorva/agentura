@@ -1,4 +1,4 @@
-import React from 'react';
+import { type JSX } from 'react';
 import { type ViewStyle, Text } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import { FONT_FAMILY_CYGRE } from '../../styles/typography.ts';

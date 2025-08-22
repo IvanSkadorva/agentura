@@ -1,4 +1,4 @@
-import React from 'react';
+import { type JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScaledSheet } from 'react-native-size-matters';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';

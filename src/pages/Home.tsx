@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import React from 'react';
+import { type JSX } from 'react';
 import MainSvg from '../assets/images/main.svg';
 import { ScaledSheet, s, vs } from 'react-native-size-matters';
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,4 @@
-import React from 'react';
+import { type JSX } from 'react';
 import { Container } from '../components/atoms/Container.tsx';
 import { ScrollView, View } from 'react-native';
 import { PlayersStepper } from '../components/organisms/PlayersStepper.tsx';

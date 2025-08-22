@@ -1,4 +1,4 @@
-import React from 'react';
+import { type JSX } from 'react';
 import { Container } from '../components/atoms/Container.tsx';
 import { View } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';

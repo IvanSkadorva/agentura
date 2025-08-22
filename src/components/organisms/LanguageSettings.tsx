@@ -2,7 +2,7 @@ import { Modal, TouchableOpacity, View } from 'react-native';
 import Close from '../../assets/images/close.svg';
 import { languages } from '../../../localization/i18n.ts';
 import { BaseText } from '../atoms/BaseText.tsx';
-import React, { useState } from 'react';
+import React, { useState, type JSX } from 'react';
 import Globe from '../../assets/images/globe.svg';
 import { ScaledSheet } from 'react-native-size-matters';
 import { MAIN_WHITE } from '../../styles/colors.ts';
@@ -82,7 +82,7 @@ const styles = ScaledSheet.create({
   },
   modalView: {
     flex: 1,
-    maxHeight: '270@mvs',
+    maxHeight: '360@mvs',
     width: '85%',
     backgroundColor: MAIN_WHITE,
     borderRadius: '30@msr',

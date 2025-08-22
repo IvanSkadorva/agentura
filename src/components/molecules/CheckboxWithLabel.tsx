@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, type JSX } from 'react';
 import { BaseText } from '../atoms/BaseText.tsx';
 import { Platform, type RegisteredStyle, View, type ViewStyle } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';

@@ -1,6 +1,6 @@
 import { TouchableOpacity, type RegisteredStyle, type ViewStyle } from 'react-native';
 import { BaseText } from '../atoms/BaseText.tsx';
-import React from 'react';
+import { type JSX } from 'react';
 import { ScaledSheet } from 'react-native-size-matters';
 import { CORAL_RED } from '../../styles/colors.ts';
 import { useAppStore, SoundFile } from '../../store/app-store.ts';

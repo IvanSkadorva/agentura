@@ -1,4 +1,4 @@
-import React from 'react';
+import { type JSX } from 'react';
 import { Container } from '../components/atoms/Container.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import { useTranslation } from 'react-i18next';

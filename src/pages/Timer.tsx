@@ -6,7 +6,7 @@ import { Pressable, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
 import { ms, ScaledSheet } from 'react-native-size-matters';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, type JSX } from 'react';
 import { CORAL_RED, MAIN_WHITE } from '../styles/colors.ts';
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
 import Pause from '../assets/images/pause.svg';

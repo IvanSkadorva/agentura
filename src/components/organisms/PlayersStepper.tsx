@@ -3,7 +3,7 @@ import CivilSvg from '../../assets/images/civil.svg';
 import SpySvg from '../../assets/images/spy.svg';
 import { BaseText } from '../atoms/BaseText.tsx';
 import { PlusMinusButton } from '../atoms/PlusMinusButton.tsx';
-import React from 'react';
+import { type JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ScaledSheet } from 'react-native-size-matters';
 import { useAppStore } from '../../store/app-store.ts';

@@ -7,7 +7,7 @@ import SpySide from '../assets/images/spy-side.svg';
 import CivilSide from '../assets/images/civil-side.svg';
 import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
 import { BaseText } from '../components/atoms/BaseText.tsx';
-import React from 'react';
+import { type JSX } from 'react';
 import { Container } from '../components/atoms/Container.tsx';
 import { FONT_FAMILY_KINO } from '../styles/typography.ts';
 import LinearGradient from 'react-native-linear-gradient';

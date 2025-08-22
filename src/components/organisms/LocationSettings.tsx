@@ -1,5 +1,5 @@
 import { Modal, Platform, TouchableOpacity, View } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, type JSX } from 'react';
 import ThreeDots from '../../assets/images/three-dots.svg';
 import { ScaledSheet } from 'react-native-size-matters';
 import Close from '../../assets/images/close.svg';

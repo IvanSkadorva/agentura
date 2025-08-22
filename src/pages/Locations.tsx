@@ -1,4 +1,4 @@
-import React from 'react';
+import { type JSX } from 'react';
 import { Animated, FlatList, Pressable, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
 import { SoundFile, useAppStore } from '../store/app-store.ts';

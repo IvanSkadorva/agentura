@@ -1,6 +1,6 @@
 import { Container } from '../components/atoms/Container.tsx';
 import { BaseText } from '../components/atoms/BaseText.tsx';
-import React from 'react';
+import { type JSX } from 'react';
 import { ms, mvs, ScaledSheet } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';

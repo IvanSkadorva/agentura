@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, type JSX } from 'react';
 import { Container } from '../components/atoms/Container.tsx';
 import {
   Animated,

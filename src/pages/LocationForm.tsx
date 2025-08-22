@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ScrollView, TextInput, View } from 'react-native';
+import React, { useState, type JSX } from 'react';
+import { TextInput, View } from 'react-native';
 import { Container } from '../components/atoms/Container.tsx';
 import { ScaledSheet } from 'react-native-size-matters';
 import { ActionButton } from '../components/molecules/ActionButton.tsx';

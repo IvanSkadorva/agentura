@@ -1,5 +1,5 @@
 import { TouchableOpacity } from 'react-native';
-import React from 'react';
+import { type JSX } from 'react';
 import InfoButtonSvg from '../../assets/images/info-button.svg';
 import { useAppStore, SoundFile } from '../../store/app-store.ts';
 
